@@ -154,4 +154,13 @@ footer .brand{justify-self:start;margin:0 0 22px}.footer-about p{max-width:280px
   .history{background-size:cover!important;background-repeat:no-repeat!important;background-position:center top!important}
   .history:before,.history:after,.location:before,.location:after{display:none!important}
   .location p,.location a{border-top:0!important;border-bottom:0!important}
+  .hero-copy,.manifesto>div:first-child,.manifesto-copy,.section-head,.history-intro,.founder-copy,.orchestra-copy,.gallery-intro,.location>div:first-child{text-align:center!important}
+  .hero-copy,.manifesto-copy,.history-intro,.founder-copy,.orchestra-copy,.gallery-intro,.location>div:first-child{margin-left:auto!important;margin-right:auto!important}
+  .hero-actions{justify-content:center!important;flex-wrap:wrap!important}
+  .course-filters{justify-content:center!important}
+  .stats{justify-content:center!important}
+  .section-head{display:block!important}
+  .section-head .circle-link{margin:30px auto 0!important}
+  .founder-copy p:not(.eyebrow),.orchestra-copy>p:not(.eyebrow){margin-left:auto!important;margin-right:auto!important}
+  .location-map{margin-top:38px!important}
 }
