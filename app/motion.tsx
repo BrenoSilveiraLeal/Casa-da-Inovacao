@@ -11,6 +11,11 @@ export function MotionSystem() {
     const finePointer = window.matchMedia("(pointer: fine)");
     document.documentElement.classList.toggle("reduced-motion", reduced.matches);
     const nav = document.querySelector(".header nav");
+    const header = document.querySelector<HTMLElement>(".header");
+    const hero = document.querySelector<HTMLElement>(".hero");
+    const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > Math.max(40, (hero?.offsetHeight ?? 700) * 0.12));
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
     if (nav && !nav.querySelector('[href="#inicio"]')) { const home = document.createElement("a"); home.href = "#inicio"; home.textContent = "Início"; nav.prepend(home); }
     gsap.registerPlugin(ScrollTrigger);
     const lenis = reduced.matches ? null : new Lenis({ duration: 1.1, smoothWheel: true });
@@ -56,7 +61,7 @@ export function MotionSystem() {
         el.addEventListener("mouseleave", () => cursor?.classList.remove("cursor-active"));
       });
     }
-    return () => { observer.disconnect(); triggers.forEach((trigger) => trigger.kill()); lenis?.destroy(); if (lenis) gsap.ticker.remove(tick); window.removeEventListener("scroll", onScroll); cancelAnimationFrame(frame); document.removeEventListener("mousemove", onMove); cursor?.remove(); };
+    return () => { observer.disconnect(); triggers.forEach((trigger) => trigger.kill()); lenis?.destroy(); if (lenis) gsap.ticker.remove(tick); window.removeEventListener("scroll", onScroll); window.removeEventListener("scroll", updateHeader); cancelAnimationFrame(frame); document.removeEventListener("mousemove", onMove); cursor?.remove(); };
   }, []);
   return null;
 }

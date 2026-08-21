@@ -1,22 +1,17 @@
 "use client";
 import { FormEvent, useState } from "react";
 
-const classes = [
-  ["games", "Desenvolvimento de Games", "Kids — Segunda e Quarta (15h às 16h)"], ["games", "Desenvolvimento de Games", "Teens — Segunda e Quarta (16h às 17h)"], ["games", "Desenvolvimento de Games", "Kids — Terça e Quinta (9h às 10h)"],
-  ["robotica", "Robótica", "Teens — Segunda e Quarta (14h às 15h)"], ["robotica", "Robótica", "Kids — Terça e Quinta (10h às 11h)"], ["inclusao", "Inclusão Digital 60+", "Terça e Quinta (11h às 12h)"],
-  ["informatica", "Introdução à Informática", "Teens — Segunda e Quarta (11h às 12h)"], ["informatica", "Introdução à Informática", "18+ — Segunda e Quarta (17h às 18h)"], ["informatica", "Introdução à Informática", "18+ — Terça e Quinta (17h às 18h)"], ["informatica", "Introdução à Informática", "Teens — Terça e Quinta (16h às 17h)"],
-  ["ingles", "Introdução à Língua Inglesa", "Segunda e Quarta (9h às 10h)"], ["ingles", "Introdução à Língua Inglesa", "Terça e Quinta (14h às 15h)"], ["aplicativos", "Criação de Aplicativos", "Segunda e Quarta (10h às 11h)"], ["aplicativos", "Criação de Aplicativos", "Terça e Quinta (15h às 16h)"], ["musica", "Música", "Segunda e Quarta (14h às 15h) — Flauta"], ["musica", "Música", "Segunda e Quarta (15h às 16h) — Cordas"],
-] as const;
-
 export function InlineRegistration() {
-  const [sent, setSent] = useState(false); const [error, setError] = useState(""); const [selectedClass, setSelectedClass] = useState("");
-  async function submit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); setError(""); const form = new FormData(event.currentTarget); const selected = classes.find((item) => item[2] === selectedClass); const payload = Object.fromEntries(form.entries()); const response = await fetch("/api/pre-matricula", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...payload, curso: selected?.[0], turma: selectedClass }) }); if (!response.ok) { setError("Não foi possível enviar agora. Confira os dados e tente novamente."); return; } setSent(true); }
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setError("");
+    const form = new FormData(event.currentTarget);
+    const response = await fetch("/api/pre-matricula", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(form.entries())) });
+    if (!response.ok) { setError("Não foi possível enviar agora. Confira os dados e tente novamente."); return; }
+    setSent(true);
+  }
   if (sent) return <section id="pre-matricula" className="inline-registration section"><p className="eyebrow">TUDO CERTO</p><h2>Pré-matrícula<br/><em>recebida.</em></h2><p>Seus dados foram enviados para a equipe da Casa da Inovação. Em breve entraremos em contato.</p><button className="button" onClick={() => setSent(false)}>Enviar outra inscrição <span>↗</span></button></section>;
-  return <section id="pre-matricula" className="inline-registration section"><div><p className="eyebrow">PRÉ-MATRÍCULA · GRATUITA</p><h2>Seu próximo<br/><em>caminho começa aqui.</em></h2><p>Preencha o cadastro diretamente no site. A inscrição seguirá para a equipe da Casa da Inovação.</p></div><form onSubmit={submit}>
-    <label>Nome do responsável<input required name="responsavel" /></label><label>CPF<input required name="cpf" inputMode="numeric" /></label><label>Telefone com DDD<input required name="telefone" inputMode="tel" placeholder="(21) 00000-0000" /></label><label>Rua<input required name="rua" /></label>
-    <div className="form-row"><label>Número<input required name="numero" /></label><label>Complemento<input name="complemento" /></label></div><div className="form-row"><label>Bairro<input required name="bairro" /></label><label>CEP<input required name="cep" inputMode="numeric" /></label></div>
-    <label>Nome completo do aluno<input required name="aluno" /></label><label>O aluno possui algum diagnóstico?<select required name="diagnostico"><option value="">Selecione</option><option>Não</option><option>Sim</option></select></label><label>Se sim, qual?<input name="diagnosticoDetalhe" /></label>
-    <div className="form-row"><label>Data de nascimento<input required name="nascimento" type="date" /></label><label>Idade<input required name="idade" type="number" min="1" max="110" /></label></div><label>Como conheceu a Casa?<select required name="origem"><option value="">Selecione</option><option>Instagram</option><option>Indicação</option><option>Jornal</option><option>Carro de som</option></select></label><label>Já fez curso na Casa?<select required name="jaFezCurso"><option value="">Selecione</option><option>Sim</option><option>Não</option></select></label>
-    <label>Curso e horário desejados<select required value={selectedClass} onChange={(event) => setSelectedClass(event.target.value)}><option value="">Selecione uma turma</option>{classes.map((item) => <option key={`${item[0]}-${item[2]}`} value={item[2]}>{item[1]} · {item[2]}</option>)}</select></label><label className="consent"><input required type="checkbox" /> Estou ciente de que a equipe poderá entrar em contato para confirmar a inscrição.</label>{error && <p role="alert">{error}</p>}<button className="button" type="submit">Enviar pré-matrícula <span>↗</span></button>
-  </form></section>;
+  return <section id="pre-matricula" className="inline-registration section"><div><p className="eyebrow">PRÉ-MATRÍCULA · GRATUITA</p><h2>Sua próxima<br/><em>jornada começa aqui.</em></h2><p>Deixe seus dados e escolha o curso de seu interesse.</p></div><form onSubmit={submit}><label>Nome<input required name="nome" /></label><label>Telefone<input required name="telefone" inputMode="tel" placeholder="(21) 00000-0000" /></label><label>E-mail<input required type="email" name="email" placeholder="voce@email.com" /></label><label>Curso de interesse<select required name="curso" defaultValue=""><option value="" disabled>Escolha uma opção</option><option>Robótica</option><option>Desenvolvimento de Games</option><option>Inclusão Digital 60+</option><option>Introdução à Informática</option><option>Introdução à Língua Inglesa</option><option>Criação de Aplicativos</option><option>Música</option></select></label>{error && <p role="alert">{error}</p>}<button className="button" type="submit">Enviar pré-matrícula <span>↗</span></button></form></section>;
 }

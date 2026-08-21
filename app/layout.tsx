@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   title: "Casa da Inovação | Educação que abre caminhos",
   description: "Tecnologia, cultura e oportunidades gratuitas em Teresópolis.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
   },
 };
 
