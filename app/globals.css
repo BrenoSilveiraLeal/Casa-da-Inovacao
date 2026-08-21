@@ -151,4 +151,7 @@ footer .brand{justify-self:start;margin:0 0 22px}.footer-about p{max-width:280px
   .hero{min-height:760px!important;height:auto!important;padding-top:150px!important;padding-bottom:80px!important}
   .hero h1{font-size:clamp(66px,18vw,96px)!important}
   .hero-text{font-size:16px!important;max-width:100%!important}
+  .history{background-size:cover!important;background-repeat:no-repeat!important;background-position:center top!important}
+  .history:before,.history:after,.location:before,.location:after{display:none!important}
+  .location p,.location a{border-top:0!important;border-bottom:0!important}
 }
