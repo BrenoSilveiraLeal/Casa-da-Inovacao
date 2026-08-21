@@ -133,3 +133,22 @@ footer .brand{justify-self:start;margin:0 0 22px}.footer-about p{max-width:280px
 .history .timeline b{font-size:clamp(30px,3vw,48px)!important;font-weight:400!important;color:#ead59a!important;text-shadow:0 1px 7px rgba(0,0,0,.62)!important}
 .history .timeline span{font-size:clamp(13px,1.1vw,17px)!important;line-height:1.35!important;font-weight:400!important;color:#fff8e8!important;text-shadow:0 1px 7px rgba(0,0,0,.72)!important}
 .history .history-intro>p:not(.eyebrow){color:#fff8e8!important;font-size:clamp(15px,1.35vw,19px)!important;line-height:1.5!important;font-weight:400!important;text-shadow:0 1px 7px rgba(0,0,0,.72)!important;max-width:480px!important}
+@media(max-width:700px){
+  .section{padding:92px 9vw!important;min-height:auto!important}
+  .manifesto{display:flex!important;flex-direction:column!important;gap:56px!important;min-height:760px!important}
+  .manifesto>div:first-child{transform:none!important}
+  .manifesto h2,.history h2{font-size:clamp(52px,15vw,76px)!important;line-height:.92!important;margin:0!important}
+  .manifesto-copy{padding-top:0!important}
+  .manifesto-copy>p{font-size:18px!important;line-height:1.45!important;margin:0!important}
+  .stats{gap:22px!important;margin-top:42px!important;flex-wrap:wrap!important}
+  .history{display:flex!important;flex-direction:column!important;gap:56px!important;min-height:980px!important;background-position:center!important}
+  .history-intro{width:100%!important}
+  .history .history-intro>p:not(.eyebrow){font-size:16px!important;line-height:1.45!important;margin-top:28px!important;max-width:100%!important}
+  .timeline{position:static!important;min-height:0!important;width:100%!important;display:flex!important;flex-direction:column!important;gap:30px!important}
+  .timeline div{display:grid!important;grid-template-columns:82px 1fr!important;align-items:start!important;gap:14px!important}
+  .history .timeline b{font-size:34px!important;line-height:1!important}
+  .history .timeline span{font-size:14px!important;line-height:1.35!important}
+  .hero{min-height:760px!important;height:auto!important;padding-top:150px!important;padding-bottom:80px!important}
+  .hero h1{font-size:clamp(66px,18vw,96px)!important}
+  .hero-text{font-size:16px!important;max-width:100%!important}
+}
