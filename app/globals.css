@@ -101,6 +101,9 @@ footer .brand:before{border-radius:14px!important}
 .founder-copy p:last-child{margin-top:28px}
 .founder,.founder-copy{height:auto;max-height:none;overflow:visible}
 .inline-registration label{font-size:13px}.inline-registration input,.inline-registration select{font-size:16px;line-height:1.4;padding:17px 0}.inline-registration .button{font-size:15px}
+.inline-registration label{gap:10px!important}
+.inline-registration input,.inline-registration select{height:38px!important;padding:0!important;line-height:38px!important}
+.inline-registration input[name="nome"]{height:38px!important}
 .header .brand:before,.form-header .brand:before,footer .brand:before{border-radius:0!important}
 @media(max-width:560px){.schedule h2{line-height:1.02;letter-spacing:-.07em}.schedule h2 em{display:inline-block;padding-top:8px}}
 .schedule h2{line-height:1.08!important}
