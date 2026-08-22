@@ -1,0 +1,10 @@
+node_modules
+.git
+.next
+.vinext
+.wrangler
+dist
+drizzle
+.openai
+Casa-da-Inovacao-site.zip
+*.log
