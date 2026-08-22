@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/pre-matricula", "destination": "/pre-matricula.html" }
+    { "source": "/pre-matricula", "destination": "/pre-matricula.html" },
+    { "source": "/cursos/:id", "destination": "/cursos/:id.html" }
   ]
 }
