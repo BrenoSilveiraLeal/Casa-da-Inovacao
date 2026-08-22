@@ -8,15 +8,15 @@ import Lenis from "lenis";
 export function MotionSystem() {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const finePointer = window.matchMedia("(pointer: fine)");
     document.documentElement.classList.toggle("reduced-motion", reduced.matches);
+    document.documentElement.classList.add("has-motion");
     const nav = document.querySelector(".header nav");
     const header = document.querySelector<HTMLElement>(".header");
     const hero = document.querySelector<HTMLElement>(".hero");
     const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > Math.max(40, (hero?.offsetHeight ?? 700) * 0.12));
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
-    if (nav && !nav.querySelector('[href="#inicio"]')) { const home = document.createElement("a"); home.href = "#inicio"; home.textContent = "Início"; nav.prepend(home); }
+    if (nav) nav.setAttribute("aria-label", "Navegação principal");
     gsap.registerPlugin(ScrollTrigger);
     const lenis = reduced.matches ? null : new Lenis({ duration: 1.1, smoothWheel: true });
     const tick = (time: number) => { lenis?.raf(time * 1000); };
@@ -51,17 +51,7 @@ export function MotionSystem() {
       }));
     };
     window.addEventListener("scroll", onScroll, { passive: true });
-    let cursor: HTMLDivElement | null = null;
-    const onMove = (event: MouseEvent) => { if (cursor && !reduced.matches) cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`; };
-    if (finePointer.matches && !reduced.matches) {
-      cursor = document.createElement("div"); cursor.className = "custom-cursor"; document.body.appendChild(cursor);
-      document.addEventListener("mousemove", onMove);
-      document.querySelectorAll("a, button").forEach((el) => {
-        el.addEventListener("mouseenter", () => cursor?.classList.add("cursor-active"));
-        el.addEventListener("mouseleave", () => cursor?.classList.remove("cursor-active"));
-      });
-    }
-    return () => { observer.disconnect(); triggers.forEach((trigger) => trigger.kill()); lenis?.destroy(); if (lenis) gsap.ticker.remove(tick); window.removeEventListener("scroll", onScroll); window.removeEventListener("scroll", updateHeader); cancelAnimationFrame(frame); document.removeEventListener("mousemove", onMove); cursor?.remove(); };
+    return () => { observer.disconnect(); triggers.forEach((trigger) => trigger.kill()); lenis?.destroy(); if (lenis) gsap.ticker.remove(tick); window.removeEventListener("scroll", onScroll); window.removeEventListener("scroll", updateHeader); cancelAnimationFrame(frame); document.documentElement.classList.remove("has-motion"); };
   }, []);
   return null;
 }
