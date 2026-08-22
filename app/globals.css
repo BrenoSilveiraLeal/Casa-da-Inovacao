@@ -371,11 +371,12 @@ button:disabled{cursor:wait;opacity:.65}
   bottom:calc(var(--circle-bottom) + var(--circle-border) + var(--circle-size) / 2)!important;
   transform:translate(50%,50%) rotate(-12deg)!important;
   z-index:2;
-  animation:orchestra-note-float 4.8s ease-in-out infinite!important;
+  will-change:transform;
+  animation:orchestra-note-float 3.8s ease-in-out infinite!important;
 }
 @keyframes orchestra-note-float{
   0%,100%{transform:translate(50%,50%) rotate(-12deg)}
-  50%{transform:translate(50%,calc(50% - 8px)) rotate(-8deg)}
+  50%{transform:translate(50%,calc(50% - 16px)) rotate(-7deg)}
 }
 @media (max-width:700px){
   .orchestra-visual{
