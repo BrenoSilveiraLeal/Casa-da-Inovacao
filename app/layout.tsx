@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Casa da Inovação | Educação que abre caminhos",
+  title: "Casa da Inovação E. F. Therezópolis",
   description: "Tecnologia, cultura e oportunidades gratuitas em Teresópolis.",
   icons: {
     icon: "/favicon.png",
