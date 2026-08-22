@@ -349,6 +349,46 @@ button:disabled{cursor:wait;opacity:.65}
   .orchestra-visual:after,.orchestra-visual .music-symbol{animation:none!important}
 }
 
+/* Keep the musical note locked to the center of the circular frame on every viewport. */
+.orchestra-visual{
+  --circle-size:320px;
+  --circle-border:45px;
+  --circle-right:-70px;
+  --circle-bottom:-90px;
+}
+.orchestra-visual:after{
+  width:var(--circle-size)!important;
+  height:var(--circle-size)!important;
+  border-width:var(--circle-border)!important;
+  right:var(--circle-right)!important;
+  bottom:var(--circle-bottom)!important;
+}
+.orchestra-visual .music-symbol{
+  font-size:clamp(160px,24vw,240px)!important;
+  left:auto!important;
+  top:auto!important;
+  right:calc(var(--circle-right) + var(--circle-border) + var(--circle-size) / 2)!important;
+  bottom:calc(var(--circle-bottom) + var(--circle-border) + var(--circle-size) / 2)!important;
+  transform:translate(50%,50%) rotate(-12deg)!important;
+  z-index:2;
+  animation:orchestra-note-float 4.8s ease-in-out infinite!important;
+}
+@keyframes orchestra-note-float{
+  0%,100%{transform:translate(50%,50%) rotate(-12deg)}
+  50%{transform:translate(50%,calc(50% - 8px)) rotate(-8deg)}
+}
+@media (max-width:700px){
+  .orchestra-visual{
+    --circle-size:230px;
+    --circle-border:32px;
+    --circle-right:-12px;
+    --circle-bottom:-18px;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .orchestra-visual .music-symbol{animation:none!important}
+}
+
 @media (max-width:700px){
   .history{background-image:radial-gradient(circle at 18% 28%,rgba(255,178,100,.16),transparent 42%),linear-gradient(105deg,rgba(116,50,28,.58) 0%,rgba(210,118,80,.30) 44%,rgba(36,56,45,.28) 100%),url('/imagens/4k/444444-history.png?v=mobile-orange-soft')!important;background-position:center!important;background-size:cover!important}
   .history-intro{position:relative;z-index:1}
