@@ -368,6 +368,15 @@ button:disabled{cursor:wait;opacity:.65}
   .closing h2 em{display:block!important}
 }
 
+/* Inline registration heading centered on mobile. */
+@media (max-width:700px){
+  .inline-registration{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+  .inline-registration>div{width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important}
+  .inline-registration h2{width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+  .inline-registration>div>p:not(.eyebrow){margin-left:auto!important;margin-right:auto!important}
+  .inline-registration form{width:100%!important;max-width:520px!important;text-align:left!important}
+}
+
 /* Figma-like motion: progressive enhancement, restrained easing and visible fallbacks. */
 html:not(.has-motion) .section > *,
 html:not(.has-motion) .course-card,
