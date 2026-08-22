@@ -9,6 +9,13 @@ export default function Home() {
   const [filter, setFilter] = useState("Todos");
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
+    const heroCoursesButton = document.querySelector<HTMLAnchorElement>('.hero-actions a.button[href="#horarios"]');
+    const handleHeroCoursesClick = (event: MouseEvent) => {
+      event.preventDefault();
+      document.getElementById("horarios")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", "#horarios");
+    };
+    heroCoursesButton?.addEventListener("click", handleHeroCoursesClick);
     document.querySelectorAll<HTMLAnchorElement>(".schedule-row").forEach((row) => {
       const courseId = new URL(row.href, window.location.origin).searchParams.get("curso");
       if (courseId) row.href = `/cursos/${courseId}`;
@@ -24,7 +31,10 @@ export default function Home() {
       }
     };
     document.addEventListener("click", handleScheduleClick);
-    return () => document.removeEventListener("click", handleScheduleClick);
+    return () => {
+      document.removeEventListener("click", handleScheduleClick);
+      heroCoursesButton?.removeEventListener("click", handleHeroCoursesClick);
+    };
   }, []);
   const categories = ["Todos", ...Array.from(new Set(courses.map((course) => course.category)))];
   const visible = useMemo(() => filter === "Todos" ? courses : courses.filter((course) => course.category === filter), [filter]);
