@@ -471,3 +471,5 @@ h1,h2,h3{ text-wrap:balance }
 }
 
 @media(max-width:700px){.course-detail-hero h1{font-size:clamp(48px,15vw,64px);max-width:100%;overflow-wrap:anywhere}}
+
+@media (max-width:700px){.course-professor{display:none}}
