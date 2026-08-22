@@ -333,7 +333,7 @@ button:disabled{cursor:wait;opacity:.65}
   .hero-actions{width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:22px!important}
   .hero-actions .button,.hero-actions .text-link{margin-left:auto!important;margin-right:auto!important}
   .orchestra-visual:after{width:230px!important;height:230px!important;border-width:32px!important;right:-12px!important;bottom:-18px!important;animation:none!important}
-  .orchestra-visual .music-symbol{font-size:clamp(120px,36vw,150px)!important;left:calc(100% - 103px)!important;top:calc(100% - 97px)!important;right:auto!important;bottom:auto!important;transform:translate(-50%,-50%) rotate(-12deg);z-index:2;animation:mobile-note-float 4.8s ease-in-out infinite!important}
+  .orchestra-visual .music-symbol{font-size:clamp(150px,45vw,190px)!important;left:calc(100% - 115px)!important;top:calc(100% - 110px)!important;right:auto!important;bottom:auto!important;transform:translate(-50%,-50%) rotate(-12deg);z-index:2;animation:mobile-note-float 4.8s ease-in-out infinite!important}
   footer{grid-template-columns:1fr!important;text-align:center!important;justify-items:center!important;gap:38px!important}
   footer .footer-about,footer .footer-nav,footer .footer-contact,footer .footer-social,footer .footer-note{grid-column:1/-1!important;justify-self:center!important;text-align:center!important}
   footer .brand{justify-self:center!important;margin-left:auto!important;margin-right:auto!important}
