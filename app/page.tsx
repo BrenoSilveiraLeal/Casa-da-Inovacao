@@ -13,6 +13,18 @@ export default function Home() {
       const courseId = new URL(row.href, window.location.origin).searchParams.get("curso");
       if (courseId) row.href = `/cursos/${courseId}`;
     });
+    const handleScheduleClick = (event: MouseEvent) => {
+      const row = (event.target as HTMLElement).closest("a.schedule-row") as HTMLAnchorElement | null;
+      if (!row) return;
+      const target = new URL(row.href, window.location.origin);
+      const courseId = target.pathname.match(/^\/cursos\/([^/]+)/)?.[1] ?? target.searchParams.get("curso");
+      if (courseId) {
+        event.preventDefault();
+        window.location.assign(`/cursos/${courseId}`);
+      }
+    };
+    document.addEventListener("click", handleScheduleClick);
+    return () => document.removeEventListener("click", handleScheduleClick);
   }, []);
   const categories = ["Todos", ...Array.from(new Set(courses.map((course) => course.category)))];
   const visible = useMemo(() => filter === "Todos" ? courses : courses.filter((course) => course.category === filter), [filter]);
