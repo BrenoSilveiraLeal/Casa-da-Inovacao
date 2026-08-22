@@ -45,11 +45,11 @@ export default function Registration() {
     <div className="form-shell">
       {done ? <div className="success">
         <span className="success-mark">✓</span><p className="eyebrow">TUDO CERTO</p>
-        <h1>Pré-matrícula<br/><em>enviada!</em></h1>
+        <h1>Pré-inscrição<br/><em>enviada!</em></h1>
         <p>Sua inscrição foi registrada. A equipe da Casa da Inovação poderá entrar em contato pelos dados informados.</p>
         <Link className="button" href="/">Voltar para o site <span>↗</span></Link>
       </div> : <>
-        <p className="eyebrow">PRÉ-MATRÍCULA · 01 / 01</p>
+        <p className="eyebrow">PRÉ-INSCRIÇÃO · 01 / 01</p>
         <h1>Vamos abrir<br/><em>esse caminho?</em></h1>
         <p className="form-intro">Preencha os dados abaixo para fazer sua pré-inscrição.</p>
         <form onSubmit={submit}>
@@ -71,7 +71,7 @@ export default function Registration() {
           <label>Turma e horário<select required name="turma" defaultValue="" disabled={!course}><option value="" disabled>{course ? "Escolha uma turma" : "Escolha primeiro o curso"}</option>{(classOptions[course] ?? []).map((option) => <option key={option}>{option}</option>)}</select></label>
           <label className="form-consent"><input required type="checkbox" name="consentimento" /> Estou ciente de que esta é uma pré-inscrição e que devo comparecer à Casa para confirmar a matrícula.</label>
           {submitState === "error" && <p role="alert" aria-live="polite">Não foi possível enviar agora. Confira os dados e tente novamente.</p>}
-          <button className="button" type="submit" disabled={submitState === "sending"}>{submitState === "sending" ? "Enviando…" : "Enviar pré-matrícula"} <span>↗</span></button>
+          <button className="button" type="submit" disabled={submitState === "sending"}>{submitState === "sending" ? "Enviando…" : "Enviar pré-inscrição"} <span>↗</span></button>
           <small>Seus dados serão encaminhados para a planilha de pré-inscrições da Casa.</small>
         </form>
       </>}

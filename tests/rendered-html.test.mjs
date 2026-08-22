@@ -11,5 +11,5 @@ test("renders the Casa da Inovação landing page", async () => {
   assert.match(html, /Casa da Inovação/);
   assert.match(html, /Nossos cursos/);
   assert.match(html, /Alex Castellar/);
-  assert.match(html, /Pré-matrícula/);
+  assert.match(html, /Pré-inscrição/);
 });

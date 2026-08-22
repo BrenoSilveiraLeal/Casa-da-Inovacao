@@ -27,11 +27,11 @@ export function MotionSystem() {
     ));
     reveal.forEach((el, index) => {
       el.dataset.reveal = "true";
-      el.style.setProperty("--reveal-delay", `${Math.min(index % 5, 4) * 70}ms`);
+      el.style.setProperty("--reveal-delay", `${Math.min(index % 5, 4) * 20}ms`);
     });
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
-    }), { threshold: 0.12 });
+    }), { threshold: 0.08 });
     reveal.forEach((el) => observer.observe(el));
     if (!reduced.matches) {
       document.querySelectorAll<HTMLElement>(".hero h1, .hero-text, .hero-actions, .hero-art, .manifesto h2, .history h2").forEach((el) => {
