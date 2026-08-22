@@ -361,6 +361,13 @@ button:disabled{cursor:wait;opacity:.65}
   .hero{background-position:38% center!important}
 }
 
+/* Closing message centered on mobile. */
+@media (max-width:700px){
+  .closing{width:100%!important;align-items:center!important;text-align:center!important;padding-left:20px!important;padding-right:20px!important}
+  .closing h2{width:100%!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important;overflow-wrap:normal!important}
+  .closing h2 em{display:block!important}
+}
+
 /* Figma-like motion: progressive enhancement, restrained easing and visible fallbacks. */
 html:not(.has-motion) .section > *,
 html:not(.has-motion) .course-card,
