@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/pre-matricula", "destination": "/pre-matricula.html" }
+  ]
+}
