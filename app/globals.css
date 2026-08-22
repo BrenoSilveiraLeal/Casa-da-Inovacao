@@ -356,6 +356,11 @@ button:disabled{cursor:wait;opacity:.65}
   .history h2 em{color:#e6c982!important;text-shadow:0 3px 16px rgba(20,14,10,.9)!important}
 }
 
+/* Mobile hero framing: shift the facade right so the round sign stays visible. */
+@media (max-width:700px){
+  .hero{background-position:38% center!important}
+}
+
 /* Figma-like motion: progressive enhancement, restrained easing and visible fallbacks. */
 html:not(.has-motion) .section > *,
 html:not(.has-motion) .course-card,
