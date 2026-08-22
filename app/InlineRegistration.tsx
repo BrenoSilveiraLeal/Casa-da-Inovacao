@@ -7,6 +7,8 @@ export function InlineRegistration() {
   const [sending, setSending] = useState(false);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdUgwMVjn7P-t4hZxPQ8pxbdKvaJLssmjazlcooW8n8mWnLXQ/viewform";
+    return;
     setError("");
     setSending(true);
     const form = new FormData(event.currentTarget);
