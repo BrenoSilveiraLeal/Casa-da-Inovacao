@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { courses } from "./data";
@@ -8,6 +8,22 @@ import { InlineRegistration } from "./InlineRegistration";
 export default function Home() {
   const [filter, setFilter] = useState("Todos");
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    document.querySelectorAll<HTMLAnchorElement>(".schedule-row").forEach((row) => {
+      const courseId = new URL(row.href, window.location.origin).searchParams.get("curso");
+      if (courseId) row.href = `/cursos/${courseId}`;
+    });
+    const handleScheduleClick = (event: MouseEvent) => {
+      const row = (event.target as HTMLElement).closest(".schedule-row") as HTMLAnchorElement | null;
+      if (row) {
+        event.preventDefault();
+        const courseId = new URL(row.href).searchParams.get("curso");
+        if (courseId) window.location.href = `/cursos/${courseId}`;
+      }
+    };
+    document.addEventListener("click", handleScheduleClick);
+    return () => document.removeEventListener("click", handleScheduleClick);
+  }, []);
   const categories = ["Todos", ...Array.from(new Set(courses.map((course) => course.category)))];
   const visible = useMemo(() => filter === "Todos" ? courses : courses.filter((course) => course.category === filter), [filter]);
   return <main><a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
