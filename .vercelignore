@@ -5,6 +5,5 @@ node_modules
 .wrangler
 dist
 drizzle
-.openai
 Casa-da-Inovacao-site.zip
 *.log
