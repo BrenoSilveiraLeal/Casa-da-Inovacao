@@ -11,7 +11,7 @@ export default function Home() {
   const categories = ["Todas", ...Array.from(new Set(courses.map((course) => course.category)))];
   const visibleCourses = useMemo(() => courses.filter((course) => (unitFilter === "all" || course.units.includes(unitFilter)) && (category === "Todas" || course.category === category)), [unitFilter, category]);
 
-  return <main>
+  return <main className="uc-site">
     <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header className="header multi-header">
       <Link href="#inicio" className="brand"><span className="brand-mark">CI</span><span>CASA DA<br /><b>INOVAÇÃO</b></span></Link>
