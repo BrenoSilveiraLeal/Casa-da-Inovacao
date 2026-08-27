@@ -16,6 +16,15 @@ export function MotionSystem() {
     const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > Math.max(40, (hero?.offsetHeight ?? 700) * 0.12));
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
+    const routeFormClicks = (event: Event) => {
+      const target = event.target as HTMLElement | null;
+      const link = target?.closest<HTMLAnchorElement>("a");
+      if (link?.href.includes("docs.google.com/forms/d/e/1FAIpQLSdUgwMVjn7P-t4hZxPQ8pxbdKvaJLssmjazlcooW8n8mWnLXQ")) {
+        event.preventDefault();
+        window.location.href = "/pre-matricula";
+      }
+    };
+    document.addEventListener("click", routeFormClicks);
     if (nav) nav.setAttribute("aria-label", "Navegação principal");
     gsap.registerPlugin(ScrollTrigger);
     const lenis = reduced.matches ? null : new Lenis({ duration: 1.1, smoothWheel: true });
@@ -51,7 +60,7 @@ export function MotionSystem() {
       }));
     };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => { observer.disconnect(); triggers.forEach((trigger) => trigger.kill()); lenis?.destroy(); if (lenis) gsap.ticker.remove(tick); window.removeEventListener("scroll", onScroll); window.removeEventListener("scroll", updateHeader); cancelAnimationFrame(frame); document.documentElement.classList.remove("has-motion"); };
+    return () => { observer.disconnect(); triggers.forEach((trigger) => trigger.kill()); lenis?.destroy(); if (lenis) gsap.ticker.remove(tick); document.removeEventListener("click", routeFormClicks); window.removeEventListener("scroll", onScroll); window.removeEventListener("scroll", updateHeader); cancelAnimationFrame(frame); document.documentElement.classList.remove("has-motion"); };
   }, []);
   return null;
 }
