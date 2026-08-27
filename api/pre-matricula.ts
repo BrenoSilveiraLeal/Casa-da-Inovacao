@@ -10,14 +10,17 @@ const courseEntries: Record<string, string> = {
   musica: "entry.76910292",
 };
 
-export default async function handler(request: any, response: any) {
+type ApiRequest = { method?: string; body?: unknown };
+type ApiResponse = { status: (code: number) => { json: (body: unknown) => void } };
+
+export default async function handler(request: ApiRequest, response: ApiResponse) {
   if (request.method !== "POST") {
     response.status(405).json({ ok: false, error: "method_not_allowed" });
     return;
   }
 
   try {
-    const data = typeof request.body === "string" ? JSON.parse(request.body) : request.body ?? {};
+    const data = (typeof request.body === "string" ? JSON.parse(request.body) : request.body ?? {}) as Record<string, string | undefined>;
     if (!data.nome && !data.aluno) {
       response.status(400).json({ ok: false, error: "nome_obrigatorio" });
       return;
