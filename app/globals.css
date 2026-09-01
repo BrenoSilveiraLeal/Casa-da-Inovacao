@@ -564,21 +564,12 @@ h1,h2,h3{ text-wrap:balance }
 /* Última camada do herói: mostra a foto da fachada sem blur ou gradiente colorido. */
 .hero{background-image:radial-gradient(circle at 12% 62%,rgba(210,118,80,.34) 0%,rgba(210,118,80,.15) 28%,transparent 58%),linear-gradient(105deg,rgba(210,118,80,.16) 0%,rgba(210,118,80,.08) 42%,rgba(36,56,45,.10) 100%),url('/imagens/otimizadas/fachada.webp?v=fachada-leve-laranja-visivel')!important}
 @media(max-width:700px){.hero{background-image:radial-gradient(ellipse 75% 82% at 0% 58%,rgba(210,118,80,.38) 0%,rgba(210,118,80,.17) 34%,transparent 76%),url('/imagens/otimizadas/fachada.webp?v=fachada-leve-laranja-mobile')!important}}
-@media(max-width:700px){.hero{background-image:linear-gradient(90deg,rgba(210,118,80,.32) 0%,rgba(210,118,80,.12) 18%,transparent 40%),url('/imagens/otimizadas/fachada.webp?v=fachada-leve-laranja-mobile')!important}}
 @media(max-width:700px){
-  .hero:after{
-    content:"";
-    display:block!important;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    width:18px;
-    z-index:0;
-    pointer-events:none;
-    background:linear-gradient(180deg,rgba(210,118,80,.22) 0%,rgba(210,118,80,.58) 44%,rgba(210,118,80,.28) 78%,rgba(210,118,80,.08) 100%)!important;
-    filter:blur(2px);
+  /* No celular, o laranja fica integrado à foto em um degradê largo e suave. */
+  .hero{
+    background-image:linear-gradient(90deg,rgba(210,118,80,.24) 0%,rgba(210,118,80,.12) 24%,rgba(210,118,80,0) 48%),url('/imagens/otimizadas/fachada.webp?v=fachada-leve-laranja-mobile')!important;
   }
+  .hero:after{content:none!important;display:none!important;background:none!important;filter:none!important}
 }
 
 /* O nome do idealizador permanece em uma única linha, reduzindo proporcionalmente no celular. */
