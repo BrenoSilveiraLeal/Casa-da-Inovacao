@@ -552,5 +552,8 @@ h1,h2,h3{ text-wrap:balance }
 /* O card inteiro abre a descrição do curso, mantendo o fluxo de inscrição. */
 .course-card{display:flex!important;flex-direction:column!important;text-decoration:none!important;color:inherit!important}
 
+/* Os botões de inscrição ficam centralizados dentro de cada unidade. */
+.choice-card .button{align-self:center!important}
+
 /* Ajuste final do celular: placa um pouco mais à esquerda e botão centralizado. */
 @media(max-width:700px){.hero{background-position:calc(40% + 12px) center!important}.inline-registration form .button{display:block;margin-left:auto!important;margin-right:auto!important}}
