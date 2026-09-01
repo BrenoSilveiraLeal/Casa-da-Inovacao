@@ -529,6 +529,12 @@ h1,h2,h3{ text-wrap:balance }
 @media(max-width:900px){.unit-schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.unit-switcher{margin-top:24px}.unit-switcher button{flex:1}.unit-schedule-grid{grid-template-columns:1fr}.unit-day{min-height:0}.unit-day p{font-size:13px}}
 
+/* No celular, mantém a placa da fachada parcialmente visível. */
+@media(max-width:700px){.hero{background-position:28% center!important}}
+
+/* No celular, o texto do idealizador ocupa toda a seção sem a foto lateral. */
+@media(max-width:700px){.founder-photo{display:none!important}.founder-copy{width:100%!important}}
+
 /* A grade fica ao lado da seleção da unidade no desktop. */
 @media(min-width:701px){
   .schedule{display:grid!important;grid-template-columns:.85fr 1.15fr!important;align-items:start!important;flex-direction:initial!important}
