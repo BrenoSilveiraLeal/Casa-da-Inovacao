@@ -455,6 +455,9 @@ h1,h2,h3{ text-wrap:balance }
 /* Logo atualizada: a mesma marca aparece no cabeçalho e no rodapé. */
 .brand:before{background-image:url('/imagens/otimizadas/logo.webp')!important;border-radius:14px!important}
 
+/* Mantém a fachada natural; o contraste vem de uma camada neutra, sem halo laranja. */
+.hero{background-image:linear-gradient(105deg,rgba(16,25,22,.62) 0%,rgba(16,25,22,.30) 45%,rgba(16,25,22,.40) 100%),url('/imagens/otimizadas/fachada.webp?v=fachada-sem-halo')!important}
+
 
 /* A apresentação do idealizador ocupa a largura toda quando não há foto. */
 .founder{display:grid!important;grid-template-columns:.9fr 1.1fr;gap:10vw;align-items:center;min-height:0!important;padding-top:120px!important;padding-bottom:120px!important;background:var(--sand)!important}
@@ -547,10 +550,14 @@ h1,h2,h3{ text-wrap:balance }
 .course-detail-page{overflow-x:clip}
 .course-detail-content{gap:clamp(48px,8vw,120px)}
 .course-detail-copy h2{max-width:620px;margin-left:auto;margin-right:auto;margin-bottom:24px;text-align:center}
+.course-detail-copy h2{word-spacing:.12em}
 .course-detail-copy>p:not(.eyebrow){max-width:520px;margin:0 auto 12px;text-align:center;line-height:1.55}
 @media(max-width:700px){
   .course-detail-hero h1{font-size:clamp(48px,15vw,72px);line-height:.94}
   .course-detail-intro{font-size:17px}
   .course-detail-content{gap:44px}
-  .course-detail-copy h2{font-size:clamp(48px,14vw,62px);line-height:.94;margin-bottom:22px}
+  .course-detail-copy h2{font-size:clamp(48px,14vw,62px);line-height:.94;margin-bottom:22px;word-spacing:.16em}
 }
+
+/* Última camada do herói: remove o gradiente laranja artificial da fachada. */
+.hero{background-image:linear-gradient(105deg,rgba(16,25,22,.62) 0%,rgba(16,25,22,.30) 45%,rgba(16,25,22,.40) 100%),url('/imagens/otimizadas/fachada.webp?v=fachada-sem-halo')!important}
