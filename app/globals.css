@@ -330,6 +330,8 @@ button:disabled{cursor:wait;opacity:.65}
 
 /* Keep the musical note locked to the center of the circular frame on every viewport. */
 .orchestra-visual{
+  background-size:cover;
+  background-position:center center;
   --circle-size:320px;
   --circle-border:45px;
   --circle-right:-70px;
@@ -538,17 +540,17 @@ h1,h2,h3{ text-wrap:balance }
 @media(max-width:700px){.hero{background-position:calc(40% + 1cm) center!important}.inline-registration form .button{display:block;margin-left:auto!important;margin-right:auto!important}}
 
 /* Detalhes dos cursos: título e textos principais centralizados, dados práticos separados. */
+.brand-mark{display:none!important}
 .course-detail-hero>.eyebrow{text-align:left}
 .course-detail-hero h1{max-width:1000px;margin-left:auto;margin-right:auto;text-align:center}
-.course-detail-intro{max-width:680px;margin-left:auto;margin-right:auto;padding:18px 22px;border:1px solid rgba(246,244,238,.28);background:rgba(246,244,238,.08);border-radius:2px;text-align:center}
+.course-detail-intro{max-width:680px;margin-left:auto;margin-right:auto;text-align:center;line-height:1.5}
+.course-detail-page{overflow-x:clip}
 .course-detail-content{gap:clamp(48px,8vw,120px)}
 .course-detail-copy h2{max-width:620px;margin-left:auto;margin-right:auto;margin-bottom:24px;text-align:center}
-.course-detail-copy>p:not(.eyebrow){max-width:520px;margin:0 auto 14px;text-align:center;line-height:1.55}
-.course-detail-copy>p:nth-of-type(2),.course-detail-copy>p:nth-of-type(3){padding:18px 20px;border:1px solid rgba(36,56,45,.28);background:rgba(246,244,238,.72);border-radius:2px}
+.course-detail-copy>p:not(.eyebrow){max-width:520px;margin:0 auto 12px;text-align:center;line-height:1.55}
 @media(max-width:700px){
   .course-detail-hero h1{font-size:clamp(48px,15vw,72px);line-height:.94}
-  .course-detail-intro{padding:16px 18px;font-size:17px}
+  .course-detail-intro{font-size:17px}
   .course-detail-content{gap:44px}
   .course-detail-copy h2{font-size:clamp(48px,14vw,62px);line-height:.94;margin-bottom:22px}
-  .course-detail-copy>p:nth-of-type(2),.course-detail-copy>p:nth-of-type(3){padding:16px 17px}
 }
