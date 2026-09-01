@@ -561,7 +561,11 @@ h1,h2,h3{ text-wrap:balance }
 }
 
 /* Última camada do herói: mostra a foto da fachada sem blur ou gradiente colorido. */
-.hero{background-image:linear-gradient(105deg,rgba(210,118,80,.14) 0%,rgba(210,118,80,.06) 38%,rgba(36,56,45,.10) 100%),url('/imagens/otimizadas/fachada.webp?v=fachada-leve-laranja')!important}
+.hero{background-image:radial-gradient(circle at 12% 62%,rgba(210,118,80,.34) 0%,rgba(210,118,80,.15) 28%,transparent 58%),linear-gradient(105deg,rgba(210,118,80,.16) 0%,rgba(210,118,80,.08) 42%,rgba(36,56,45,.10) 100%),url('/imagens/otimizadas/fachada.webp?v=fachada-leve-laranja-visivel')!important}
+
+/* O nome do idealizador permanece em uma única linha, reduzindo proporcionalmente no celular. */
+.founder-copy h2 strong{white-space:nowrap}
+@media(max-width:700px){.founder-copy h2{font-size:clamp(28px,11vw,58px)!important;letter-spacing:-.07em}}
 
 /* No desktop, o título principal volta a ocupar exatamente duas linhas. */
 @media(min-width:701px){
