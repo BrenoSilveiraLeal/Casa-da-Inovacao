@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   title: "Casa da Inovação E. F. Therezópolis",
   description: "Tecnologia, cultura e oportunidades gratuitas em Teresópolis.",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
+    icon: "/imagens/logo-casa-nova-rounded.png",
+    shortcut: "/imagens/logo-casa-nova-rounded.png",
   },
 };
 
