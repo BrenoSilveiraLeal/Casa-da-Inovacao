@@ -462,7 +462,7 @@ h1,h2,h3{ text-wrap:balance }
 .founder-copy{max-width:none!important;margin:0!important}
 .founder-copy h2{margin-bottom:34px}
 .founder-copy p:not(.eyebrow){max-width:680px!important}
-.founder-copy::after{content:"EDUCAÇÃO · TECNOLOGIA · OPORTUNIDADES";display:block;margin-top:48px;color:var(--rust);font-size:10px;letter-spacing:.2em}
+.founder-copy::after{content:"EDUCAÇÃO · TECNOLOGIA · OPORTUNIDADES";display:block;margin-top:48px;color:var(--rust);font-size:10px;letter-spacing:.2em;text-align:center}
 .location-maps{display:grid!important;grid-template-rows:1fr 1fr;gap:14px;height:560px!important;box-shadow:none!important;background:transparent!important;overflow:visible!important}
 .location-maps iframe{min-height:0;border:1px solid #24382d33}
 .location-address strong{display:block;color:var(--rust);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
@@ -507,6 +507,15 @@ h1,h2,h3{ text-wrap:balance }
 .unit-day p{font-size:12px;line-height:1.35;margin:0;padding:10px 0;border-top:1px solid #24382d33;color:var(--forest)}
 @media(max-width:900px){.unit-schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.unit-switcher{margin-top:24px}.unit-switcher button{flex:1}.unit-schedule-grid{grid-template-columns:1fr}.unit-day{min-height:0}.unit-day p{font-size:13px}}
+
+.schedule-row-disabled{cursor:not-allowed;opacity:.72}
+.schedule-row-disabled:hover{padding-left:0;color:inherit}
+.schedule-status{justify-self:end;color:var(--rust)!important;font-size:10px!important;font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-align:right}
+.button-disabled{cursor:not-allowed;opacity:.62;pointer-events:none;background:#59665c!important;color:var(--linen)!important}
+.choice-card-closed{background:#e4e0d7!important}
+.footer-credit{grid-column:1/-1;justify-self:center;margin:4px 0 0;color:#8d9990;font-size:10px;letter-spacing:.08em;text-align:center}
+.footer-credit span{color:#d4c28d}
+@media(max-width:560px){.schedule-row-disabled .schedule-status{display:block!important;grid-column:1/-1;justify-self:start;text-align:left}}
 
 /* No celular, mantém a placa da fachada parcialmente visível. */
 @media(max-width:700px){.hero{background-position:40% center!important}}
@@ -604,3 +613,7 @@ h1,h2,h3{ text-wrap:balance }
     background-image:linear-gradient(90deg,rgba(210,118,80,.38) 0%,rgba(210,118,80,.16) 24%,rgba(210,118,80,0) 60%,rgba(210,118,80,0) 100%),url('/imagens/otimizadas/history.webp?v=mobile-orange-soft')!important;
   }
 }
+
+/* Títulos de cursos: mais respiro entre linhas quando o nome quebra. */
+.course-detail-hero h1{line-height:1.02}
+@media(max-width:700px){.course-detail-hero h1{line-height:1.04}}
