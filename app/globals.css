@@ -530,7 +530,7 @@ h1,h2,h3{ text-wrap:balance }
 @media(max-width:560px){.unit-switcher{margin-top:24px}.unit-switcher button{flex:1}.unit-schedule-grid{grid-template-columns:1fr}.unit-day{min-height:0}.unit-day p{font-size:13px}}
 
 /* No celular, mantém a placa da fachada parcialmente visível. */
-@media(max-width:700px){.hero{background-position:12% center!important}}
+@media(max-width:700px){.hero{background-position:28% center!important}}
 
 /* No celular, o texto do idealizador ocupa toda a seção sem a foto lateral. */
 @media(max-width:700px){.founder{grid-template-columns:1fr!important;gap:48px!important}.founder-photo{display:none!important}.founder-copy{width:100%!important;max-width:680px!important;margin:0 auto!important;justify-self:center!important;text-align:center!important}.founder-copy h2,.founder-copy p{text-align:center!important}.founder-copy p:not(.eyebrow){margin-left:auto!important;margin-right:auto!important}}
