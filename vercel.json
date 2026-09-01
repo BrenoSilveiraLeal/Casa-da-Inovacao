@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/pre-matricula", "destination": "/pre-matricula.html" },
+    { "source": "/cursos/sao-pedro/:id", "destination": "/cursos/sao-pedro/:id.html" },
     { "source": "/cursos/:id", "destination": "/cursos/:id.html" }
   ]
 }

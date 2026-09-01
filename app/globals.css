@@ -559,4 +559,4 @@ h1,h2,h3{ text-wrap:balance }
 .sao-pedro-schedule-lines b{display:block;font-weight:700;line-height:1.35}
 
 /* Ajuste final do celular: placa um pouco mais à esquerda e botão centralizado. */
-@media(max-width:700px){.hero{background-position:calc(40% + 6px) center!important}.inline-registration form .button{display:block;margin-left:auto!important;margin-right:auto!important}}
+@media(max-width:700px){.hero{background-position:calc(40% - 6px) center!important}.inline-registration form .button{display:block;margin-left:auto!important;margin-right:auto!important}}
