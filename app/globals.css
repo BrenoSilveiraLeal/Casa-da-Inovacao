@@ -530,7 +530,7 @@ h1,h2,h3{ text-wrap:balance }
 @media(max-width:560px){.unit-switcher{margin-top:24px}.unit-switcher button{flex:1}.unit-schedule-grid{grid-template-columns:1fr}.unit-day{min-height:0}.unit-day p{font-size:13px}}
 
 /* No celular, mantém a placa da fachada parcialmente visível. */
-@media(max-width:700px){.hero{background-position:28% center!important}}
+@media(max-width:700px){.hero{background-position:40% center!important}}
 
 /* No celular, o texto do idealizador ocupa toda a seção sem a foto lateral. */
 @media(max-width:700px){.founder{grid-template-columns:1fr!important;gap:48px!important}.founder-photo{display:none!important}.founder-copy{width:100%!important;max-width:680px!important;margin:0 auto!important;justify-self:center!important;text-align:center!important}.founder-copy h2,.founder-copy p{text-align:center!important}.founder-copy p:not(.eyebrow){margin-left:auto!important;margin-right:auto!important}}
@@ -548,3 +548,9 @@ h1,h2,h3{ text-wrap:balance }
 .course-schedules{gap:12px!important}
 .course-schedules strong{display:block;line-height:1.45}
 @media(max-width:700px){.course-detail-info{gap:28px}.course-schedules{gap:14px!important}.course-schedules strong{padding-top:4px}}
+
+/* O card inteiro abre a descrição do curso, mantendo o fluxo de inscrição. */
+.course-card{display:flex!important;flex-direction:column!important;text-decoration:none!important;color:inherit!important}
+
+/* Ajuste final do celular: placa um pouco mais à esquerda e botão centralizado. */
+@media(max-width:700px){.hero{background-position:calc(40% + 12px) center!important}.inline-registration form .button{display:block;margin-left:auto!important;margin-right:auto!important}}
