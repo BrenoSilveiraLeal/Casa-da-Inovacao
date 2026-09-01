@@ -587,6 +587,6 @@ h1,h2,h3{ text-wrap:balance }
   inset:0;
   z-index:1;
   pointer-events:none;
-  background:linear-gradient(180deg,rgba(16,25,22,.22) 0%,rgba(16,25,22,.30) 100%);
+  background:linear-gradient(105deg,rgba(210,118,80,.28) 0%,rgba(210,118,80,.14) 42%,rgba(36,56,45,.24) 100%);
 }
 .hero-copy{position:relative;z-index:2}
