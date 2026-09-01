@@ -550,14 +550,28 @@ h1,h2,h3{ text-wrap:balance }
 .course-detail-page{overflow-x:clip}
 .course-detail-content{gap:clamp(48px,8vw,120px)}
 .course-detail-copy h2{max-width:620px;margin-left:auto;margin-right:auto;margin-bottom:24px;text-align:center}
-.course-detail-copy h2{word-spacing:.12em}
+.course-detail-copy h2{word-spacing:normal}
+.course-title-word{display:inline-block;margin-left:.30em}
 .course-detail-copy>p:not(.eyebrow){max-width:520px;margin:0 auto 12px;text-align:center;line-height:1.55}
 @media(max-width:700px){
   .course-detail-hero h1{font-size:clamp(48px,15vw,72px);line-height:.94}
   .course-detail-intro{font-size:17px}
   .course-detail-content{gap:44px}
-  .course-detail-copy h2{font-size:clamp(48px,14vw,62px);line-height:.94;margin-bottom:22px;word-spacing:.16em}
+  .course-detail-copy h2{font-size:clamp(48px,14vw,62px);line-height:.94;margin-bottom:22px}
 }
 
-/* Última camada do herói: remove o gradiente laranja artificial da fachada. */
-.hero{background-image:linear-gradient(105deg,rgba(16,25,22,.62) 0%,rgba(16,25,22,.30) 45%,rgba(16,25,22,.40) 100%),url('/imagens/otimizadas/fachada.webp?v=fachada-sem-halo')!important}
+/* Última camada do herói: mostra a foto da fachada sem blur ou gradiente colorido. */
+.hero{background-image:linear-gradient(105deg,rgba(210,118,80,.14) 0%,rgba(210,118,80,.06) 38%,rgba(36,56,45,.10) 100%),url('/imagens/otimizadas/fachada.webp?v=fachada-leve-laranja')!important}
+
+/* No desktop, o título principal volta a ocupar exatamente duas linhas. */
+@media(min-width:701px){
+  .hero-copy{max-width:900px!important}
+  .hero h1{white-space:nowrap}
+}
+
+/* Os mapas precisam preencher cada linha do contêiner; sem isso o iframe cai no tamanho padrão de 300x150. */
+.location-maps iframe{display:block;width:100%;height:100%;min-height:0!important;border:1px solid #24382d33}
+@media(max-width:700px){
+  .location-maps{width:100%!important;max-width:680px!important;height:620px!important;grid-template-rows:repeat(2,minmax(0,1fr));gap:24px!important}
+  .location-maps iframe{width:100%!important;height:100%!important;min-height:0!important}
+}
