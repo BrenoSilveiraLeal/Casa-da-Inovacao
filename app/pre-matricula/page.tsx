@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Link from "next/link";
 
-const saoPedroForm = "https://docs.google.com/forms/d/e/1FAIpQLSc60R92wI_qZRH450rKPQU1iAWsz9fFKZ1JViZZyeR1JQtSKw/viewform?usp=publish-editor";
+const saoPedroForm = "https://docs.google.com/forms/d/e/1FAIpQLSfdPtZIrXAKesZnBzOZgAv2AFoKWFrbYuKfyCOwvsADCNT5lA/viewform?usp=publish-editor";
 
 export default function RegistrationChoice() {
   return <main className="registration choice-registration">
