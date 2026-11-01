@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const registrations = [
@@ -18,8 +21,16 @@ const registrations = [
 ];
 
 export default function RegistrationChoice() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return <main className="proposal-site registration-page">
-    <header className="header scrolled choice-header" id="top">
+    <header className={`header choice-header${scrolled ? " scrolled" : ""}`} id="top">
       <div className="wrap">
         <Link href="/" className="logo" aria-label="Casa da Inovação">
           <img className="site-logo" src="/imagens/otimizadas/logo.webp" alt="" />

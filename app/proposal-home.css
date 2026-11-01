@@ -266,7 +266,8 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .footer-contact-label:first-of-type{margin-top:0}
 .proposal-site .choice-header .wrap{grid-template-columns:1fr auto auto;gap:clamp(20px,3vw,42px)}
 .proposal-site .choice-header .nav{gap:clamp(16px,2vw,28px)}
-.proposal-site .choice-back{font-size:14px;font-weight:600;text-decoration:none;color:var(--terra-dark);white-space:nowrap}
+.proposal-site .choice-back{font-size:14px;font-weight:600;text-decoration:none;color:rgba(255,255,255,.9);white-space:nowrap;transition:color .3s}
+.proposal-site .header.scrolled .choice-back{color:var(--terra-dark)}
 .proposal-site .choice-back:hover{color:var(--ink)}
 .proposal-site .choice-hero{padding:116px 0 42px}
 .proposal-site .choice-hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);align-items:center;gap:clamp(32px,6vw,84px)}
