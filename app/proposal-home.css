@@ -217,9 +217,9 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
   .proposal-site .menu-btn{display:grid;place-items:center}
   .proposal-site .header .wrap{grid-template-columns:1fr auto}
   .proposal-site .controls .unit-addr{margin-left:0;flex-basis:100%}
-  .proposal-site .mobile-nav{position:fixed;inset:76px 0 auto;background:var(--paper);padding:12px 20px 24px;box-shadow:0 20px 40px -20px rgba(0,0,0,.3)}
-  .proposal-site .mobile-nav.open{display:grid;gap:4px}
-  .proposal-site .mobile-nav a{padding:14px 4px;text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
+  .proposal-site .mobile-nav{position:absolute;inset:76px 0 auto;z-index:60;max-height:calc(100dvh - 76px);overflow-y:auto;background:var(--paper);color:var(--ink);padding:12px 20px 24px;box-shadow:0 20px 40px -20px rgba(0,0,0,.3)}
+  .proposal-site .header .mobile-nav.open{display:grid;gap:4px;opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  .proposal-site .mobile-nav a{padding:14px 4px;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
   .proposal-site .mobile-nav .btn{margin-top:14px;justify-content:center;border-bottom:0;color:#fff}
   .proposal-site .hero .wrap,.proposal-site .about .wrap,.proposal-site .history .wrap,.proposal-site .founder .wrap,.proposal-site .orchestra .wrap,.proposal-site .signup .wrap{grid-template-columns:1fr}
   .proposal-site .grid{grid-template-columns:1fr 1fr}
@@ -231,7 +231,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
   .proposal-site .wrap{width:calc(100% - 32px)}
   .proposal-site .hero{padding-bottom:40px}
   .proposal-site .hero-card{display:none}
-  .proposal-site .hero-bg{background-position:25% center}
+  .proposal-site .hero-bg{background-position:29% center}
   .proposal-site .hero .ctas .btn{flex:1 1 100%;justify-content:center}
   .proposal-site .stats .wrap{grid-template-columns:1fr 1fr}
   .proposal-site .stat{padding:24px 16px;border-left:0;border-top:1px solid var(--line)}
@@ -423,10 +423,11 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
   .proposal-site .controls{display:grid;width:100%;grid-template-columns:minmax(0,1fr);gap:12px;padding-top:20px}
   .proposal-site .seg{display:flex;width:100%;min-width:0}
   .proposal-site .seg button{flex:1 1 0;min-width:0;min-height:44px;padding-inline:8px;white-space:normal;font-size:clamp(12px,3.5vw,14px);line-height:1.2}
-  .proposal-site .filters{display:flex;width:100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
-  .proposal-site .filters button{min-height:44px;flex:none;scroll-snap-align:start}
+  .proposal-site .filters{display:grid;width:100%;min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;overflow:visible}
+  .proposal-site .filters button{width:100%;min-width:0;min-height:44px;padding:9px 10px;line-height:1.25;white-space:normal;text-align:center}
   .proposal-site .grid{grid-template-columns:minmax(0,1fr)}
   .proposal-site .grid>.card{min-width:0}
+  .proposal-site .unit{padding:20px}
   .proposal-site .unit-map{height:220px}
   .proposal-site footer .cols{grid-template-columns:minmax(0,1fr);gap:26px}
   .proposal-site footer .cols>*{min-width:0;overflow-wrap:anywhere}
@@ -452,6 +453,16 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
   .proposal-site footer .footer-brand{display:flex;flex-direction:column;align-items:center;text-align:center}
   .proposal-site footer .footer-brand .logo{justify-content:center;width:100%;margin:0 auto 12px!important}
   .proposal-site footer .footer-brand p{max-width:28ch;margin-inline:auto}
+}
+@media(max-width:640px){
+  .proposal-site .hero .wrap>div:first-child{max-width:100%;margin-inline:auto;text-align:center}
+  .proposal-site .hero h1{max-width:16ch;margin-inline:auto;text-align:center;text-wrap:balance}
+  .proposal-site .hero .sub{max-width:36ch;margin-inline:auto;text-align:center}
+  .proposal-site .hero .ctas{justify-content:center;width:100%}
+}
+@media(max-width:560px){
+  .proposal-site footer .bottom{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px}
+  .proposal-site footer .bottom>*{width:100%;text-align:center}
 }
 @media(max-height:500px) and (orientation:landscape){
   .proposal-site .hero{min-height:640px;padding-top:120px}
