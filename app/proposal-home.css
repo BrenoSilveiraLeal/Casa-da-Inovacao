@@ -260,6 +260,10 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .card.compact-schedule .turmas small{font-size:10.5px;white-space:nowrap}
 .proposal-site .card.compact-schedule .turmas li b{font-size:12.5px}
 @media(max-width:640px){.proposal-site .courses{padding-bottom:48px}}
+.proposal-site .unit-contact{display:grid;gap:4px;margin-top:2px}
+.proposal-site .unit .unit-contact a{margin-top:0;font-size:14px;font-weight:500;color:var(--muted);overflow-wrap:anywhere}
+.proposal-site .footer-contact-label{margin:14px 0 6px;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.proposal-site .footer-contact-label:first-of-type{margin-top:0}
 .proposal-site .signup-photo{min-height:450px;aspect-ratio:4/3;border-radius:28px;background:url('/imagens/otimizadas/fachada.webp') center/cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .proposal-site button:focus-visible,.proposal-site a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 .proposal-site ::selection{background:var(--terra);color:#fff}
