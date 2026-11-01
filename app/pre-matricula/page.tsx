@@ -34,10 +34,14 @@ export default function RegistrationChoice() {
 
     <section className="choice-hero dark">
       <div className="wrap">
-        <span className="eyebrow">Pré-inscrição · gratuita</span>
-        <h1>Escolha onde <em>começar.</em></h1>
-        <p className="lead">Selecione a unidade mais perto de você para abrir o formulário de pré-inscrição e ver os cursos disponíveis.</p>
-        <div className="choice-highlights"><span>2 unidades em Teresópolis</span><span>Cursos gratuitos</span></div>
+        <div className="choice-hero-title">
+          <span className="eyebrow">Pré-inscrição · gratuita</span>
+          <h1>Escolha onde <em>começar.</em></h1>
+        </div>
+        <div className="choice-hero-copy">
+          <p className="lead">Selecione a unidade mais perto de você para abrir o formulário de pré-inscrição e ver os cursos disponíveis.</p>
+          <div className="choice-highlights"><span>2 unidades em Teresópolis</span><span>Cursos gratuitos</span></div>
+        </div>
       </div>
     </section>
 
