@@ -325,3 +325,6 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .history .timeline p{margin:6px 0 0;color:var(--ink);font-size:17px;line-height:1.45}
 @media(max-width:760px){.proposal-site .history .wrap{grid-template-columns:1fr;gap:36px}.proposal-site .history .timeline{margin-left:2px}}
 .proposal-site .history .timeline{position:relative!important;top:auto!important;align-self:start!important}
+
+/* Match the square classroom photo in the about section reference. */
+.proposal-site .about-img{aspect-ratio:1/1}
