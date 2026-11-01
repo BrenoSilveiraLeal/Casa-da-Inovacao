@@ -311,3 +311,17 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .hero .sub{max-width:48ch;font-size:clamp(17px,1.7vw,20px);line-height:1.5;color:rgba(255,248,239,.88)}
 .proposal-site .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 @media(max-width:640px){.proposal-site .hero{min-height:100svh;padding:116px 0 48px!important;align-items:center!important}.proposal-site .hero h1{max-width:16ch;font-size:clamp(46px,12vw,68px);line-height:1;margin:18px 0}.proposal-site .hero .sub{max-width:36ch}.proposal-site .hero .ctas{align-items:stretch}.proposal-site .hero .ctas .btn{flex:1 1 100%;justify-content:center}}
+.proposal-site .history{display:block!important;grid-template-columns:none!important;gap:0!important;padding:clamp(72px,9vw,116px) 0!important;background-color:var(--cream)!important;background-image:none!important;color:var(--ink)!important}
+.proposal-site .history .wrap{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(48px,8vw,112px);align-items:start}
+.proposal-site .history .eyebrow{color:var(--terra)}
+.proposal-site .history .lead{max-width:52ch;color:var(--muted)}
+.proposal-site .history .timeline{display:block;min-height:0;border:0;border-left:0;justify-content:initial;flex-direction:initial;color:var(--ink);margin:0;padding:0 0 0 34px}
+.proposal-site .history .timeline::before{top:11px;bottom:10px}
+.proposal-site .history .timeline li{padding:0 0 32px;margin:0}
+.proposal-site .history .timeline li:last-child{padding-bottom:0}
+.proposal-site .history .timeline li::before{background:var(--cream)}
+.proposal-site .history .timeline li.now::before{background:var(--terra)}
+.proposal-site .history .year{font-size:34px;color:var(--terra)}
+.proposal-site .history .timeline p{margin:6px 0 0;color:var(--ink);font-size:17px;line-height:1.45}
+@media(max-width:760px){.proposal-site .history .wrap{grid-template-columns:1fr;gap:36px}.proposal-site .history .timeline{margin-left:2px}}
+.proposal-site .history .timeline{position:relative!important;top:auto!important;align-self:start!important}
