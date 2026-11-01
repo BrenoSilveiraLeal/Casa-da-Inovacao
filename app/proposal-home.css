@@ -264,6 +264,35 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .unit .unit-contact a{margin-top:0;font-size:14px;font-weight:500;color:var(--muted);overflow-wrap:anywhere}
 .proposal-site .footer-contact-label{margin:14px 0 6px;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .proposal-site .footer-contact-label:first-of-type{margin-top:0}
+.proposal-site .choice-header .wrap{grid-template-columns:1fr auto auto;gap:clamp(20px,3vw,42px)}
+.proposal-site .choice-header .nav{gap:clamp(16px,2vw,28px)}
+.proposal-site .choice-back{font-size:14px;font-weight:600;text-decoration:none;color:var(--terra-dark);white-space:nowrap}
+.proposal-site .choice-back:hover{color:var(--ink)}
+.proposal-site .choice-hero{padding:152px 0 68px}
+.proposal-site .choice-hero .wrap{display:flex;flex-direction:column;align-items:flex-start}
+.proposal-site .choice-hero h1{max-width:12ch;font-size:clamp(52px,7vw,88px);margin:16px 0 18px}
+.proposal-site .choice-hero h1 em{color:var(--gold)}
+.proposal-site .choice-hero .lead{max-width:58ch}
+.proposal-site .choice-highlights{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line-dark);color:rgba(255,248,239,.72);font-size:13px}
+.proposal-site .choice-options{padding:76px 0 96px;background:var(--cream)}
+.proposal-site .choice-heading{margin-bottom:32px}
+.proposal-site .choice-heading h2{font-size:clamp(38px,5vw,58px);margin:10px 0}
+.proposal-site .choice-heading .lead{font-size:16px}
+.proposal-site .choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.proposal-site .choice-unit{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:clamp(24px,3vw,36px);border:1px solid var(--line);border-radius:24px;background:var(--paper);box-shadow:0 20px 50px -42px rgba(47,29,23,.42)}
+.proposal-site .choice-unit:nth-child(2){background:#F1E8D9}
+.proposal-site .choice-unit-top{display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px}
+.proposal-site .choice-unit .badge{font-size:12px;font-weight:600;padding:6px 11px;border-radius:999px;background:rgba(201,100,59,.12);color:var(--terra-dark)}
+.proposal-site .choice-index{color:var(--terra);font:italic 26px var(--serif)}
+.proposal-site .choice-unit h3{margin:22px 0 8px;font-size:clamp(34px,4vw,46px);line-height:1}
+.proposal-site .choice-address{color:var(--muted);font-size:15px}
+.proposal-site .choice-course-list{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);width:100%}
+.proposal-site .choice-course-list span{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-dark)}
+.proposal-site .choice-course-list p{margin-top:8px;color:var(--muted);font-size:15px;line-height:1.55}
+.proposal-site .choice-unit .btn{margin-top:28px;justify-content:space-between;width:100%;max-width:360px}
+.proposal-site .choice-footer{background:#1C120E}
+@media(max-width:980px){.proposal-site .choice-header .wrap{grid-template-columns:1fr auto}.proposal-site .choice-header .nav{display:none}}
+@media(max-width:640px){.proposal-site .choice-hero{padding:128px 0 48px}.proposal-site .choice-hero h1{font-size:clamp(48px,13vw,64px)}.proposal-site .choice-highlights{gap:12px 22px;margin-top:22px}.proposal-site .choice-options{padding:52px 0 64px}.proposal-site .choice-heading{margin-bottom:24px}.proposal-site .choice-grid{grid-template-columns:1fr;gap:14px}.proposal-site .choice-unit{padding:24px}.proposal-site .choice-unit h3{font-size:38px}.proposal-site .choice-unit .btn{max-width:none}}
 .proposal-site .signup-photo{min-height:450px;aspect-ratio:4/3;border-radius:28px;background:url('/imagens/otimizadas/fachada.webp') center/cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .proposal-site button:focus-visible,.proposal-site a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 .proposal-site ::selection{background:var(--terra);color:#fff}

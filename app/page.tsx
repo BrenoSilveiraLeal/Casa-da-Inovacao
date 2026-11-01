@@ -2,7 +2,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { courses, saoPedroCourses } from "./data";
-import "./proposal-home.css";
 
 type Unit = "beira" | "sao";
 type AgeFilter = "all" | "kids" | "teens" | "adultos" | "60";
