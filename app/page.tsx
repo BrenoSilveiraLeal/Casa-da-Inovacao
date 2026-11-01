@@ -33,6 +33,22 @@ function compactDays(schedule: string) {
   if (day.startsWith("Terça")) return "Ter. / Qui.";
   return day;
 }
+function compactGameSchedules(schedules: string[]) {
+  const rows: { key: string; day: string; label: string; times: string[] }[] = [];
+  for (const schedule of schedules) {
+    const [day, time = "", ...nameParts] = schedule.split(" · ");
+    const label = nameParts.join(" · ");
+    const group = label.match(/\b(?:Kids|Teens)\s+([A-Z])$/);
+    const key = group ? `${day}-${group[1]}` : schedule;
+    let row = rows.find(item => item.key === key);
+    if (!row) {
+      row = { key, day, label: group ? `Kids / Teens ${group[1]}` : label, times: [] };
+      rows.push(row);
+    }
+    row.times.push(time);
+  }
+  return rows;
+}
 function CourseGrid({ unit, age }: { unit: Unit; age: AgeFilter }) {
   const list = unit === "beira" ? courses : saoPedroCourses;
   const filtered = list.filter(course => matchesAge(course.age, age));
@@ -46,13 +62,17 @@ function CourseGrid({ unit, age }: { unit: Unit; age: AgeFilter }) {
       if (age === "adultos") return /adultos|teens/.test(s) || !/kids/.test(s);
       return true;
     });
+    const compactSchedules = course.id === "games" && unit === "sao" && age === "all";
+    const scheduleRows = compactSchedules
+      ? compactGameSchedules(schedules)
+      : schedules.map(schedule => { const [day, time = "", ...name] = schedule.split(" · "); return { key: schedule, day, label: name.join(" · "), times: [time] }; });
     const href = unit === "beira" ? `/cursos/${course.id}` : `/cursos/sao-pedro/${course.id}`;
-    return <article className="card" key={`${unit}-${course.id}`}>
+    return <article className={`card${compactSchedules?" compact-schedule":""}`} key={`${unit}-${course.id}`}>
       <div className="card-top"><span className="card-icon"><CategoryIcon category={course.category}/></span><span className="cat">{course.category}</span></div>
       <div><h3><Link href={href}>{course.name}</Link></h3></div>
       <div className="ages"><span className="age">{course.age}</span></div>
       <p>{course.description || course.text}</p>
-      <ul className="turmas">{schedules.map((schedule, index) => <li key={`${schedule}-${index}`}><span>{compactDays(schedule)}</span><small>{schedule.split(" · ").slice(2).join(" · ")}</small><b>{schedule.split(" · ")[1] || ""}</b></li>)}</ul>
+      <ul className="turmas">{scheduleRows.map(row=><li key={row.key}><span>{compactDays(row.day)}</span><small>{row.label}</small><b>{row.times.map(time=>compactSchedules?time.replace(/(\d{2})h–(\d{2})h/,"$1–$2h"):time).join(" / ")}</b></li>)}</ul>
     </article>;
   })}</div>;
 }

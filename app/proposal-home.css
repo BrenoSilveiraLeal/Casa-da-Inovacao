@@ -112,7 +112,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .filters button.on{background:#FFF8EF;color:var(--brown);border-color:#FFF8EF}
 .proposal-site .unit-addr{font-size:14px;color:rgba(255,248,239,.6);display:flex;align-items:center;gap:6px}
 .proposal-site .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.proposal-site .card{align-self:start;background:var(--brown-2);border:1px solid var(--line-dark);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .25s,border-color .25s}.proposal-site .card:hover{transform:translateY(-4px);border-color:rgba(226,193,122,.45)}
+.proposal-site .card{align-self:stretch;background:var(--brown-2);border:1px solid var(--line-dark);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .25s,border-color .25s}.proposal-site .card:hover{transform:translateY(-4px);border-color:rgba(226,193,122,.45)}
 .proposal-site .card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .proposal-site .card-icon{width:48px;height:48px;border-radius:14px;background:rgba(201,100,59,.18);color:#F0A07D;display:grid;place-items:center}
 .proposal-site .cat{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,239,.5)}
@@ -255,6 +255,11 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .signup .wrap{align-items:center}
 .proposal-site .signup .btn{margin-top:28px}
 .proposal-site .signup h2{font-size:clamp(48px,5vw,70px)}
+.proposal-site .courses{padding-bottom:clamp(48px,6vw,80px)}
+.proposal-site .card.compact-schedule .turmas li{grid-template-columns:6em minmax(0,1fr) auto;gap:6px}
+.proposal-site .card.compact-schedule .turmas small{font-size:10.5px;white-space:nowrap}
+.proposal-site .card.compact-schedule .turmas li b{font-size:12.5px}
+@media(max-width:640px){.proposal-site .courses{padding-bottom:48px}}
 .proposal-site .signup-photo{min-height:450px;aspect-ratio:4/3;border-radius:28px;background:url('/imagens/otimizadas/fachada.webp') center/cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .proposal-site button:focus-visible,.proposal-site a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 .proposal-site ::selection{background:var(--terra);color:#fff}
