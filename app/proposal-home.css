@@ -377,7 +377,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site footer .site-credit a:hover{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 
 /* Keep the orchestra photo and copy balanced inside the site content width. */
-.proposal-site .orchestra{padding:clamp(64px,8vw,104px) 0;overflow:hidden}
+.proposal-site .orchestra{display:block!important;grid-template-columns:none!important;gap:0!important;align-items:initial!important;padding:clamp(64px,8vw,104px) 0;overflow:hidden}
 .proposal-site .orchestra .wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto;display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;align-items:center;gap:clamp(32px,5vw,72px)}
 .proposal-site .orch-img{display:block;width:100%;min-width:0;max-height:560px;aspect-ratio:5/4;background-position:center;background-size:cover}
 .proposal-site .orchestra .wrap>div:last-child{min-width:0;max-width:560px}
@@ -386,4 +386,4 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
 .proposal-site .facts div{min-width:0}
 @media(max-width:800px){.proposal-site .orchestra .wrap{grid-template-columns:1fr!important;gap:30px}.proposal-site .orch-img{width:100%;max-width:560px;aspect-ratio:16/10;margin-inline:auto}.proposal-site .orchestra .wrap>div:last-child{max-width:640px}.proposal-site .orchestra h2{max-width:16ch;font-size:clamp(40px,8vw,58px)}}
-@media(max-width:520px){.proposal-site .orchestra{padding:56px 0}.proposal-site .orchestra .wrap{width:calc(100% - 32px)}.proposal-site .orch-img{aspect-ratio:4/3;border-radius:20px}.proposal-site .facts{gap:12px}.proposal-site .facts div b{font-size:13px}.proposal-site .facts div span{font-size:12px}}
+@media(max-width:520px){.proposal-site .orchestra{padding:56px 0}.proposal-site .orchestra .wrap{width:calc(100% - 32px)!important}.proposal-site .orch-img{aspect-ratio:4/3;border-radius:20px}.proposal-site .facts{gap:12px}.proposal-site .facts div b{font-size:13px}.proposal-site .facts div span{font-size:12px}}
