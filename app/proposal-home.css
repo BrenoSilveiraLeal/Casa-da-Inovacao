@@ -362,8 +362,15 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .history .timeline li.now::before{background:var(--terra)}
 .proposal-site .history .year{font-size:34px;color:var(--terra)}
 .proposal-site .history .timeline p{margin:6px 0 0;color:var(--ink);font-size:17px;line-height:1.45}
-@media(max-width:760px){.proposal-site .history .wrap{grid-template-columns:1fr;gap:36px}.proposal-site .history .timeline{margin-left:2px}}
+@media(max-width:800px){.proposal-site .history .wrap{grid-template-columns:1fr;gap:36px}.proposal-site .history .timeline{margin-left:2px}}
 .proposal-site .history .timeline{position:relative!important;top:auto!important;align-self:start!important}
 
 /* Match the square classroom photo in the about section reference. */
 .proposal-site .about-img{aspect-ratio:1/1}
+.proposal-site .wa{right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));width:58px;height:58px;padding:0;justify-content:center;gap:0;overflow:hidden;white-space:nowrap;transition:width .28s cubic-bezier(.2,.8,.2,1),padding .28s ease,gap .28s ease,transform .2s,box-shadow .2s}
+.proposal-site .wa svg{width:24px;height:24px;flex:none}
+.proposal-site .wa span{display:block;max-width:0;overflow:hidden;opacity:0;visibility:hidden;transition:max-width .28s ease,opacity .18s ease,visibility .18s ease}
+.proposal-site .wa:hover,.proposal-site .wa:focus-visible{width:204px;height:58px;padding:0 18px;justify-content:flex-start;gap:10px}
+.proposal-site .wa:hover span,.proposal-site .wa:focus-visible span{max-width:150px;opacity:1;visibility:visible}
+.proposal-site .wa:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+@media(hover:none),(pointer:coarse){.proposal-site .wa{width:56px;height:56px;padding:0;gap:0;justify-content:center}.proposal-site .wa span{display:none}}
