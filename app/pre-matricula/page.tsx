@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const registrations = [
@@ -21,16 +18,8 @@ const registrations = [
 ];
 
 export default function RegistrationChoice() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return <main className="proposal-site registration-page">
-    <header className={`header choice-header${scrolled ? " scrolled" : ""}`} id="top">
+    <header className="header scrolled choice-header" id="top">
       <div className="wrap">
         <Link href="/" className="logo" aria-label="Casa da Inovação">
           <img className="site-logo" src="/imagens/otimizadas/logo.webp" alt="" />
@@ -42,19 +31,6 @@ export default function RegistrationChoice() {
         <Link href="/" className="choice-back">Voltar ao site <span aria-hidden="true">↗</span></Link>
       </div>
     </header>
-
-    <section className="choice-hero dark">
-      <div className="wrap">
-        <div className="choice-hero-title">
-          <span className="eyebrow">Pré-inscrição · gratuita</span>
-          <h1>Escolha onde <em>começar.</em></h1>
-        </div>
-        <div className="choice-hero-copy">
-          <p className="lead">Selecione a unidade mais perto de você para abrir o formulário de pré-inscrição e ver os cursos disponíveis.</p>
-          <div className="choice-highlights"><span>2 unidades em Teresópolis</span><span>Cursos gratuitos</span></div>
-        </div>
-      </div>
-    </section>
 
     <section className="choice-options" id="unidades-form">
       <div className="wrap">
