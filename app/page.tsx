@@ -25,6 +25,14 @@ function matchesAge(age: string, filter: AgeFilter) {
   if (filter === "adultos") return /adultos|15 anos|18[–-]59/.test(text);
   return /60\+|60 anos|melhor idade/.test(text);
 }
+function compactDays(schedule: string) {
+  const day = schedule.split(" · ")[0];
+  if (day.startsWith("Segunda")) return "Seg. / Qua.";
+  if (day.startsWith("Terça-feira")) return "Terça";
+  if (day.startsWith("Sexta-feira")) return "Sexta";
+  if (day.startsWith("Terça")) return "Ter. / Qui.";
+  return day;
+}
 function CourseGrid({ unit, age }: { unit: Unit; age: AgeFilter }) {
   const list = unit === "beira" ? courses : saoPedroCourses;
   const filtered = list.filter(course => matchesAge(course.age, age));
@@ -44,7 +52,7 @@ function CourseGrid({ unit, age }: { unit: Unit; age: AgeFilter }) {
       <div><h3><Link href={href}>{course.name}</Link></h3></div>
       <div className="ages"><span className="age">{course.age}</span></div>
       <p>{course.description || course.text}</p>
-      <ul className="turmas">{schedules.map((schedule, index) => <li key={`${schedule}-${index}`}><span>{schedule.split(" · ")[0]}</span><small>{schedule.split(" · ").slice(2).join(" · ")}</small><b>{schedule.split(" · ")[1] || ""}</b></li>)}</ul>
+      <ul className="turmas">{schedules.map((schedule, index) => <li key={`${schedule}-${index}`}><span>{compactDays(schedule)}</span><small>{schedule.split(" · ").slice(2).join(" · ")}</small><b>{schedule.split(" · ")[1] || ""}</b></li>)}</ul>
     </article>;
   })}</div>;
 }
