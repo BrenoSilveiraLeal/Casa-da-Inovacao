@@ -294,3 +294,5 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .header .logo-wordmark{color:#fff;font-size:12px;font-weight:700;line-height:1.1;letter-spacing:.08em;text-transform:uppercase}
 .proposal-site .header.scrolled .logo-wordmark{color:var(--ink)}
 @media(max-width:560px){.proposal-site .header .site-logo{width:46px;height:46px}.proposal-site .header .logo-wordmark{font-size:10px}}
+.proposal-site .hero .wrap{grid-template-columns:minmax(0,1fr)}
+.proposal-site .hero .wrap>div:first-child{max-width:900px}
