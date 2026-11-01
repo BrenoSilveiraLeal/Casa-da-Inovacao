@@ -1,28 +1,47 @@
-# Casa da Inovação E.F. Therezópolis
+# Casa da Inovação E. F. Therezópolis
 
-Site institucional da Casa da Inovação, construído com React, vinext e TypeScript.
+Site institucional da Casa da Inovação E. F. Therezópolis, em Teresópolis (RJ). Apresenta os cursos gratuitos, horários, história, unidades, mapas de localização e o projeto Orquestra Sustentável. A página de pré-inscrição direciona cada pessoa ao formulário da unidade escolhida.
+
+**Site:** https://casadainovacao.vercel.app
+
+**Pré-inscrição:** https://casadainovacao.vercel.app/pre-matricula
+
+## Unidades
+
+- **Beira Linha:** Rua Beira Linha, 329, Teresópolis · (21) 96690-7209 · casadainovacaoteresopolis@gmail.com
+- **São Pedro:** Rua São Pedro, nº 191, Loja 01, Teresópolis · (21) 2040-1220 · casadainovacaosaopedro@gmail.com
+
+## Tecnologias
+
+- React 19 e TypeScript
+- Vinext e Vite
+- CSS responsivo
+- Publicação no Vercel
 
 ## Executar localmente
+
+Requer Node.js 24.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Acesse `http://localhost:3000`.
+Acesse http://localhost:3000.
 
-## Estrutura
-
-- `app/page.tsx`: página institucional principal.
-- `app/pre-matricula/page.tsx`: experiência de pré-matrícula.
-- `app/globals.css`: sistema visual e responsividade.
-- `public/`: arquivos públicos da marca.
-
-## Validação
+## Comandos
 
 ```bash
 npm run lint
 npm run build
+npm test
 ```
 
-O formulário está preparado como fluxo nativo no site. O envio para o Google Forms existente ainda depende do mapeamento confirmado dos `entry.*` reais do formulário, que não foi incluído nos arquivos disponíveis neste workspace.
+## Estrutura
+
+- `app/page.tsx`: página principal e seções institucionais.
+- `app/pre-matricula/page.tsx`: seleção da unidade e acesso aos formulários.
+- `app/cursos/`: páginas com detalhes dos cursos.
+- `app/data.ts`: cursos, descrições e horários.
+- `app/proposal-home.css`: estilos e comportamento responsivo.
+- `public/imagens/`: imagens e identidade visual.
