@@ -254,6 +254,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .card h3 a:hover{color:var(--gold)}
 .proposal-site .signup .wrap{align-items:center}
 .proposal-site .signup .btn{margin-top:28px}
+.proposal-site .signup h2{font-size:clamp(48px,5vw,70px)}
 .proposal-site .signup-photo{min-height:450px;aspect-ratio:4/3;border-radius:28px;background:url('/imagens/otimizadas/fachada.webp') center/cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .proposal-site button:focus-visible,.proposal-site a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 .proposal-site ::selection{background:var(--terra);color:#fff}
