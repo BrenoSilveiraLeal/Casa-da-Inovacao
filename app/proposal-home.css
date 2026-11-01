@@ -112,7 +112,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .filters button.on{background:#FFF8EF;color:var(--brown);border-color:#FFF8EF}
 .proposal-site .unit-addr{font-size:14px;color:rgba(255,248,239,.6);display:flex;align-items:center;gap:6px}
 .proposal-site .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.proposal-site .card{background:var(--brown-2);border:1px solid var(--line-dark);border-radius:var(--radius);padding:24px;display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:14px;align-content:start;transition:transform .25s, border-color .25s}.proposal-site .card:hover{transform:translateY(-4px);border-color:rgba(226,193,122,.45)}
+.proposal-site .card{background:var(--brown-2);border:1px solid var(--line-dark);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .25s,border-color .25s}.proposal-site .card:hover{transform:translateY(-4px);border-color:rgba(226,193,122,.45)}
 .proposal-site .card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .proposal-site .card-icon{width:48px;height:48px;border-radius:14px;background:rgba(201,100,59,.18);color:#F0A07D;display:grid;place-items:center}
 .proposal-site .cat{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,239,.5)}
@@ -120,7 +120,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .card p{font-size:14.5px;color:rgba(255,248,239,.7);line-height:1.5}
 .proposal-site .ages{display:flex;gap:6px;flex-wrap:wrap}
 .proposal-site .age{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(226,193,122,.16);color:var(--gold)}
-.proposal-site .turmas{list-style:none;border-top:1px solid var(--line-dark);padding-top:14px;display:grid;gap:8px;align-content:start}
+.proposal-site .turmas{list-style:none;border-top:1px solid var(--line-dark);padding-top:14px;margin-top:auto;display:grid;gap:8px;align-content:start}
 .proposal-site .turmas li{display:grid;grid-template-columns:5.6em 1fr auto;align-items:baseline;gap:10px;font-size:14px;color:rgba(255,248,239,.82)}
 .proposal-site .turmas li b{color:#fff;font-weight:600;white-space:nowrap;text-align:right}
 .proposal-site .turmas small{font-size:11.5px;color:rgba(255,248,239,.5)}
