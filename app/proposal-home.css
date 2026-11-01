@@ -231,7 +231,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
   .proposal-site .wrap{width:calc(100% - 32px)}
   .proposal-site .hero{padding-bottom:40px}
   .proposal-site .hero-card{display:none}
-  .proposal-site .hero-bg{background-position:22% center}
+  .proposal-site .hero-bg{background-position:25% center}
   .proposal-site .hero .ctas .btn{flex:1 1 100%;justify-content:center}
   .proposal-site .stats .wrap{grid-template-columns:1fr 1fr}
   .proposal-site .stat{padding:24px 16px;border-left:0;border-top:1px solid var(--line)}
@@ -285,7 +285,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .choice-index{color:var(--terra);font:italic 26px var(--serif)}
 .proposal-site .choice-unit h3{margin:22px 0 8px;font-size:clamp(34px,4vw,46px);line-height:1}
 .proposal-site .choice-address{color:var(--muted);font-size:15px}
-.proposal-site .choice-course-list{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);width:100%}
+.proposal-site .choice-course-list{margin-top:26px;margin-bottom:16px;padding-top:18px;border-top:1px solid var(--line);width:100%}
 .proposal-site .choice-course-list span{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-dark)}
 .proposal-site .choice-course-list p{margin-top:8px;color:var(--muted);font-size:15px;line-height:1.55}
 .proposal-site .choice-unit .btn{margin-top:auto;justify-content:space-between;width:100%;max-width:360px}
@@ -443,6 +443,15 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
   .proposal-site .turmas li{grid-template-columns:5.2em minmax(0,1fr) auto;gap:6px;font-size:13px}
   .proposal-site .wa{width:48px;height:48px;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom))}
   .proposal-site .wa:hover,.proposal-site .wa:focus-visible{width:48px;height:48px;padding:0;justify-content:center}
+}
+@media(max-width:700px){
+  .proposal-site .history h2{color:var(--ink)!important;text-shadow:none!important;margin:0 0 20px!important}
+  .proposal-site .history h2 em{color:var(--terra)!important;text-shadow:none!important}
+}
+@media(max-width:560px){
+  .proposal-site footer .footer-brand{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .proposal-site footer .footer-brand .logo{justify-content:center;width:100%;margin:0 auto 12px!important}
+  .proposal-site footer .footer-brand p{max-width:28ch;margin-inline:auto}
 }
 @media(max-height:500px) and (orientation:landscape){
   .proposal-site .hero{min-height:640px;padding-top:120px}
