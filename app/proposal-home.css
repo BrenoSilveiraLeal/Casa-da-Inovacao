@@ -374,3 +374,5 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 .proposal-site .wa:hover span,.proposal-site .wa:focus-visible span{max-width:150px;opacity:1;visibility:visible}
 .proposal-site .wa:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 @media(hover:none),(pointer:coarse){.proposal-site .wa{width:56px;height:56px;padding:0;gap:0;justify-content:center}.proposal-site .wa span{display:none}}
+.proposal-site footer .site-credit a{color:inherit;text-decoration:none}
+.proposal-site footer .site-credit a:hover{color:var(--gold);text-decoration:underline;text-underline-offset:3px}

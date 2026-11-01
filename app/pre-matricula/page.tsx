@@ -68,7 +68,7 @@ export default function RegistrationChoice() {
           <div><h4>Atendimento</h4><ul><li><a href="tel:+5521966907209">Beira Linha · (21) 96690-7209</a></li><li><a href="mailto:casadainovacaoteresopolis@gmail.com">casadainovacaoteresopolis@gmail.com</a></li><li><a href="tel:+552120401220">São Pedro · (21) 2040-1220</a></li><li><a href="mailto:casadainovacaosaopedro@gmail.com">casadainovacaosaopedro@gmail.com</a></li></ul></div>
           <div><h4>Redes</h4><ul><li><a href="https://www.instagram.com/casadainovacaoteresopolis/" target="_blank" rel="noopener noreferrer">Instagram · @casadainovacaoteresopolis</a></li><li><a href="https://www.facebook.com/casadainovacaoteresopolis/" target="_blank" rel="noopener noreferrer">Facebook · Casa da Inovação</a></li></ul></div>
         </div>
-        <div className="bottom"><span>© Casa da Inovação E. F. Therezópolis</span><span>Cursos gratuitos para todas as idades.</span></div>
+        <div className="bottom"><span>© Casa da Inovação E. F. Therezópolis</span><span>Cursos gratuitos para todas as idades.</span><span className="site-credit">Site desenvolvido por Breno Silveira &middot; <a href="https://www.instagram.com/bsl_silveira/" target="_blank" rel="noopener noreferrer">@bsl_silveira</a></span></div>
       </div>
     </footer>
   </main>;
