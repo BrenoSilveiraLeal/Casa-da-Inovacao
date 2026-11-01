@@ -296,3 +296,10 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 @media(max-width:560px){.proposal-site .header .site-logo{width:46px;height:46px}.proposal-site .header .logo-wordmark{font-size:10px}}
 .proposal-site .hero .wrap{grid-template-columns:minmax(0,1fr)}
 .proposal-site .hero .wrap>div:first-child{max-width:900px}
+.proposal-site .history{display:block!important;grid-template-columns:none!important;gap:0!important}
+.proposal-site .founder{display:block!important;grid-template-columns:none!important;gap:0!important;align-items:initial!important;min-height:0!important;padding:clamp(72px,9vw,116px) 0!important;background:var(--paper)!important}
+.proposal-site .founder .wrap{display:grid!important;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr)!important;gap:clamp(40px,7vw,96px)!important;align-items:center!important;width:min(1180px,100% - 40px)!important;margin-inline:auto!important}
+.proposal-site .founder-img{width:100%;max-width:460px;height:auto;min-height:540px;aspect-ratio:4/5;border-radius:24px;background-color:var(--terra);background-image:url('/imagens/otimizadas/alex-castellar.png');background-position:center 25%;background-size:cover;box-shadow:0 30px 60px -30px rgba(47,29,23,.5)}
+.proposal-site .founder .wrap>div:last-child{min-width:0;max-width:650px}
+@media(max-width:980px){.proposal-site .founder .wrap{grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr)!important;gap:36px!important}.proposal-site .founder-img{min-height:420px}}
+@media(max-width:700px){.proposal-site .founder .wrap{grid-template-columns:1fr!important;gap:32px!important}.proposal-site .founder-img{width:100%;max-width:440px;min-height:460px;margin-inline:auto}}
