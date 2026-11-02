@@ -348,7 +348,7 @@
       if (!e.isIntersecting) return;
       e.target.src = e.target.dataset.src; mapObs.unobserve(e.target);
     });
-  }, { rootMargin: '400px' });
+  }, { rootMargin: '2200px' });
   $$('.unidade-map iframe').forEach((f) => mapObs.observe(f));
 
   /* ---------- cursos ---------- */

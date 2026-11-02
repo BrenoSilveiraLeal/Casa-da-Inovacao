@@ -1,0 +1,26 @@
+- main [ref=f67e2]:
+  - generic [ref=f67e3]:
+    - link "← Voltar para cursos" [ref=f67e4] [cursor=pointer]:
+      - /url: /#horarios
+    - generic [ref=f67e5]: CURSO GRATUITO · Tecnologia
+  - generic [ref=f67e6]:
+    - paragraph [ref=f67e7]: Tecnologia
+    - heading "Robótica" [level=1] [ref=f67e8]
+    - paragraph [ref=f67e9]: Aprendizado mão na massa para explorar tecnologia, criatividade e resolução de problemas.
+  - generic [ref=f67e10]:
+    - generic [ref=f67e11]:
+      - paragraph [ref=f67e12]: O QUE VOCÊ VAI APRENDER
+      - heading [level=2] [ref=f67e13]:
+        - text: Aprender fazendo
+        - emphasis [ref=f67e14]: abre caminhos.
+      - paragraph [ref=f67e15]: Eletrônica básica, lógica, programação e construção de projetos com movimento.
+      - paragraph [ref=f67e16]: As atividades são pensadas para o ritmo da turma, com prática, troca e acompanhamento da equipe.
+    - generic [ref=f67e17]:
+      - generic [ref=f67e18]:
+        - text: FAIXA ETÁRIA
+        - strong [ref=f67e19]: Kids · 8–11 anos · Teens · 12–17 anos
+      - generic [ref=f67e20]:
+        - text: TURMAS E HORÁRIOS
+        - strong [ref=f67e21]: Segunda e quarta · 14h–15h
+        - strong [ref=f67e22]: Terça e quinta · 10h–11h
+      - text: Inscrições encerradas

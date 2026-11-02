@@ -1,12 +1,12 @@
 /* =========================================================
-   DADOS DO SITE â€” edite aqui sem mexer no resto do cÃ³digo
+   DADOS DO SITE — edite aqui sem mexer no resto do código
    ========================================================= */
 
 window.CASA = {
-  /* ---------- INSCRIÃ‡Ã•ES ----------
-     abertas: true  â†’ os botÃµes levam para o FormulÃ¡rio do Google de cada unidade
-     abertas: false â†’ o site mostra "InscriÃ§Ãµes encerradas"
-     Cole o link do formulÃ¡rio de cada unidade em `links`.            */
+  /* ---------- INSCRIÇÕES ----------
+     abertas: true  → os botões levam para o Formulário do Google de cada unidade
+     abertas: false → o site mostra "Inscrições encerradas"
+     Cole o link do formulário de cada unidade em `links`.            */
   inscricoes: {
     abertas: false,
     links: {
@@ -27,7 +27,7 @@ window.CASA = {
       nome: 'Beira Linha',
       selo: 'Unidade sede',
       endereco: 'Rua Beira Linha, 329',
-      cidade: 'TeresÃ³polis Â· RJ',
+      cidade: 'Teresópolis · RJ',
       maps: 'https://www.google.com/maps/search/?api=1&query=Rua+Beira+Linha+329+Teresopolis+RJ',
       embed: 'https://www.google.com/maps?q=Rua+Beira+Linha,+329,+Teres%C3%B3polis+-+RJ&output=embed',
       telefone: '(21) 96690-7209',
@@ -35,10 +35,10 @@ window.CASA = {
       email: 'casadainovacaoteresopolis@gmail.com'
     },
     'sao-pedro': {
-      nome: 'SÃ£o Pedro',
+      nome: 'São Pedro',
       selo: 'Nova unidade',
-      endereco: 'Rua SÃ£o Pedro, nÂº 191, Loja 01',
-      cidade: 'SÃ£o Pedro, TeresÃ³polis Â· RJ',
+      endereco: 'Rua São Pedro, nº 191, Loja 01',
+      cidade: 'São Pedro, Teresópolis · RJ',
       maps: 'https://www.google.com/maps/search/?api=1&query=Rua+S%C3%A3o+Pedro+191+Loja+01+S%C3%A3o+Pedro+Teres%C3%B3polis+RJ',
       embed: 'https://www.google.com/maps?q=Rua+S%C3%A3o+Pedro,+191,+Teres%C3%B3polis+-+RJ&output=embed',
       telefone: '(21) 2040-1220',
@@ -48,90 +48,90 @@ window.CASA = {
   },
 
   /* ---------- CURSOS POR UNIDADE ----------
-     idades: 'kids' (8â€“11), 'teens' (12â€“17), 'adultos' (18â€“59), '60' (60+)
+     idades: 'kids' (8–11), 'teens' (12–17), 'adultos' (18–59), '60' (60+)
      icone:  robo | games | apps | ingles | pc | sessenta
-     horarios: [dias, horÃ¡rio, turma (opcional)]                         */
+     horarios: [dias, horário, turma (opcional)]                         */
   cursos: {
     'beira-linha': [
       {
         id: 'ingles', icone: 'ingles', area: 'Idiomas',
-        nome: 'IntroduÃ§Ã£o Ã  LÃ­ngua Inglesa',
-        publico: 'Kids Â· 8â€“11 anos', idades: ['kids'],
-        resumo: 'Um primeiro contato com a lÃ­ngua inglesa de forma leve, prÃ¡tica e conectada ao dia a dia.',
-        aprende: 'VocabulÃ¡rio, conversaÃ§Ã£o, compreensÃ£o e confianÃ§a para se comunicar.',
-        horarios: [['Seg. / Qua.', '09hâ€“10h'], ['Ter. / Qui.', '14hâ€“15h']]
+        nome: 'Introdução à Língua Inglesa',
+        publico: 'Kids · 8–11 anos', idades: ['kids'],
+        resumo: 'Um primeiro contato com a língua inglesa de forma leve, prática e conectada ao dia a dia.',
+        aprende: 'Vocabulário, conversação, compreensão e confiança para se comunicar.',
+        horarios: [['Seg. / Qua.', '09h–10h'], ['Ter. / Qui.', '14h–15h']]
       },
       {
         id: 'apps', icone: 'apps', area: 'Tecnologia',
-        nome: 'CriaÃ§Ã£o de Aplicativos',
+        nome: 'Criação de Aplicativos',
         publico: 'A partir de 15 anos', idades: ['teens', 'adultos'],
         resumo: 'Transforme uma ideia em um projeto digital, criando tanto sites quanto aplicativos.',
-        aprende: 'IdeaÃ§Ã£o, prototipaÃ§Ã£o, lÃ³gica de programaÃ§Ã£o, criaÃ§Ã£o de interfaces, sites e aplicativos.',
-        horarios: [['Seg. / Qua.', '10hâ€“11h'], ['Ter. / Qui.', '15hâ€“16h']]
+        aprende: 'Ideação, prototipação, lógica de programação, criação de interfaces, sites e aplicativos.',
+        horarios: [['Seg. / Qua.', '10h–11h'], ['Ter. / Qui.', '15h–16h']]
       },
       {
         id: 'robotica', icone: 'robo', area: 'Tecnologia',
-        nome: 'RobÃ³tica',
-        publico: 'Kids Â· 8â€“11 anos Â· Teens Â· 12â€“17 anos', idades: ['kids', 'teens'],
-        resumo: 'Aprendizado mÃ£o na massa para explorar tecnologia, criatividade e resoluÃ§Ã£o de problemas.',
-        aprende: 'EletrÃ´nica bÃ¡sica, lÃ³gica, programaÃ§Ã£o e construÃ§Ã£o de projetos com movimento.',
-        horarios: [['Seg. / Qua.', '14hâ€“15h'], ['Ter. / Qui.', '10hâ€“11h']]
+        nome: 'Robótica',
+        publico: 'Kids · 8–11 anos · Teens · 12–17 anos', idades: ['kids', 'teens'],
+        resumo: 'Aprendizado mão na massa para explorar tecnologia, criatividade e resolução de problemas.',
+        aprende: 'Eletrônica básica, lógica, programação e construção de projetos com movimento.',
+        horarios: [['Seg. / Qua.', '14h–15h'], ['Ter. / Qui.', '10h–11h']]
       },
       {
         id: 'games', icone: 'games', area: 'Tecnologia',
         nome: 'Desenvolvimento de Games',
-        publico: 'Kids Â· 8â€“11 anos Â· Teens Â· 12â€“17 anos', idades: ['kids', 'teens'],
-        resumo: 'Um espaÃ§o para imaginar, criar e programar jogos do zero usando o Clickteam Fusion.',
-        aprende: 'Roteiro, lÃ³gica, programaÃ§Ã£o, design de fases e criaÃ§Ã£o de jogos com o Clickteam Fusion.',
-        horarios: [['Seg. / Qua.', '15hâ€“16h'], ['Seg. / Qua.', '16hâ€“17h'], ['Ter. / Qui.', '09hâ€“10h']]
+        publico: 'Kids · 8–11 anos · Teens · 12–17 anos', idades: ['kids', 'teens'],
+        resumo: 'Um espaço para imaginar, criar e programar jogos do zero usando o Clickteam Fusion.',
+        aprende: 'Roteiro, lógica, programação, design de fases e criação de jogos com o Clickteam Fusion.',
+        horarios: [['Seg. / Qua.', '15h–16h'], ['Seg. / Qua.', '16h–17h'], ['Ter. / Qui.', '09h–10h']]
       },
       {
         id: 'informatica18', icone: 'pc', area: 'Tecnologia',
-        nome: 'IntroduÃ§Ã£o Ã  InformÃ¡tica',
-        publico: 'Adultos Â· 18â€“59 anos Â· Teens Â· 12â€“17 anos', idades: ['adultos', 'teens'],
+        nome: 'Introdução à Informática',
+        publico: 'Adultos · 18–59 anos · Teens · 12–17 anos', idades: ['adultos', 'teens'],
         resumo: 'Aprenda a usar as principais ferramentas digitais para estudar, trabalhar e organizar sua rotina.',
-        aprende: 'Word, PowerPoint, Excel, criaÃ§Ã£o e organizaÃ§Ã£o de pastas e arquivos.',
+        aprende: 'Word, PowerPoint, Excel, criação e organização de pastas e arquivos.',
         horarios: [
-          ['Seg. / Qua.', '17hâ€“18h', 'Adultos'], ['Ter. / Qui.', '17hâ€“18h', 'Adultos'],
-          ['Seg. / Qua.', '11hâ€“12h', 'Teens'], ['Ter. / Qui.', '16hâ€“17h', 'Teens']
+          ['Seg. / Qua.', '17h–18h', 'Adultos'], ['Ter. / Qui.', '17h–18h', 'Adultos'],
+          ['Seg. / Qua.', '11h–12h', 'Teens'], ['Ter. / Qui.', '16h–17h', 'Teens']
         ]
       },
       {
         id: 'informatica60', icone: 'sessenta', area: 'Tecnologia',
-        nome: 'InclusÃ£o Digital 60+',
+        nome: 'Inclusão Digital 60+',
         publico: '60 anos ou mais', idades: ['60'],
         resumo: 'Mais autonomia para explorar o mundo digital.',
         aprende: 'Mais autonomia para explorar o mundo digital.',
-        horarios: [['Ter. / Qui.', '11hâ€“12h']]
+        horarios: [['Ter. / Qui.', '11h–12h']]
       }
     ],
     'sao-pedro': [
       {
         id: 'informatica60', icone: 'sessenta', area: 'Tecnologia',
-        nome: 'InclusÃ£o Digital 60+',
-        publico: 'Melhor idade Â· 60+ anos', idades: ['60'],
+        nome: 'Inclusão Digital 60+',
+        publico: 'Melhor idade · 60+ anos', idades: ['60'],
         resumo: 'Tecnologia, criatividade e autonomia digital para a melhor idade.',
         aprende: 'Tecnologia, criatividade e autonomia digital para a melhor idade.',
-        horarios: [['Seg. / Qua.', '08hâ€“09h'], ['Ter. / Qui.', '08hâ€“09h']]
+        horarios: [['Seg. / Qua.', '08h–09h'], ['Ter. / Qui.', '08h–09h']]
       },
       {
         id: 'games', icone: 'games', area: 'Tecnologia',
         nome: 'Desenvolvimento de Games',
-        publico: 'Kids Â· 8â€“11 anos Â· Teens Â· 12â€“17 anos', idades: ['kids', 'teens'],
-        resumo: 'Um espaÃ§o para imaginar, criar e programar jogos do zero.',
-        aprende: 'Roteiro, lÃ³gica, programaÃ§Ã£o, design de fases e criaÃ§Ã£o de jogos.',
+        publico: 'Kids · 8–11 anos · Teens · 12–17 anos', idades: ['kids', 'teens'],
+        resumo: 'Um espaço para imaginar, criar e programar jogos do zero.',
+        aprende: 'Roteiro, lógica, programação, design de fases e criação de jogos.',
         horarios: [
-          ['Seg. / Qua.', '09â€“10h / 10â€“11h', 'Kids / Teens A'], ['Seg. / Qua.', '13â€“14h / 14â€“15h', 'Kids / Teens C'],
-          ['Ter. / Qui.', '09â€“10h / 10â€“11h', 'Kids / Teens B'], ['Ter. / Qui.', '15â€“16h / 16â€“17h', 'Kids / Teens D']
+          ['Seg. / Qua.', '09–10h / 10–11h', 'Kids / Teens A'], ['Seg. / Qua.', '13–14h / 14–15h', 'Kids / Teens C'],
+          ['Ter. / Qui.', '09–10h / 10–11h', 'Kids / Teens B'], ['Ter. / Qui.', '15–16h / 16–17h', 'Kids / Teens D']
         ]
       },
       {
         id: 'ingles', icone: 'ingles', area: 'Idiomas',
-        nome: 'InglÃªs',
+        nome: 'Inglês',
         publico: 'A partir de 15 anos', idades: ['teens', 'adultos'],
-        resumo: 'PrÃ¡tica de inglÃªs para ampliar possibilidades de estudo, trabalho e comunicaÃ§Ã£o.',
-        aprende: 'VocabulÃ¡rio, conversaÃ§Ã£o, compreensÃ£o e confianÃ§a para se comunicar.',
-        horarios: [['Ter. / Qui.', '11hâ€“12h', 'InglÃªs Teens A'], ['Ter. / Qui.', '13hâ€“14h', 'InglÃªs Teens B']]
+        resumo: 'Prática de inglês para ampliar possibilidades de estudo, trabalho e comunicação.',
+        aprende: 'Vocabulário, conversação, compreensão e confiança para se comunicar.',
+        horarios: [['Ter. / Qui.', '11h–12h', 'Inglês Teens A'], ['Ter. / Qui.', '13h–14h', 'Inglês Teens B']]
       }
     ]
   }
@@ -139,7 +139,7 @@ window.CASA = {
 
 ;
 /* =========================================================
-   CASA DA INOVAÃ‡ÃƒO â€” interaÃ§Ãµes
+   CASA DA INOVAÇÃO — interações
    ========================================================= */
 (() => {
   const D = window.CASA;
@@ -149,7 +149,7 @@ window.CASA = {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(pointer: fine)').matches;
 
-  /* ---------- Ã­cones ---------- */
+  /* ---------- ícones ---------- */
   const ICONS = {
     robo: '<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4.5V8M9.5 12.5v1M14.5 12.5v1M9.5 16h5M3 12v3M21 12v3"/><circle cx="12" cy="3.5" r="1"/>',
     games: '<path d="M7 8h10a4.5 4.5 0 0 1 4.5 4.5V15a2.6 2.6 0 0 1-4.7 1.5L15.5 15h-7l-1.3 1.5A2.6 2.6 0 0 1 2.5 15v-2.5A4.5 4.5 0 0 1 7 8z"/><path d="M8 10.5v3M6.5 12h3M15.5 11.5h.01M17.5 13h.01"/>',
@@ -174,7 +174,7 @@ window.CASA = {
   const ACCENT = { robo: '#FFC21A', games: '#FF6A1A', apps: '#2F8CFF', ingles: '#3BE07A', pc: '#B98CFF', sessenta: '#FF7EB6' };
 
   /* ---------- faixa infinita ---------- */
-  // duplica a lista atÃ© cobrir a tela duas vezes; a animaÃ§Ã£o anda -50% e recomeÃ§a sem emenda
+  // duplica a lista até cobrir a tela duas vezes; a animação anda -50% e recomeça sem emenda
   const mqTrack = $('.marquee-track');
   const mqSet = mqTrack.innerHTML;
   const fillTrack = () => {
@@ -237,7 +237,7 @@ window.CASA = {
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
   const watchReveal = (root = document) => {
-    // atraso escalonado entre irmÃ£os
+    // atraso escalonado entre irmãos
     $$('[data-reveal]', root).forEach((el) => {
       const sibs = [...el.parentElement.children].filter((c) => c.hasAttribute('data-reveal'));
       el.style.setProperty('--d', `${Math.min(sibs.indexOf(el), 6) * 0.08}s`);
@@ -266,7 +266,7 @@ window.CASA = {
 
   /* ---------- texto digitado ---------- */
   const typed = $('.typed');
-  const words = ['robÃ³tica', 'programaÃ§Ã£o', 'games', 'inglÃªs', 'informÃ¡tica', 'apps'];
+  const words = ['robótica', 'programação', 'games', 'inglês', 'informática', 'apps'];
   if (!reduce) {
     let wi = 0, ci = words[0].length, del = true;
     const tick = () => {
@@ -419,7 +419,7 @@ window.CASA = {
     addEventListener('scroll', () => { if (scrollY < innerHeight * 1.2) requestAnimationFrame(paintMedia); }, { passive: true });
   }
 
-  /* ---------- botÃµes magnÃ©ticos ---------- */
+  /* ---------- botões magnéticos ---------- */
   if (fine && !reduce) {
     $$('.magnetic').forEach((b) => {
       b.addEventListener('pointermove', (e) => {
@@ -430,7 +430,7 @@ window.CASA = {
     });
   }
 
-  /* ---------- inscriÃ§Ãµes ---------- */
+  /* ---------- inscrições ---------- */
   const abertas = !!D.inscricoes.abertas;
   const formLink = (u) => (abertas && D.inscricoes.links[u]) || '';
   const insta = D.contato.instagram;
@@ -438,13 +438,13 @@ window.CASA = {
   const renderInscricao = () => {
     const st = $('.status');
     st.classList.toggle('is-open', abertas);
-    $('.status-txt').textContent = abertas ? 'InscriÃ§Ãµes abertas' : 'InscriÃ§Ãµes encerradas';
+    $('.status-txt').textContent = abertas ? 'Inscrições abertas' : 'Inscrições encerradas';
     $('.inscricao-msg').textContent = abertas
-      ? 'As inscriÃ§Ãµes estÃ£o abertas! Escolha a unidade e preencha o formulÃ¡rio. Ã‰ rÃ¡pido e 100% gratuito.'
-      : 'As inscriÃ§Ãµes estÃ£o fechadas no momento. Acompanhe os canais da Casa para saber quando novas vagas estiverem disponÃ­veis.';
+      ? 'As inscrições estão abertas! Escolha a unidade e preencha o formulário. É rápido e 100% gratuito.'
+      : 'As inscrições estão fechadas no momento. Acompanhe os canais da Casa para saber quando novas vagas estiverem disponíveis.';
     const passos = abertas
-      ? ['Veja os cursos e horÃ¡rios de cada unidade.', 'Escolha a unidade mais perto de vocÃª.', 'Preencha o formulÃ¡rio de inscriÃ§Ã£o.']
-      : ['Veja os cursos e horÃ¡rios de cada unidade.', 'Escolha a unidade para consultar as informaÃ§Ãµes.', 'Acompanhe os canais da Casa para novas vagas.'];
+      ? ['Veja os cursos e horários de cada unidade.', 'Escolha a unidade mais perto de você.', 'Preencha o formulário de inscrição.']
+      : ['Veja os cursos e horários de cada unidade.', 'Escolha a unidade para consultar as informações.', 'Acompanhe os canais da Casa para novas vagas.'];
     $('.passos').innerHTML = passos.map((p) => `<li>${p}</li>`).join('');
 
     const btns = $('.inscricao-btns');
@@ -452,14 +452,14 @@ window.CASA = {
       btns.innerHTML = Object.entries(D.unidades).map(([k, u]) => {
         const l = formLink(k);
         return l
-          ? `<a class="btn btn-ink magnetic" href="${l}" target="_blank" rel="noopener">InscriÃ§Ã£o Â· ${u.nome} <span class="arrow">â†—</span></a>`
-          : `<span class="btn btn-ink" aria-disabled="true">${u.nome} Â· em breve</span>`;
+          ? `<a class="btn btn-ink magnetic" href="${l}" target="_blank" rel="noopener">Inscrição · ${u.nome} <span class="arrow">↗</span></a>`
+          : `<span class="btn btn-ink" aria-disabled="true">${u.nome} · em breve</span>`;
       }).join('');
     } else {
       btns.innerHTML = `
-        <a class="btn btn-ink magnetic" href="${insta}" target="_blank" rel="noopener">Seguir no Instagram <span class="arrow">â†—</span></a>
-        <a class="btn btn-line" href="/pre-matricula">Selecionar unidade <span class="arrow">â†—</span></a>
-        <small>O formulÃ¡rio serÃ¡ reaberto quando houver novas vagas.</small>`;
+        <a class="btn btn-ink magnetic" href="${insta}" target="_blank" rel="noopener">Seguir no Instagram <span class="arrow">↗</span></a>
+        <a class="btn btn-line" href="/pre-matricula">Selecionar unidade <span class="arrow">↗</span></a>
+        <small>O formulário será reaberto quando houver novas vagas.</small>`;
     }
   };
   renderInscricao();
@@ -478,17 +478,17 @@ window.CASA = {
           <a href="tel:${u.tel}"><i>${icon('tel')}</i>${u.telefone}</a>
           <a href="mailto:${u.email}"><i>${icon('mail')}</i>${u.email}</a>
         </div>
-        <a class="btn btn-ink btn-sm" href="${u.maps}" target="_blank" rel="noopener">Como chegar <span class="arrow">â†’</span></a>
+        <a class="btn btn-ink btn-sm" href="${u.maps}" target="_blank" rel="noopener">Como chegar <span class="arrow">→</span></a>
       </div>
     </article>`).join('');
   watchReveal($('.unidades'));
-  // carrega os mapas sÃ³ quando chegam perto da tela
+  // carrega os mapas só quando chegam perto da tela
   const mapObs = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
       e.target.src = e.target.dataset.src; mapObs.unobserve(e.target);
     });
-  }, { rootMargin: '400px' });
+  }, { rootMargin: '2200px' });
   $$('.unidade-map iframe').forEach((f) => mapObs.observe(f));
 
   /* ---------- cursos ---------- */
@@ -514,19 +514,19 @@ window.CASA = {
         <p class="card-publico">${c.publico}</p>
         <p class="card-resumo">${c.resumo}</p>
         <div class="card-horarios">${hs}${mais}</div>
-        <span class="card-cta">Ver turmas e horÃ¡rios <span class="arrow">${icon('seta')}</span></span>
+        <span class="card-cta">Ver turmas e horários <span class="arrow">${icon('seta')}</span></span>
       </a>`;
   };
 
   const renderCursos = (animate = true) => {
     const u = D.unidades[state.unidade];
-    $('.cursos-endereco span').textContent = `${u.endereco} Â· ${u.cidade}`;
+    $('.cursos-endereco span').textContent = `${u.endereco} · ${u.cidade}`;
     const list = D.cursos[state.unidade].filter((c) => state.idade === 'todas' || c.idades.includes(state.idade));
     const paint = () => {
       if (!list.length) {
         const outra = state.unidade === 'beira-linha' ? 'sao-pedro' : 'beira-linha';
-        cardsEl.innerHTML = `<div class="cards-vazio"><p>Ainda nÃ£o hÃ¡ turma para essa idade na unidade ${u.nome}.</p>
-          <button class="btn btn-ghost btn-sm" data-trocar="${outra}">Ver unidade ${D.unidades[outra].nome} <span class="arrow">â†’</span></button></div>`;
+        cardsEl.innerHTML = `<div class="cards-vazio"><p>Ainda não há turma para essa idade na unidade ${u.nome}.</p>
+          <button class="btn btn-ghost btn-sm" data-trocar="${outra}">Ver unidade ${D.unidades[outra].nome} <span class="arrow">→</span></button></div>`;
         return;
       }
       cardsEl.innerHTML = list.map(cardHTML).join('');
@@ -570,7 +570,7 @@ window.CASA = {
     if (t) segBtns.find((x) => x.dataset.unidade === t.dataset.trocar).click();
   });
 
-  // pinta os cards quando a seÃ§Ã£o aparece
+  // pinta os cards quando a seção aparece
   new IntersectionObserver(([e], o) => {
     if (e.isIntersecting) { renderCursos(false); o.disconnect(); }
   }, { rootMargin: '0px 0px -15% 0px' }).observe(cardsEl);
@@ -589,32 +589,32 @@ window.CASA = {
     const u = D.unidades[unidade];
     const link = formLink(unidade);
     const cta = link
-      ? `<a class="btn btn-yellow" href="${link}" target="_blank" rel="noopener">Fazer inscriÃ§Ã£o <span class="arrow">â†—</span></a>`
-      : `<span class="btn btn-yellow" aria-disabled="true">InscriÃ§Ãµes encerradas</span>
-         <a class="btn btn-ghost" href="${insta}" target="_blank" rel="noopener">Acompanhar no Instagram <span class="arrow">â†—</span></a>
-         <small>${abertas ? 'O formulÃ¡rio desta unidade serÃ¡ publicado em breve.' : 'O formulÃ¡rio serÃ¡ reaberto quando houver novas vagas.'}</small>`;
+      ? `<a class="btn btn-yellow" href="${link}" target="_blank" rel="noopener">Fazer inscrição <span class="arrow">↗</span></a>`
+      : `<span class="btn btn-yellow" aria-disabled="true">Inscrições encerradas</span>
+         <a class="btn btn-ghost" href="${insta}" target="_blank" rel="noopener">Acompanhar no Instagram <span class="arrow">↗</span></a>
+         <small>${abertas ? 'O formulário desta unidade será publicado em breve.' : 'O formulário será reaberto quando houver novas vagas.'}</small>`;
     modalInner.style.setProperty('--accent', ACCENT[c.icone]);
     modalInner.innerHTML = `
       <div class="modal-hero">
         <button class="modal-close" aria-label="Fechar">${icon('x')}</button>
-        <p class="modal-kicker">Curso gratuito Â· ${c.area}</p>
+        <p class="modal-kicker">Curso gratuito · ${c.area}</p>
         <h2 id="modal-title">${c.nome}</h2>
         <p class="modal-resumo">${c.resumo}</p>
       </div>
       <div class="modal-body">
         <div class="modal-bloco">
-          <h4>O que vocÃª vai aprender</h4>
+          <h4>O que você vai aprender</h4>
           <p class="modal-aprende">${c.aprende}</p>
-          <p class="modal-nota">As atividades sÃ£o pensadas para o ritmo da turma, com prÃ¡tica, troca e acompanhamento da equipe.</p>
+          <p class="modal-nota">As atividades são pensadas para o ritmo da turma, com prática, troca e acompanhamento da equipe.</p>
         </div>
         <div class="modal-meta">
-          <div><span>Faixa etÃ¡ria</span><b>${c.publico}</b></div>
-          <div><span>Unidade</span><b>${u.nome} Â· ${u.endereco}</b></div>
+          <div><span>Faixa etária</span><b>${c.publico}</b></div>
+          <div><span>Unidade</span><b>${u.nome} · ${u.endereco}</b></div>
         </div>
         <div class="modal-bloco">
-          <h4>Turmas e horÃ¡rios</h4>
+          <h4>Turmas e horários</h4>
           <ul class="horarios">${c.horarios.map((h) => `
-            <li><span class="dias">${h[0].replace('Seg. / Qua.', 'Segunda e quarta').replace('Ter. / Qui.', 'TerÃ§a e quinta')}${h[2] ? `<span class="turma">${h[2]}</span>` : ''}</span><span class="hora">${h[1]}</span></li>`).join('')}
+            <li><span class="dias">${h[0].replace('Seg. / Qua.', 'Segunda e quarta').replace('Ter. / Qui.', 'Terça e quinta')}${h[2] ? `<span class="turma">${h[2]}</span>` : ''}</span><span class="hora">${h[1]}</span></li>`).join('')}
           </ul>
         </div>
         <div class="modal-ctas">${cta}</div>
@@ -636,7 +636,7 @@ window.CASA = {
   });
   modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-  // links antigos (/cursos/robotica â†’ /#curso-robotica) abrem o curso direto
+  // links antigos (/cursos/robotica → /#curso-robotica) abrem o curso direto
   const fromHash = () => {
     const m = location.hash.match(/^#curso-([a-z0-9]+?)(-sp)?$/);
     if (!m) return;
@@ -684,7 +684,7 @@ window.CASA = {
   const onScrollFx = () => {
     const vh = innerHeight;
 
-    // histÃ³ria: rola na horizontal no desktop, preenche a linha no celular
+    // história: rola na horizontal no desktop, preenche a linha no celular
     const r = historia.getBoundingClientRect();
     let p;
     if (wide.matches && !reduce) {
