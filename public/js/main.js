@@ -584,4 +584,30 @@
   addEventListener('load', relayout);
   document.fonts && document.fonts.ready.then(relayout);
   relayout(); onScrollNav();
+
+  const whats = $('.whats');
+  if (whats) {
+    let whatsTicking = false;
+    const updateWhatsVisibility = () => {
+      whatsTicking = false;
+      const rect = whats.getBoundingClientRect();
+      const overlapsControl = Array.from(document.querySelectorAll('a, button, input, select, textarea, [tabindex="0"], .card'))
+        .some((control) => {
+          if (control === whats || whats.contains(control)) return false;
+          const target = control.getBoundingClientRect();
+          return target.width > 0 && target.height > 0 && rect.left < target.right && rect.right > target.left && rect.top < target.bottom && rect.bottom > target.top;
+        });
+      whats.classList.toggle('is-obscured', overlapsControl);
+      whats.setAttribute('aria-hidden', String(overlapsControl));
+      whats.tabIndex = overlapsControl ? -1 : 0;
+    };
+    const scheduleWhatsVisibility = () => {
+      if (whatsTicking) return;
+      whatsTicking = true;
+      requestAnimationFrame(updateWhatsVisibility);
+    };
+    addEventListener('scroll', scheduleWhatsVisibility, { passive: true });
+    addEventListener('resize', scheduleWhatsVisibility);
+    requestAnimationFrame(scheduleWhatsVisibility);
+  }
 })();

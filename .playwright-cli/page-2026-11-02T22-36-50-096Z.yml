@@ -1,0 +1,59 @@
+- main [ref=f15e2]:
+  - generic [ref=f15e3]:
+    - link "Casa da Inovação — início" [ref=f15e4] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f15e5]: Casa daInovação
+    - navigation "Navegação principal" [ref=f15e6]:
+      - link "A Casa" [ref=f15e7] [cursor=pointer]:
+        - /url: /#casa
+      - link "Cursos" [ref=f15e8] [cursor=pointer]:
+        - /url: /#cursos
+      - link "História" [ref=f15e9] [cursor=pointer]:
+        - /url: /#historia
+      - link "Unidades" [ref=f15e10] [cursor=pointer]:
+        - /url: /#local
+    - link "Voltar ao site" [ref=f15e11] [cursor=pointer]:
+      - /url: /
+      - text: Voltar ao site
+      - generic [aria-hidden] [ref=f15e12]: ↗
+  - generic [ref=f15e14]:
+    - generic [ref=f15e15]:
+      - paragraph [ref=f15e16]: Pré-inscrição gratuita
+      - heading [level=1] [ref=f15e17]:
+        - text: Escolha sua
+        - emphasis [ref=f15e18]: unidade.
+      - paragraph [ref=f15e19]: Veja os cursos disponíveis em cada Casa da Inovação. As inscrições estão encerradas no momento.
+    - generic [ref=f15e20]:
+      - article [ref=f15e21]:
+        - generic [ref=f15e22]:
+          - generic [ref=f15e23]: Unidade sede
+          - generic [ref=f15e24]: "01"
+        - heading "Beira Linha" [level=2] [ref=f15e25]
+        - paragraph [ref=f15e26]: Rua Beira Linha, 329 · Teresópolis, RJ
+        - generic [ref=f15e27]:
+          - heading "Cursos nesta unidade" [level=3] [ref=f15e28]
+          - list [ref=f15e29]:
+            - listitem [ref=f15e30]: Inglês
+            - listitem [ref=f15e31]: Criação de Aplicativos
+            - listitem [ref=f15e32]: Inclusão Digital 60+
+            - listitem [ref=f15e33]: Robótica
+            - listitem [ref=f15e34]: Desenvolvimento de Games
+            - listitem [ref=f15e35]: Introdução à Informática
+        - paragraph [ref=f15e36]: Inscrições encerradas no momento
+      - article [ref=f15e38]:
+        - generic [ref=f15e39]:
+          - generic [ref=f15e40]: Nova unidade
+          - generic [ref=f15e41]: "02"
+        - heading "São Pedro" [level=2] [ref=f15e42]
+        - paragraph [ref=f15e43]: Rua São Pedro, nº 191, Loja 01 · Teresópolis, RJ
+        - generic [ref=f15e44]:
+          - heading "Cursos nesta unidade" [level=3] [ref=f15e45]
+          - list [ref=f15e46]:
+            - listitem [ref=f15e47]: Inglês
+            - listitem [ref=f15e48]: Inclusão Digital 60+
+            - listitem [ref=f15e49]: Desenvolvimento de Games
+        - paragraph [ref=f15e50]: Inscrições encerradas no momento
+  - generic [ref=f15e53]:
+    - generic [ref=f15e54]: Casa da Inovação · Teresópolis, RJ
+    - link "Acompanhe as próximas vagas no Instagram ↗" [ref=f15e55] [cursor=pointer]:
+      - /url: https://www.instagram.com/casadainovacaoteresopolis/

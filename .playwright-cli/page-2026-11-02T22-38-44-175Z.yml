@@ -1,0 +1,222 @@
+- generic [ref=f26e2]:
+  - img [ref=f26e4]:
+    - generic [ref=f26e6]: Casa
+    - generic [ref=f26e7]: da
+    - generic [ref=f26e8]: INOVAÇÃO
+    - generic [ref=f26e9]: E.F. Therezópolis
+  - banner [ref=f26e10]:
+    - link "Casa da Inovação — início" [ref=f26e11] [cursor=pointer]:
+      - /url: "#top"
+      - generic [ref=f26e12]: Casa daInovação
+    - button "Abrir menu" [ref=f26e13] [cursor=pointer]
+  - main [ref=f26e16]:
+    - generic [ref=f26e17]:
+      - img "Fachada da Casa da Inovação na Beira Linha" [ref=f26e19]
+      - generic [ref=f26e21]:
+        - generic [ref=f26e22]:
+          - paragraph [ref=f26e23]: Teresópolis · RJ — 100% gratuito
+          - heading "Casa da Inovação" [level=1] [ref=f26e24]:
+            - generic [ref=f26e25]: Casa da
+            - generic [ref=f26e27]: Inovação
+          - paragraph [ref=f26e29]: E. F. Therezópolis
+        - generic [ref=f26e30]:
+          - paragraph [ref=f26e31]:
+            - generic [ref=f26e32]: ">"
+            - text: aprenda
+            - generic [ref=f26e33]: robótica
+            - text: de graça
+          - paragraph [ref=f26e35]: Cursos gratuitos de tecnologia, idiomas, música e inclusão digital para todas as idades.
+          - generic [ref=f26e36]:
+            - link "Conhecer os cursos →" [ref=f26e37] [cursor=pointer]:
+              - /url: "#cursos"
+              - text: Conhecer os cursos
+              - generic [ref=f26e38]: →
+            - link "Fazer pré-inscrição" [ref=f26e39] [cursor=pointer]:
+              - /url: "#inscricao"
+      - paragraph [ref=f26e40]: Unidade sede · Rua Beira Linha, 329
+      - list [ref=f26e42]:
+        - listitem [ref=f26e43]:
+          - strong [ref=f26e44]: 0%
+          - generic [ref=f26e45]: gratuito, sem mensalidade
+        - listitem [ref=f26e46]:
+          - strong [ref=f26e47]: "0"
+          - generic [ref=f26e48]: cursos diferentes
+        - listitem [ref=f26e49]:
+          - strong [ref=f26e50]: 8 a 0+
+          - generic [ref=f26e51]: "anos: tem turma para todas as idades"
+        - listitem [ref=f26e52]:
+          - strong [ref=f26e53]: "0"
+          - generic [ref=f26e54]: unidades em Teresópolis
+    - generic [ref=f26e57]:
+      - generic [ref=f26e58]: Robótica
+      - generic [ref=f26e59]: ✦
+      - generic [ref=f26e60]: Criação de Aplicativos
+      - generic [ref=f26e61]: ✦
+      - generic [ref=f26e62]: Desenvolvimento de Games
+      - generic [ref=f26e63]: ✦
+      - generic [ref=f26e64]: Inglês
+      - generic [ref=f26e65]: ✦
+      - generic [ref=f26e66]: Informática
+      - generic [ref=f26e67]: ✦
+      - generic [ref=f26e68]: Inclusão Digital 60+
+      - generic [ref=f26e69]: ✦
+      - generic [ref=f26e70]: Orquestra Sustentável
+      - generic [ref=f26e71]: ✦
+    - generic [ref=f26e73]:
+      - generic [ref=f26e74]:
+        - paragraph [ref=f26e75]: O que é a Casa
+        - heading [level=2] [ref=f26e76]:
+          - text: Um espaço para
+          - emphasis [ref=f26e77]: criar
+          - text: caminhos.
+        - paragraph [ref=f26e78]:
+          - text: A Casa da Inovação Estrada de Ferro Therezópolis é uma escola pública de habilidades digitais no bairro da Beira Linha. Aqui, a comunidade aprende tecnologia, idiomas e cidadania,
+          - mark [ref=f26e79]: de graça
+          - text: .
+      - generic [ref=f26e80]:
+        - figure "// sala principal Beira Linha" [ref=f26e81]:
+          - img "Sala de aula da Casa da Inovação com notebooks e cadeiras amarelas" [ref=f26e82]
+          - generic [ref=f26e83]:
+            - generic [ref=f26e84]: // sala principal
+            - text: Beira Linha
+        - article [ref=f26e85]:
+          - generic [ref=f26e86]: "01"
+          - generic [ref=f26e88]:
+            - heading "Aprender fazendo" [level=3] [ref=f26e89]
+            - paragraph [ref=f26e90]: Aulas práticas, em turmas pequenas.
+        - article [ref=f26e91]:
+          - generic [ref=f26e92]: "02"
+          - generic [ref=f26e94]:
+            - heading "Todas as idades" [level=3] [ref=f26e95]
+            - paragraph [ref=f26e96]: Dos 8 anos à melhor idade.
+        - article [ref=f26e97]:
+          - generic [ref=f26e98]: "03"
+          - generic [ref=f26e100]:
+            - heading "Para o futuro" [level=3] [ref=f26e101]
+            - paragraph [ref=f26e102]: Preparo para estudar e trabalhar.
+    - generic [ref=f26e104]:
+      - generic [ref=f26e105]:
+        - generic [ref=f26e106]:
+          - paragraph [ref=f26e107]: Encontre sua turma
+          - heading "Cursos, dias e horários." [level=2] [ref=f26e108]: Cursos, diase horários.
+        - paragraph [ref=f26e109]: Escolha a unidade e filtre pela idade de quem vai estudar.
+      - generic [ref=f26e110]:
+        - tablist "Unidade" [ref=f26e111]:
+          - tab "Beira Linha" [selected] [ref=f26e112] [cursor=pointer]
+          - tab "São Pedro" [ref=f26e113] [cursor=pointer]
+        - group "Idade" [ref=f26e114]:
+          - button "Todas as idades" [pressed] [ref=f26e115] [cursor=pointer]
+          - button "Kids 8–11" [ref=f26e116] [cursor=pointer]
+          - button "Teens 12–17" [ref=f26e117] [cursor=pointer]
+          - button "Adultos 18–59" [ref=f26e118] [cursor=pointer]
+          - button "60+" [ref=f26e119] [cursor=pointer]
+      - paragraph
+    - generic [ref=f26e122]:
+      - generic [ref=f26e123]:
+        - generic [ref=f26e124]:
+          - paragraph [ref=f26e125]: Nossa história
+          - heading [level=2] [ref=f26e126]:
+            - text: Uma ideia quevoltou para
+            - emphasis [ref=f26e127]: casa
+            - text: .
+        - paragraph [ref=f26e128]: Da democratização da tecnologia em Nova Iguaçu à criação de novas oportunidades na Beira Linha, a Casa continua crescendo junto com a comunidade.
+      - list [ref=f26e130]:
+        - listitem [ref=f26e131]:
+          - generic [ref=f26e132]: "2018"
+          - paragraph [ref=f26e134]: O conceito nasce em Nova Iguaçu.
+        - listitem [ref=f26e135]:
+          - generic [ref=f26e136]: "2019"
+          - paragraph [ref=f26e138]: Começam as articulações para Teresópolis.
+        - listitem [ref=f26e139]:
+          - generic [ref=f26e140]: "2022"
+          - paragraph [ref=f26e142]: A Casa abre suas portas na Beira Linha.
+        - listitem [ref=f26e143]:
+          - generic [ref=f26e144]: Hoje
+          - paragraph [ref=f26e146]: Nova unidade aberta em São Pedro.
+    - generic [ref=f26e149]:
+      - figure [ref=f26e150]:
+        - img "Alex Castellar, idealizador da Casa da Inovação em Teresópolis" [ref=f26e151]
+      - generic [ref=f26e152]:
+        - paragraph [ref=f26e153]: Nosso idealizador
+        - heading "Alex Castellar" [level=2] [ref=f26e154]
+        - paragraph [ref=f26e155]: Nascido e criado na Beira Linha, Alex transformou sua trajetória em compromisso com educação, tecnologia e inclusão.
+        - paragraph [ref=f26e156]: Em 2022, trouxe a Casa da Inovação para Teresópolis e para seu próprio bairro.
+        - paragraph [ref=f26e157]: O projeto nasceu para ampliar o acesso de jovens e adultos a uma formação de qualidade, com mais preparo para o mercado de trabalho, contato com a inovação e oportunidades de aprendizagem em tecnologia.
+    - generic [ref=f26e158]:
+      - img "Jovens da Orquestra Sustentável tocando instrumentos feitos à mão" [ref=f26e160]
+      - generic [ref=f26e161]:
+        - paragraph [ref=f26e162]: Orquestra Sustentável
+        - heading [level=2] [ref=f26e163]:
+          - text: Quando acriatividadevira
+          - emphasis [ref=f26e164]: música.
+        - paragraph [ref=f26e178]: Crianças e jovens aprendem, criam e se apresentam numa experiência que une educação musical, cultura, sustentabilidade e comunidade.
+        - list [ref=f26e179]:
+          - listitem [ref=f26e180]: Educação musical
+          - listitem [ref=f26e181]: Cultura
+          - listitem [ref=f26e182]: Sustentabilidade
+          - listitem [ref=f26e183]: Comunidade
+    - generic [ref=f26e184]:
+      - generic [ref=f26e185]:
+        - paragraph [ref=f26e186]: A Casa acontece
+        - heading [level=2] [ref=f26e187]:
+          - text: Aprender é umaexperiência
+          - emphasis [ref=f26e188]: coletiva.
+      - figure [ref=f26e189]:
+        - img "Formatura de alunos da Casa da Inovação segurando seus certificados no palco" [ref=f26e190]
+        - paragraph [ref=f26e192]: Cada formatura é a prova de que, quando a comunidade tem acesso, ela vai longe.
+    - generic [ref=f26e195]:
+      - paragraph [ref=f26e196]: Venha conhecer
+      - heading [level=2] [ref=f26e197]:
+        - text: A Casa está
+        - emphasis [ref=f26e198]: perto
+        - text: de você.
+    - generic [ref=f26e200]:
+      - generic [ref=f26e201]:
+        - paragraph [ref=f26e202]
+        - heading "Sua próxima jornada começa aqui." [level=2] [ref=f26e204]: Sua próximajornada começaaqui.
+        - paragraph
+      - generic [ref=f26e205]:
+        - list
+  - contentinfo [ref=f26e206]:
+    - generic [ref=f26e207]:
+      - generic [ref=f26e208]:
+        - generic [ref=f26e209]:
+          - img "Casa da Inovação E. F. Therezópolis" [ref=f26e210]
+          - paragraph [ref=f26e211]: Educação, tecnologia e oportunidades gratuitas para quem mora em Teresópolis.
+        - generic [ref=f26e212]:
+          - heading "Navegação" [level=4] [ref=f26e213]
+          - link "A Casa" [ref=f26e214] [cursor=pointer]:
+            - /url: "#casa"
+          - link "Cursos e horários" [ref=f26e215] [cursor=pointer]:
+            - /url: "#cursos"
+          - link "Nossa história" [ref=f26e216] [cursor=pointer]:
+            - /url: "#historia"
+          - link "Pré-inscrição" [ref=f26e217] [cursor=pointer]:
+            - /url: "#inscricao"
+        - generic [ref=f26e218]:
+          - heading "Atendimento" [level=4] [ref=f26e219]
+          - paragraph [ref=f26e220]: Beira Linha
+          - link "(21) 96690-7209" [ref=f26e221] [cursor=pointer]:
+            - /url: tel:+5521966907209
+          - link "casadainovacaoteresopolis@gmail.com" [ref=f26e222] [cursor=pointer]:
+            - /url: mailto:casadainovacaoteresopolis@gmail.com
+          - paragraph [ref=f26e223]: São Pedro
+          - link "(21) 2040-1220" [ref=f26e224] [cursor=pointer]:
+            - /url: tel:+552120401220
+          - link "casadainovacaosaopedro@gmail.com" [ref=f26e225] [cursor=pointer]:
+            - /url: mailto:casadainovacaosaopedro@gmail.com
+        - generic [ref=f26e226]:
+          - heading "Redes" [level=4] [ref=f26e227]
+          - link "Instagram · @casadainovacaoteresopolis" [ref=f26e228] [cursor=pointer]:
+            - /url: https://www.instagram.com/casadainovacaoteresopolis/
+          - link "Facebook · Casa da Inovação Teresópolis" [ref=f26e229] [cursor=pointer]:
+            - /url: https://www.facebook.com/casadainovacaoteresopolis/
+      - paragraph [aria-hidden] [ref=f26e230]: Casa da Inovação
+      - generic [ref=f26e231]:
+        - generic [ref=f26e232]: © Casa da Inovação E. F. Therezópolis · Cursos gratuitos para todas as idades.
+        - generic [ref=f26e233]:
+          - text: Site desenvolvido por Breno Silveira ·
+          - link "@bsl_silveira" [ref=f26e234] [cursor=pointer]:
+            - /url: https://www.instagram.com/bsl_silveira/
+  - link "Falar no WhatsApp" [ref=f26e235] [cursor=pointer]:
+    - /url: https://wa.me/5521966907209

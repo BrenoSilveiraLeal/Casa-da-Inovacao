@@ -1,0 +1,49 @@
+- main [ref=f22e2]:
+  - generic [ref=f22e3]:
+    - link "Casa da Inovação — início" [ref=f22e4] [cursor=pointer]:
+      - /url: /
+    - link "Voltar ao site" [ref=f22e5] [cursor=pointer]:
+      - /url: /
+      - text: Voltar ao site
+      - generic [aria-hidden] [ref=f22e6]: ↗
+  - generic [ref=f22e8]:
+    - generic [ref=f22e9]:
+      - paragraph [ref=f22e10]: Pré-inscrição gratuita
+      - heading [level=1] [ref=f22e11]:
+        - text: Escolha sua
+        - emphasis [ref=f22e12]: unidade.
+      - paragraph [ref=f22e13]: Veja os cursos disponíveis em cada Casa da Inovação. As inscrições estão encerradas no momento.
+    - generic [ref=f22e14]:
+      - article [ref=f22e15]:
+        - generic [ref=f22e16]:
+          - generic [ref=f22e17]: Unidade sede
+          - generic [ref=f22e18]: "01"
+        - heading "Beira Linha" [level=2] [ref=f22e19]
+        - paragraph [ref=f22e20]: Rua Beira Linha, 329 · Teresópolis, RJ
+        - generic [ref=f22e21]:
+          - heading "Cursos nesta unidade" [level=3] [ref=f22e22]
+          - list [ref=f22e23]:
+            - listitem [ref=f22e24]: Inglês
+            - listitem [ref=f22e25]: Criação de Aplicativos
+            - listitem [ref=f22e26]: Inclusão Digital 60+
+            - listitem [ref=f22e27]: Robótica
+            - listitem [ref=f22e28]: Desenvolvimento de Games
+            - listitem [ref=f22e29]: Introdução à Informática
+        - paragraph [ref=f22e30]: Inscrições encerradas no momento
+      - article [ref=f22e32]:
+        - generic [ref=f22e33]:
+          - generic [ref=f22e34]: Nova unidade
+          - generic [ref=f22e35]: "02"
+        - heading "São Pedro" [level=2] [ref=f22e36]
+        - paragraph [ref=f22e37]: Rua São Pedro, nº 191, Loja 01 · Teresópolis, RJ
+        - generic [ref=f22e38]:
+          - heading "Cursos nesta unidade" [level=3] [ref=f22e39]
+          - list [ref=f22e40]:
+            - listitem [ref=f22e41]: Inglês
+            - listitem [ref=f22e42]: Inclusão Digital 60+
+            - listitem [ref=f22e43]: Desenvolvimento de Games
+        - paragraph [ref=f22e44]: Inscrições encerradas no momento
+  - generic [ref=f22e47]:
+    - generic [ref=f22e48]: Casa da Inovação · Teresópolis, RJ
+    - link "Acompanhe as próximas vagas no Instagram ↗" [ref=f22e49] [cursor=pointer]:
+      - /url: https://www.instagram.com/casadainovacaoteresopolis/
