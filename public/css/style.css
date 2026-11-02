@@ -515,7 +515,6 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   .nav-links { display: none; }
   .nav-cta { margin-left: auto; }
   .nav-burger { display: block; margin-left: 0; }
-  .hero-grid { grid-template-columns: 1fr; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .bento { grid-template-columns: 1fr 1fr; }
   .bento-photo { grid-column: 1 / -1; grid-row: auto; min-height: 380px; }
@@ -526,10 +525,12 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 }
 
 @media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; align-items: start; }
+  .hero-side { margin-left: 0; }
   .stats { grid-template-columns: 1fr 1fr; }
   .stats li:nth-child(3) { padding-left: 0; border-left: 0; }
   .stats li:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 22px; }
-  .alex-grid, .inscricao-grid, .unidades { grid-template-columns: 1fr; }
+  .alex-grid, .unidades { grid-template-columns: 1fr; }
   .alex-photo { max-width: 460px; }
   /* história vira lista vertical */
   .historia-track { flex-direction: column; width: auto; gap: 34px; padding: 0 var(--gutter) 0 calc(var(--gutter) + 34px); transform: none !important; }
@@ -538,6 +539,10 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   .historia-line { left: calc(var(--gutter) + 8px); right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
   .historia-line span { width: 100%; height: 100%; transform-origin: 50% 0; transform: scaleY(var(--p, 0)); }
   .marco-ano { font-size: clamp(4.2rem, 20vw, 6rem); }
+}
+
+@media (max-width: 980px) {
+  .inscricao-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -583,6 +588,34 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 @media (max-width: 680px) {
   .hero-side { max-width: 100%; }
   .hero-ctas .btn { flex: 1 1 100%; }
+}
+
+@media (max-width: 480px) {
+  :root { --gutter: 16px; }
+  .nav { width: calc(100% - 16px); gap: 12px; padding: 7px 8px 7px 10px; }
+  .nav-brand { gap: 8px; }
+  .nav-brand img { width: 36px; height: 36px; }
+  .selection-nav { gap: 8px; }
+  .selection-nav .nav-brand span { display: none; }
+  .selection-back { padding: 0 12px; font-size: 12px; }
+  .hero { padding-top: 40svh; }
+  .hero-title { font-size: clamp(3rem, 13vw, 3.4rem); letter-spacing: -.045em; }
+  .hero-tag { max-width: calc(100% - 32px); white-space: normal; }
+  .hero-typed { max-width: 100%; padding: 9px 12px; }
+  .hero-ctas .btn { padding-inline: 16px; }
+  .stats { margin-top: 28px; }
+  .stats li { padding-top: 18px; }
+  .bento-photo { min-height: 260px; }
+  .bento-card { padding: 22px; }
+  .card { padding: 20px; }
+  .unidade-map { height: 210px; }
+  .passos li { gap: 12px; padding: 15px 14px; }
+  .unit-select-section { padding: 116px 0 56px; }
+  .unit-select-card { padding: 22px; }
+  .unit-select-card h2 { font-size: 34px; }
+  .unit-select-courses li { max-width: 100%; overflow-wrap: anywhere; }
+  .modal-hero, .modal-body { padding-left: 18px; padding-right: 18px; }
+  .horarios li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

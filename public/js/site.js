@@ -191,7 +191,7 @@ window.CASA = {
 
   /* ---------- preloader ---------- */
   const start = () => requestAnimationFrame(() => document.documentElement.classList.add('is-loaded'));
-  start();
+  setTimeout(start, reduce ? 0 : 1400);
 
   /* ---------- nav, progresso, link ativo ---------- */
   const nav = $('.nav');
