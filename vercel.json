@@ -1,7 +1,16 @@
 {
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/cursos/sao-pedro/:slug", "destination": "/#curso-:slug-sp", "permanent": false },
+    { "source": "/cursos/:slug", "destination": "/#curso-:slug", "permanent": false }
+  ],
   "rewrites": [
-    { "source": "/pre-matricula", "destination": "/pre-matricula.html" },
-    { "source": "/cursos/sao-pedro/:id", "destination": "/cursos/sao-pedro/:id.html" },
-    { "source": "/cursos/:id", "destination": "/cursos/:id.html" }
+    { "source": "/pre-matricula", "destination": "/pre-matricula.html" }
+  ],
+  "headers": [
+    {
+      "source": "/imagens/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+    }
   ]
 }
