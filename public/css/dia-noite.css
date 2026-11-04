@@ -33,38 +33,9 @@
 .day-night button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
 
 /* ---------- camadas da fachada ---------- */
-.hero-night { position: absolute; inset: 0; z-index: 2; isolation: isolate; opacity: 0; pointer-events: none; transition: opacity 1.1s var(--ease-in-out); }
+.hero-night { position: absolute; inset: 0; z-index: 3; isolation: isolate; opacity: 0; pointer-events: none; transition: opacity 1.1s var(--ease-in-out); }
 .hero-night img { position: absolute; inset: 0; filter: none; }
 .hero-night .night-light { mix-blend-mode: screen; opacity: 0; }
-.hero-media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: url('/imagens/fachada-noite.webp') 50% 30% / cover no-repeat;
-  clip-path: ellipse(5.8% 12% at 28.4% 31.6%);
-  filter: brightness(3.5);
-  transform: scale(1.1);
-  transition: transform 2.6s var(--ease), opacity 1.1s var(--ease-in-out);
-}
-.is-loaded .hero-media::after { transform: none; }
-.hero-media::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: url('/imagens/fachada-noite-placa.webp') 50% 30% / cover no-repeat;
-  clip-path: ellipse(5.8% 12% at 28.4% 31.6%);
-  mix-blend-mode: screen;
-  opacity: .62;
-  filter: brightness(.7) saturate(.82);
-  transform: scale(1.1);
-  transition: transform 2.6s var(--ease), opacity 1.1s var(--ease-in-out);
-}
-.is-loaded .hero-media::before { transform: none; }
-.is-night .hero-media::after, .is-night .hero-media::before { opacity: 0; }
 .hero-shade { transition: opacity 1.1s var(--ease-in-out); }
 /* à noite a sombra é mais leve para a placa e a sala aparecerem */
 .hero-shade-night {
@@ -81,15 +52,11 @@
 .is-night .stats strong, .is-night .stats span { text-shadow: 0 1px 10px rgba(0, 0, 0, .9); }
 .is-night .stats span { color: rgba(244, 241, 234, .85); }
 .hero-side { position: relative; }
-.hero-side::before {
-  content: ''; position: absolute; inset: -16px; z-index: -1;
-  border-radius: var(--radius);
-  background: rgba(10, 10, 11, .55);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  opacity: 0; pointer-events: none;
-  transition: opacity 1.1s var(--ease-in-out);
-}
-.is-night .hero-side::before { opacity: 1; }
+.hero-side::before { display: none; }
+.hero-side .eyebrow, .hero-side .hero-typed, .hero-side .hero-lead { text-shadow: 0 1px 8px rgba(0, 0, 0, .9); }
+.hero-side { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.hero-side > p { margin: 0; }
+.hero-side > .hero-ctas { width: 100%; margin: 0; gap: 12px; }
 
 /* o céu escurece, depois a placa e a sala acendem */
 @media (prefers-reduced-motion: no-preference) {
@@ -97,7 +64,7 @@
   .is-night .night-room { animation: light-on .9s 1.25s both; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-night, .hero-shade, .hero-side::before, .day-night button { transition: none; }
+  .hero-night, .hero-shade, .day-night button { transition: none; }
 }
 @keyframes light-on {
   0%, 18% { opacity: 0; }
@@ -126,16 +93,14 @@
   .hero-tag { top: 76px; }
   .hero-shade { background: linear-gradient(180deg, rgba(10, 10, 11, .42) 0, rgba(10, 10, 11, .04) 30svh, rgba(10, 10, 11, .8) 46svh, var(--bg) 56svh); }
   .hero-shade-night { background: linear-gradient(180deg, rgba(10, 10, 11, .42) 0, transparent 90px, rgba(10, 10, 11, .05) 30svh, rgba(10, 10, 11, .85) 46svh, var(--bg) 56svh); }
-  .hero-media::after, .hero-media::before { background-position: 28% 40%; clip-path: ellipse(11.5% 10.5% at 28.8% 31.3%); }
 }
 
 /* Em telas de paisagem baixas, reduzir a área dos blocos sobre a fachada. */
 @media (min-width: 861px) and (max-width: 1500px) and (max-height: 760px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr); gap: clamp(24px, 4vw, 54px); }
-  .hero-title { font-size: clamp(3.5rem, 6.3vw, 5.8rem); line-height: .9; }
+  .hero-title { font-size: clamp(5.4rem, 8.2vw, 8.6rem); line-height: .86; }
   .hero-sub { margin-top: 10px; }
   .hero-ctas { margin-top: 16px; }
-  .hero-side::before { inset: -10px; }
   .stats { margin-top: 16px; }
   .stats li { padding-top: 12px; }
   .stats strong { font-size: clamp(2.2rem, 3.8vw, 3rem); }
@@ -158,30 +123,15 @@
   .historia-line span { width: 100%; height: 100%; transform-origin: 0 50%; transform: scaleX(0); }
 }
 
-/* Mantém as informações originais em uma faixa compacta na base do hero. */
-.hero-facts { position: relative; z-index: 2; width: 100%; margin-top: clamp(16px, 3vh, 26px); padding: 0; color: var(--text); }
-.hero-facts .stats { margin: 0; padding-top: 10px; border-top-color: var(--line-2); }
-.hero-facts .stats li { padding: 12px 16px 0 0; gap: 4px; }
-.hero-facts .stats li + li { border-left-color: var(--line); padding-left: 16px; }
-.hero-facts .stats strong { color: var(--text); font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
-.hero-facts .stats span { color: rgba(244, 241, 234, .76); font-size: 12px; }
-.hero-facts .stats strong span { color: inherit; font-size: inherit; }
 @media (min-width: 861px) {
   .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(340px, .8fr); gap: clamp(28px, 5vw, 72px); }
-  .hero-title { font-size: clamp(3.8rem, 5.2vw, 7rem); }
+  .hero-title { font-size: clamp(5.4rem, 8.2vw, 8.6rem); }
+  .hero-grid { margin-bottom: -18px; }
   .hero-side { max-width: 470px; }
-  .hero-side .eyebrow { margin-bottom: 8px; }
-  .hero-lead { margin-top: 0; }
-  .hero-ctas { margin-top: 18px; }
 }
 @media (min-width: 1200px) {
   .hero-ctas .btn { flex: 1 1 190px; min-width: 0; }
 }
 @media (min-width: 861px) and (max-height: 760px) {
   .hero { padding-bottom: clamp(88px, 12vh, 120px); }
-}
-@media (max-width: 860px) {
-  .hero-facts .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero-facts .stats li:nth-child(3) { padding-left: 0; border-left: 0; }
-  .hero-facts .stats li:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 12px; }
 }

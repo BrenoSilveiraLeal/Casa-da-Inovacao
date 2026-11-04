@@ -587,7 +587,7 @@ h1,h2,h3{ text-wrap:balance }
 
 /* Hero: uma única camada contínua de contraste, sem faixas, máscaras ou emendas. */
 .hero{
-  background-image:url('/imagens/otimizadas/fachada.webp?v=hero-original')!important;
+  background-image:url('/imagens/otimizadas/fachada.webp?v=fachada-dia-20261104')!important;
   background-size:cover!important;
 }
 .hero::before{
