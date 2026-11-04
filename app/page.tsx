@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <div dangerouslySetInnerHTML={{ __html: content }} />
       <Script src="/js/site.js?v=20261102-text-map-v2" strategy="afterInteractive" />
+      <Script src="/js/dia-noite.js" strategy="afterInteractive" />
     </>
   );
 }

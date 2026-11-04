@@ -1,0 +1,96 @@
+/* =========================================================
+   CASA DA INOVAÇÃO — opção de dia e noite na fachada
+   ========================================================= */
+
+/* ---------- a foto continua até a faixa amarela ---------- */
+:root { --marquee-half: calc(clamp(20px, 3vw, 44px) + 20px + clamp(21px, 2.4vw, 32px) / 2); }
+.hero { min-height: calc(100svh + var(--marquee-half)); }
+.hero::after { content: ''; flex: none; height: var(--marquee-half); }
+.marquee-wrap { margin-top: calc(-1 * var(--marquee-half)); background: linear-gradient(180deg, transparent 50%, var(--cream) 50%); }
+
+/* ---------- seletor: mesma linguagem da etiqueta .hero-tag ---------- */
+.day-night {
+  position: absolute; top: 152px; right: max(var(--gutter), calc((100% - 1320px) / 2 + var(--gutter)));
+  display: inline-flex; gap: 2px; padding: 3px;
+  border-radius: 999px;
+  background: rgba(14, 14, 16, .6);
+  border: 1px solid var(--line-2);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.day-night button {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 36px; padding: 0 12px 0 10px;
+  border: 0; border-radius: 999px;
+  background: transparent;
+  font: 400 13px/1 var(--mono);
+  color: rgba(244, 241, 234, .72);
+  cursor: pointer;
+  transition: color .25s, background .25s;
+}
+.day-night svg { width: 16px; height: 16px; }
+.day-night button:hover { color: var(--text); background: rgba(255, 255, 255, .06); }
+.day-night button[aria-pressed="true"] { color: var(--yellow); background: rgba(255, 194, 26, .14); }
+.day-night button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+
+/* ---------- camadas da fachada ---------- */
+.hero-night { position: absolute; inset: 0; isolation: isolate; opacity: 0; pointer-events: none; transition: opacity 1.1s var(--ease-in-out); }
+.hero-night img { position: absolute; inset: 0; filter: none; }
+.hero-night .night-light { mix-blend-mode: screen; opacity: 0; }
+.hero-shade { transition: opacity 1.1s var(--ease-in-out); }
+/* à noite a sombra é mais leve para a placa e a sala aparecerem */
+.hero-shade-night {
+  opacity: 0;
+  background: linear-gradient(0deg, rgba(10, 10, 11, .98) 0%, rgba(10, 10, 11, .94) 26%, rgba(10, 10, 11, .72) 40%, rgba(10, 10, 11, .2) 58%, transparent 74%, rgba(10, 10, 11, .4) 100%);
+}
+
+.is-night .hero-night { opacity: 1; }
+.is-night .hero-night .night-light { opacity: 1; }
+.is-night .hero-shade { opacity: 0; }
+.is-night .hero-shade-night { opacity: 1; }
+
+/* com a sala acesa, o texto precisa se separar do que está atrás do vidro */
+.is-night .stats strong, .is-night .stats span { text-shadow: 0 1px 10px rgba(0, 0, 0, .9); }
+.is-night .stats span { color: rgba(244, 241, 234, .85); }
+.hero-side { position: relative; }
+.hero-side::before {
+  content: ''; position: absolute; inset: -16px; z-index: -1;
+  border-radius: var(--radius);
+  background: rgba(10, 10, 11, .55);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 1.1s var(--ease-in-out);
+}
+.is-night .hero-side::before { opacity: 1; }
+
+/* o céu escurece, depois a placa e a sala acendem */
+@media (prefers-reduced-motion: no-preference) {
+  .is-night .night-sign { animation: light-on .9s .85s both; }
+  .is-night .night-room { animation: light-on .9s 1.25s both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-night, .hero-shade, .hero-side::before, .day-night button { transition: none; }
+}
+@keyframes light-on {
+  0%, 18% { opacity: 0; }
+  24% { opacity: .75; }
+  32% { opacity: .1; }
+  44% { opacity: .9; }
+  52% { opacity: .45; }
+  100% { opacity: 1; }
+}
+
+/* ---------- responsivo ---------- */
+@media (min-width: 641px) and (max-width: 860px) {
+  /* no tablet o enquadramento central corta a placa */
+  .hero-media img { object-position: 30% 30%; }
+}
+@media (max-width: 860px) {
+  .hero-side::before { display: none; }
+}
+@media (max-width: 640px) {
+  /* a etiqueta fica à esquerda no celular; o seletor vai à direita, sem cobrir a placa */
+  .day-night { top: 132px; right: var(--gutter); }
+  .day-night button { min-height: 38px; }
+  /* no celular a foto ocupa só o topo: a sombra precisa terminar na cor do fundo */
+  .hero-shade-night { background: linear-gradient(180deg, rgba(10, 10, 11, .45) 0, transparent 90px, rgba(10, 10, 11, .05) 30svh, rgba(10, 10, 11, .85) 50svh, var(--bg) 64svh); }
+}

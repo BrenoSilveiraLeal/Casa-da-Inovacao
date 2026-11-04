@@ -407,8 +407,7 @@ window.CASA = {
   if (!reduce) {
     const m = { x: 0, y: 0 };
     const paintMedia = () => {
-      const sy = Math.min(scrollY, innerHeight) * .3;
-      media.style.transform = `translate3d(${m.x * -16}px, ${m.y * -10 + sy}px, 0)`;
+      media.style.transform = `translate3d(${m.x * -16}px, ${m.y * -10}px, 0)`;
     };
     if (fine) {
       $('.hero').addEventListener('pointermove', (e) => {
@@ -416,7 +415,6 @@ window.CASA = {
         requestAnimationFrame(paintMedia);
       });
     }
-    addEventListener('scroll', () => { if (scrollY < innerHeight * 1.2) requestAnimationFrame(paintMedia); }, { passive: true });
   }
 
   /* ---------- botões magnéticos ---------- */
