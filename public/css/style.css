@@ -677,3 +677,19 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   .menu-open .menu a:nth-child(5) { transition-delay: .12s; }
   .menu-open .menu a:nth-child(6) { transition-delay: .15s; color: var(--yellow); }
 }
+
+
+/* Apresentacao do idealizador: distribuir as linhas de forma equilibrada. */
+.alex-quote{text-wrap:balance;max-width:62ch}
+
+
+/* No celular, o card de aprendizagem aparece imediatamente; a chamada e os botoes mantem o reveal. */
+@media(max-width:640px){.hero-typed[data-reveal]{opacity:1;transform:none;transition:none}}
+
+
+/* Titulo do hero um pouco maior em telas de celular. */
+@media(max-width:640px){.hero-title{font-size:clamp(3.8rem,19vw,5.3rem);letter-spacing:-.055em}.hero-sub{font-size:clamp(20px,5.8vw,24px)}}
+
+
+/* No celular, os elementos superiores do hero ja aparecem no carregamento. */
+@media(max-width:640px){.hero .eyebrow-dot[data-reveal],.hero-typed[data-reveal]{opacity:1;transform:none;transition:none}}
