@@ -654,14 +654,13 @@ window.CASA = {
   const acontece = $('.acontece-media');
   const orqMedia = $('.orquestra-media');
   const orq = $('.orquestra');
-  const wide = matchMedia('(min-width: 861px)');
   let dist = 0;
 
   const layoutHistoria = () => {
     dist = Math.max(0, track.scrollWidth - innerWidth);
     const pin = $('.historia-pin');
     historia.classList.toggle('historia-static', reduce);
-    if (!wide.matches || reduce) {
+    if (reduce) {
       historia.style.height = '';
       pin.style.position = '';
       pin.style.top = '';
@@ -674,7 +673,7 @@ window.CASA = {
     }
     historia.classList.remove('historia-static');
     pin.style.position = 'sticky'; pin.style.top = '0';
-    pin.style.minHeight = '100vh';
+    pin.style.minHeight = '100svh';
     pin.style.display = 'flex'; pin.style.flexDirection = 'column'; pin.style.justifyContent = 'center';
     historia.style.height = (pin.offsetHeight + dist) + 'px';
   };
@@ -685,7 +684,7 @@ window.CASA = {
     // história: rola na horizontal no desktop, preenche a linha no celular
     const r = historia.getBoundingClientRect();
     let p;
-    if (wide.matches && !reduce) {
+    if (!reduce) {
       const total = historia.offsetHeight - $('.historia-pin').offsetHeight;
       p = total > 0 ? clamp(-r.top / total, 0, 1) : 0;
       track.style.transform = `translate3d(${-p * dist}px,0,0)`;

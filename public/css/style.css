@@ -564,7 +564,7 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   .alex-grid, .unidades { grid-template-columns: 1fr; }
   .alex-photo { max-width: 460px; }
   /* história vira lista vertical */
-  .historia-track { flex-direction: column; width: auto; gap: 34px; padding: 0 var(--gutter) 0 calc(var(--gutter) + 34px); transform: none !important; }
+  .historia-track { flex-direction: column; width: auto; gap: 34px; padding: 0 var(--gutter) 0 calc(var(--gutter) + 34px); }
   .marco { width: auto; padding-bottom: 0; }
   .marco-dot { left: calc(-34px + 1px); top: .9em; bottom: auto; }
   .historia-line { left: calc(var(--gutter) + 8px); right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
@@ -612,6 +612,10 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   .modal-meta { grid-template-columns: 1fr; }
   .acontece-media { height: 70vh; }
   .orquestra { min-height: 100svh; }
+  .orquestra-copy { width: 100%; min-width: 0; }
+  .orquestra-copy .h2 { max-width: 100%; font-size: clamp(2.3rem, 11vw, 3.4rem); line-height: .98; overflow-wrap: anywhere; }
+  .orquestra-copy .h2 em { white-space: normal; }
+  .orquestra-media img { object-position: 72% 30%; }
   .whats { width: 52px; height: 52px; right: 14px; bottom: 14px; }
 }
 
