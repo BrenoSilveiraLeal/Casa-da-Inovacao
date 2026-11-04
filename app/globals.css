@@ -600,6 +600,9 @@ h1,h2,h3{ text-wrap:balance }
 }
 .hero-copy{position:relative;z-index:2}
 
+/* Enquadra a fachada mais perto da placa no celular. */
+@media(max-width:700px){.hero{background-size:auto 112%!important;background-position:42% 43%!important}}
+
 @media(min-width:701px){
   .hero{background-position:center 45%!important}
 }
