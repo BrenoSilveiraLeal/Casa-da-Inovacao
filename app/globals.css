@@ -601,7 +601,7 @@ h1,h2,h3{ text-wrap:balance }
 .hero-copy{position:relative;z-index:2}
 
 /* Enquadra a fachada mais perto da placa no celular. */
-@media(max-width:700px){.hero{background-size:auto 112%!important;background-position:42% 43%!important}}
+@media(max-width:700px){.hero{background-size:auto 125%!important;background-position:42% calc(0% + 72px)!important}}
 
 @media(min-width:701px){
   .hero{background-position:center 45%!important}
@@ -620,3 +620,7 @@ h1,h2,h3{ text-wrap:balance }
 /* Títulos de cursos: mais respiro entre linhas quando o nome quebra. */
 .course-detail-hero h1{line-height:1.02}
 @media(max-width:700px){.course-detail-hero h1{line-height:1.04}}
+
+
+/* Equilibra as linhas do texto de apresentação do idealizador. */
+.alex-quote{text-wrap:balance;max-width:640px!important}
