@@ -2,14 +2,11 @@
    CASA DA INOVAÇÃO — opção de dia e noite na fachada
    ========================================================= */
 (() => {
-  const KEY = 'casa-periodo';
   const root = document.documentElement;
   const hero = document.querySelector('.hero');
   const media = document.querySelector('.hero-media');
   if (!hero || !media) return;
 
-  const read = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
-  const save = (v) => { try { localStorage.setItem(KEY, v); } catch { /* sem armazenamento: vale só nesta visita */ } };
 
   /* ---------- seletor ---------- */
   const icon = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
@@ -76,9 +73,9 @@
 
   buttons.forEach((b) => b.addEventListener('click', () => {
     setNight(b.dataset.period === 'noite');
-    save(b.dataset.period);
   }));
   ['pointerenter', 'focusin'].forEach((type) => picker.addEventListener(type, () => { load().catch(() => {}); }, { once: true }));
 
-  setNight(read() === 'noite');
+  // Cada carregamento da página começa de dia; a escolha vale só nesta visita.
+  setNight(false);
 })();
