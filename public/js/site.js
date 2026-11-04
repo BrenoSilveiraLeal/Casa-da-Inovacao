@@ -267,7 +267,7 @@ window.CASA = {
   /* ---------- texto digitado ---------- */
   const typed = $('.typed');
   const words = ['robótica', 'programação', 'games', 'inglês', 'informática', 'apps'];
-  if (!reduce) {
+  if (!reduce && typed) {
     let wi = 0, ci = words[0].length, del = true;
     const tick = () => {
       if (del) {

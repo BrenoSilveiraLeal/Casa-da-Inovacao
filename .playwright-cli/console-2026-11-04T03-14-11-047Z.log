@@ -5,3 +5,16 @@
 [  669747ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=f82cbec8:14337
 [  693823ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=f82cbec8:14337
 [  817837ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=f82cbec8:14337
+[ 1593366ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:968
+[ 1596145ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=f82cbec8:14337
+[ 1598871ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at tick (http://localhost:3000/js/site.js?v=20261102-text-map-v2:274:27)
+[ 1705698ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=f82cbec8:14337
+[ 1824060ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/predio:0
+[ 1824085ms] [ERROR] Refused to apply style from 'http://localhost:3000/css/style.css' because its MIME type ('text/plain') is not a supported stylesheet MIME type, and strict MIME checking is enabled. @ http://localhost:3000/predio:0
+[ 1824527ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/@id/__x00__vinext:async-hooks-stub:0
+[ 1824547ms] Failed to fetch dynamically imported module: http://localhost:3000/@id/__x00__virtual:vinext-app-browser-entry
+[ 1831940ms] TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at <anonymous> (eval at evaluate (:370:30)), <anonymous>:1:209)
+[ 1831960ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/predio:0
+[ 1832062ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=f82cbec8:14337
