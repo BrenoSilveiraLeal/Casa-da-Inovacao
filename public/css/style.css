@@ -661,10 +661,9 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   [data-reveal], .card { opacity: 1; transform: none; translate: none; }
 }
 
-/* No celular, mantenha o header estável e use uma transição leve no menu. */
+/* No celular, use uma transição leve no header e no menu. */
 @media (max-width: 640px) {
   .nav { transition: background .2s ease, border-color .2s ease, transform .2s var(--ease); }
-  .nav.is-hidden { transform: translateX(-50%); }
   .nav.is-scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; }
   .menu {
     clip-path: none;

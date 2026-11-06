@@ -196,14 +196,27 @@ window.CASA = {
   /* ---------- nav, progresso, link ativo ---------- */
   const nav = $('.nav');
   const bar = $('.progress span');
-  let lastY = 0;
+  const headerBoundary = $('.marquee-wrap');
+  let lastY = Math.max(0, scrollY);
+  let direction = 0;
+  let directionDistance = 0;
   const onScrollNav = () => {
-    const y = scrollY;
+    const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+    const y = Math.min(max, Math.max(0, scrollY));
+    const delta = y - lastY;
     nav.classList.toggle('is-scrolled', y > 40);
-    nav.classList.toggle('is-hidden', y > 600 && y > lastY + 4 && !document.body.classList.contains('menu-open'));
-    if (y < lastY - 4) nav.classList.remove('is-hidden');
+    const beforeYellowStrip = headerBoundary && headerBoundary.getBoundingClientRect().top > nav.offsetHeight + 14;
+    if (y <= 40 || beforeYellowStrip || document.body.classList.contains('menu-open')) {
+      nav.classList.remove('is-hidden');
+      direction = 0;
+      directionDistance = 0;
+    } else if (delta !== 0) {
+      const nextDirection = Math.sign(delta);
+      directionDistance = nextDirection === direction ? directionDistance + Math.abs(delta) : Math.abs(delta);
+      direction = nextDirection;
+      if (directionDistance >= 8) nav.classList.toggle('is-hidden', direction > 0);
+    }
     lastY = y;
-    const max = document.documentElement.scrollHeight - innerHeight;
     bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
   };
 
