@@ -166,7 +166,10 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   clip-path: circle(0 at calc(100% - 46px) 46px);
   transition: clip-path .7s var(--ease-in-out);
   visibility: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
+.menu nav { margin-block: auto; }
 .menu-open .menu { clip-path: circle(150% at calc(100% - 46px) 46px); visibility: visible; }
 .menu nav { display: flex; flex-direction: column; width: 100%; }
 .menu a { display: flex; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); font: 600 clamp(32px, 9vw, 52px)/1.05 var(--display); letter-spacing: -.03em; transform: translateY(30px); opacity: 0; transition: transform .6s var(--ease), opacity .6s; }
@@ -653,6 +656,16 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   .unit-select-courses li { max-width: 100%; overflow-wrap: anywhere; }
   .modal-hero, .modal-body { padding-left: 18px; padding-right: 18px; }
   .horarios li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+}
+
+/* Keep navigation reachable with browser bars, keyboards, and landscape phones. */
+@media (max-height: 500px) and (max-width: 1080px) {
+  .menu { align-items: flex-start; padding-top: 90px; padding-bottom: 24px; }
+  .menu a { font-size: 28px; padding-block: 9px; }
+}
+
+@media (pointer: coarse) {
+  .chips button, .day-night button { min-height: 44px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -242,6 +242,9 @@ window.CASA = {
   burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
   $$('a', menu).forEach((a) => a.addEventListener('click', () => setMenu(false)));
   addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  matchMedia('(min-width: 1081px)').addEventListener('change', (event) => {
+    if (event.matches) setMenu(false);
+  });
 
   /* ---------- reveal ---------- */
   const revObs = new IntersectionObserver((entries) => {
@@ -668,12 +671,14 @@ window.CASA = {
   const orqMedia = $('.orquestra-media');
   const orq = $('.orquestra');
   let dist = 0;
+  const compactHistory = matchMedia('(max-width: 860px)');
 
   const layoutHistoria = () => {
-    dist = Math.max(0, track.scrollWidth - innerWidth);
     const pin = $('.historia-pin');
-    historia.classList.toggle('historia-static', reduce);
-    if (reduce) {
+    const vertical = reduce || compactHistory.matches;
+    historia.classList.toggle('historia-static', vertical);
+    if (vertical) {
+      dist = 0;
       historia.style.height = '';
       pin.style.position = '';
       pin.style.top = '';
@@ -682,9 +687,11 @@ window.CASA = {
       pin.style.flexDirection = '';
       pin.style.justifyContent = '';
       track.style.transform = '';
+      line.style.transform = '';
       return;
     }
     historia.classList.remove('historia-static');
+    dist = Math.max(0, track.scrollWidth - innerWidth);
     pin.style.position = 'sticky'; pin.style.top = '0';
     pin.style.minHeight = '100svh';
     pin.style.display = 'flex'; pin.style.flexDirection = 'column'; pin.style.justifyContent = 'center';
@@ -697,7 +704,7 @@ window.CASA = {
     // história: rola na horizontal no desktop, preenche a linha no celular
     const r = historia.getBoundingClientRect();
     let p;
-    if (!reduce) {
+    if (!reduce && !compactHistory.matches) {
       const total = historia.offsetHeight - $('.historia-pin').offsetHeight;
       p = total > 0 ? clamp(-r.top / total, 0, 1) : 0;
       track.style.transform = `translate3d(${-p * dist}px,0,0)`;
