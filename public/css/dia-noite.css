@@ -178,6 +178,7 @@
 /* No telefone, o texto de apoio e os CTAs entram com reveal durante a rolagem. */
 @media (max-width: 640px) {
   .hero { padding-top: 38svh !important; }
+  .hero-side > .hero-lead { margin-top: 50px; }
   .hero .hero-lead[data-reveal],
   .hero .hero-ctas[data-reveal] {
     opacity: 0;

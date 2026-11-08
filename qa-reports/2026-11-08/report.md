@@ -157,7 +157,7 @@ Correction: that previous follow-up was inaccurate. The phone overrides are set 
 
 | Viewport | Initial state | After scroll | Result |
 |---|---|---|---|
-| 375×812 (Chrome, fresh load) | Title top 331 px; supporting text and CTAs remain in their original layout positions but render at opacity 0 | A 10 px scroll reveals supporting text and both CTAs (opacity 1); title moves only with normal page scroll | Pass |
+| 375×812 (Chrome, fresh load) | Title top 309 px; eyebrow and typed line stay in place; course description and CTAs render at opacity 0. The description is 50 px lower, and the second CTA ends at 834 px, below the fold. | A 10 px scroll reveals the description and CTAs (opacity 1); title moves only with normal page scroll | Pass |
 | 1366×768 (Chrome, fresh load) | Supporting text and CTAs are visible immediately; hero padding is 120 px | No phone-only gating | Pass |
 
 `npm run build` passed with 12 routes prerendered. The browser screenshot tool was available for visual inspection but denied saving its image into the project workspace; the measurements above were read from the live browser DOM. This retest covers the changed hero behavior, not the full responsive route matrix in the Ultimate Website QA checklist.
