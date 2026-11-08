@@ -263,7 +263,9 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 .bento-card:nth-of-type(3) .bento-body { display: flex; flex-direction: column; }
 
 /* Cursos */
-#cursos .wrap { max-width: 1320px; }
+@media (min-width: 641px) {
+  #cursos .wrap { max-width: 1320px; }
+}
 .cursos-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
 .cursos-head .lead { max-width: 30ch; }
 .filtros { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
@@ -408,9 +410,14 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 .acontece-media figcaption b { color: var(--yellow); font-weight: 700; }
 
 /* Unidades */
-#local > .wrap { max-width: 1320px; }
+@media (min-width: 641px) {
+  #local > .wrap { max-width: 1320px; }
+}
 .local-head { margin-bottom: clamp(48px, 6vw, 72px); }
-.unidades { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 1210px; margin-inline: auto; }
+.unidades { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (min-width: 641px) {
+  .unidades { max-width: 1210px; margin-inline: auto; }
+}
 .unidade { background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(17, 16, 18, .06); display: flex; flex-direction: column; transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
 .unidade:hover { transform: translateY(-6px); box-shadow: 0 40px 70px -40px rgba(17, 16, 18, .45); }
 .unidade-map { position: relative; height: 260px; overflow: hidden;

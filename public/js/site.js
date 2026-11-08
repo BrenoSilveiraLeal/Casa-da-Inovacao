@@ -252,34 +252,15 @@ window.CASA = {
       if (e.isIntersecting) { e.target.classList.add('is-in'); revObs.unobserve(e.target); }
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
-  const phoneHeroRevealTargets = new Set();
-  const revealPhoneHeroDuringScroll = () => {
-    if (!window.matchMedia('(max-width: 640px)').matches || !window.scrollY) return;
-    phoneHeroRevealTargets.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight * .92 && rect.bottom > 0) {
-        el.classList.add('is-in');
-        phoneHeroRevealTargets.delete(el);
-      }
-    });
-  };
-  window.addEventListener('scroll', revealPhoneHeroDuringScroll, { passive: true });
   const watchReveal = (root = document) => {
     // atraso escalonado entre irmãos
     $$('[data-reveal]', root).forEach((el) => {
-      if (window.matchMedia('(max-width: 640px)').matches
-        && el.matches('.hero .hero-lead, .hero .hero-ctas')) {
-        el.classList.remove('is-in');
-        phoneHeroRevealTargets.add(el);
-        return;
-      }
       const sibs = [...el.parentElement.children].filter((c) => c.hasAttribute('data-reveal'));
       el.style.setProperty('--d', `${Math.min(sibs.indexOf(el), 6) * 0.08}s`);
       revObs.observe(el);
     });
   };
   watchReveal();
-  revealPhoneHeroDuringScroll();
 
   /* ---------- contadores ---------- */
   const countObs = new IntersectionObserver((entries) => {

@@ -168,46 +168,13 @@
   .hero-grid { max-width: 2080px; padding-inline: var(--gutter); }
 }
 
-/* Keep general reveal content visible unless its specific section opts in below. */
-.hero [data-reveal] {
-  opacity: 1;
-  transform: none;
-  transition: none;
-}
-
-/* No telefone, o texto de apoio e os CTAs entram com reveal durante a rolagem. */
-@media (max-width: 640px) {
-  .hero { padding-top: 38svh !important; }
-  .hero-side > .hero-lead { margin-top: 50px; }
-  .hero .hero-lead[data-reveal],
-  .hero .hero-ctas[data-reveal] {
-    opacity: 0;
-    transform: translateY(26px);
-    transition: opacity .6s var(--ease), transform .6s var(--ease);
-    transition-delay: var(--d, 0s);
-  }
-  .hero .hero-lead[data-reveal].is-in,
-  .hero .hero-ctas[data-reveal].is-in {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@media (max-width: 360px) {
-  .hero { padding-top: 32svh !important; }
-}
-
-@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
-  .hero .hero-lead[data-reveal],
-  .hero .hero-ctas[data-reveal] {
+/* Desktop keeps its immediate hero display; phones use the original reveals. */
+@media (min-width: 641px) {
+  .hero [data-reveal],
+  .hero-title .line > span {
     opacity: 1;
     transform: none;
     transition: none;
   }
-}
-
-.hero-title .line > span {
-  transform: none;
-  transition: none;
 }
 

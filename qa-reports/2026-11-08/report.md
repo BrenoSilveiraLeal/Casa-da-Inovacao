@@ -161,3 +161,13 @@ Correction: that previous follow-up was inaccurate. The phone overrides are set 
 | 1366×768 (Chrome, fresh load) | Supporting text and CTAs are visible immediately; hero padding is 120 px | No phone-only gating | Pass |
 
 `npm run build` passed with 12 routes prerendered. The browser screenshot tool was available for visual inspection but denied saving its image into the project workspace; the measurements above were read from the live browser DOM. This retest covers the changed hero behavior, not the full responsive route matrix in the Ultimate Website QA checklist.
+
+## Phone restoration to the pre-November-8 version (supersedes the spacing experiments above)
+
+The user requested the phone site as it was yesterday, with only the red blinking closed-registration indicator added. Git has no November 7 source revision; `baee3ec` (November 6, 23:00:42 -0300) is the last saved version before today's changes.
+
+Removed today's phone hero padding, margin and custom scroll-gating changes. Restored `site.js` exactly to `baee3ec`. Scoped today's hero reveal overrides and course/map wrapper changes to widths above 640 px, preserving the current desktop presentation. Kept the closed-status red `blink` animation and changed asset version strings to refresh browser caches.
+
+Chrome compared the current phone layout against the historical `style.css` and `dia-noite.css` loaded into the same live page. At 375x812 and 430x932, all 20 selected layout measurements (navigation, hero, course controls/cards, maps, registration status and footer) matched, with no horizontal overflow. The original reveal observer shows the description and CTAs as they enter view; scrolling 300 px at 430x932 revealed both. The red light reports `blink 1.2s steps(1) infinite`.
+
+Desktop regression at 1366x768: hero grid top 384 px, title 112.012 px, description and CTAs visible immediately. Build passed (12 prerendered routes); `git diff --check` passed. No commit or deployment was made.
