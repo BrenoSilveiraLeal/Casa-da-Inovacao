@@ -148,8 +148,6 @@ window.CASA = {
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(pointer: fine)').matches;
-  // escala do computador (ver app/layout.tsx); 1 no celular e no tablet
-  const zoomOf = () => parseFloat(document.documentElement.style.zoom) || 1;
 
   /* ---------- ícones ---------- */
   const ICONS = {
@@ -182,7 +180,7 @@ window.CASA = {
   const fillTrack = () => {
     mqTrack.innerHTML = mqSet;
     const setW = mqTrack.scrollWidth;
-    const copies = Math.max(1, Math.ceil((innerWidth / zoomOf() + 200) / setW));
+    const copies = Math.max(1, Math.ceil((innerWidth + 200) / setW));
     mqTrack.innerHTML = mqSet.repeat(copies * 2);
     mqTrack.style.animationDuration = `${(setW * copies) / 70}s`; // ~70px por segundo em qualquer tela
   };
@@ -203,11 +201,11 @@ window.CASA = {
   let direction = 0;
   let directionDistance = 0;
   const onScrollNav = () => {
-    const max = Math.max(0, document.documentElement.scrollHeight * zoomOf() - innerHeight);
+    const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
     const y = Math.min(max, Math.max(0, scrollY));
     const delta = y - lastY;
     nav.classList.toggle('is-scrolled', y > 40);
-    const beforeYellowStrip = headerBoundary && headerBoundary.getBoundingClientRect().top > (nav.offsetHeight + 14) * zoomOf();
+    const beforeYellowStrip = headerBoundary && headerBoundary.getBoundingClientRect().top > nav.offsetHeight + 14;
     if (y <= 40 || beforeYellowStrip || document.body.classList.contains('menu-open')) {
       nav.classList.remove('is-hidden');
       direction = 0;
@@ -313,10 +311,9 @@ window.CASA = {
   const resize = () => {
     dpr = Math.min(devicePixelRatio || 1, 2);
     const r = canvas.getBoundingClientRect();
-    const z = zoomOf();
-    W = r.width / z; H = r.height / z;
-    canvas.width = W * dpr * z; canvas.height = H * dpr * z;
-    ctx.setTransform(dpr * z, 0, 0, dpr * z, 0, 0);
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     cols = Math.ceil(W / GAP) + 1; rows = Math.ceil(H / GAP) + 1;
     glow = new Float32Array(cols * rows);
     if (reduce) drawStatic();
@@ -408,8 +405,7 @@ window.CASA = {
     let lastPtrSpawn = 0;
     hero.addEventListener('pointermove', (e) => {
       const r = canvas.getBoundingClientRect();
-      const z = zoomOf();
-      ptr.tx = (e.clientX - r.left) / z; ptr.ty = (e.clientY - r.top) / z;
+      ptr.tx = e.clientX - r.left; ptr.ty = e.clientY - r.top;
       if (ptr.x < -500) { ptr.x = ptr.tx; ptr.y = ptr.ty; }
       const now = performance.now();
       if (now - lastPtrSpawn > 260) {
@@ -442,8 +438,7 @@ window.CASA = {
     $$('.magnetic').forEach((b) => {
       b.addEventListener('pointermove', (e) => {
         const r = b.getBoundingClientRect();
-        const z = zoomOf();
-        b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) / z * .18}px, ${(e.clientY - r.top - r.height / 2) / z * .28}px)`;
+        b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .18}px, ${(e.clientY - r.top - r.height / 2) * .28}px)`;
       });
       b.addEventListener('pointerleave', () => { b.style.transform = ''; });
     });
@@ -566,8 +561,7 @@ window.CASA = {
     card.addEventListener('pointermove', (e) => {
       const r = card.getBoundingClientRect();
       const x = e.clientX - r.left, y = e.clientY - r.top;
-      const z = zoomOf();
-      card.style.setProperty('--mx', x / z + 'px'); card.style.setProperty('--my', y / z + 'px');
+      card.style.setProperty('--mx', x + 'px'); card.style.setProperty('--my', y + 'px');
       if (fine && !reduce) card.style.transform = `perspective(900px) rotateX(${(.5 - y / r.height) * 5}deg) rotateY(${(x / r.width - .5) * 6}deg)`;
     });
     card.addEventListener('pointerleave', () => { card.style.transform = ''; });
@@ -696,9 +690,9 @@ window.CASA = {
       return;
     }
     historia.classList.remove('historia-static');
-    dist = Math.max(0, track.scrollWidth - innerWidth / zoomOf());
+    dist = Math.max(0, track.scrollWidth - innerWidth);
     pin.style.position = 'sticky'; pin.style.top = '0';
-    pin.style.minHeight = 'calc(100 * var(--vh, 1svh))';
+    pin.style.minHeight = '100svh';
     pin.style.display = 'flex'; pin.style.flexDirection = 'column'; pin.style.justifyContent = 'center';
     historia.style.height = (pin.offsetHeight + dist) + 'px';
   };
@@ -711,7 +705,7 @@ window.CASA = {
     let p;
     if (!reduce) {
       const total = historia.offsetHeight - $('.historia-pin').offsetHeight;
-      p = total > 0 ? clamp(-r.top / (total * zoomOf()), 0, 1) : 0;
+      p = total > 0 ? clamp(-r.top / total, 0, 1) : 0;
       track.style.transform = `translate3d(${-p * dist}px,0,0)`;
       line.style.transform = `scaleX(${p})`;
       marcos.forEach((m, i) => m.classList.toggle('is-on', r.top < vh * .5 && p >= i / (marcos.length - 1) - .04));

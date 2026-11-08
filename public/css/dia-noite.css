@@ -3,8 +3,8 @@
    ========================================================= */
 
 /* ---------- a foto continua até a faixa amarela ---------- */
-:root { --marquee-half: calc(clamp(20px, calc(3 * var(--vw, 1vw)), 44px) + 20px + clamp(21px, calc(2.4 * var(--vw, 1vw)), 32px) / 2); }
-.hero { min-height: calc(calc(100 * var(--vh, 1svh)) + var(--marquee-half)); }
+:root { --marquee-half: calc(clamp(20px, 3vw, 44px) + 20px + clamp(21px, 2.4vw, 32px) / 2); }
+.hero { min-height: calc(100svh + var(--marquee-half)); }
 .hero::after { content: ''; flex: none; height: var(--marquee-half); }
 .marquee-wrap { margin-top: calc(-1 * var(--marquee-half)); background: linear-gradient(180deg, transparent 50%, var(--cream) 50%); }
 
@@ -88,22 +88,22 @@
   .day-night { top: 126px; right: var(--gutter); }
   .day-night button { min-height: 38px; }
   /* a foto termina antes do conteúdo para manter a fachada livre no celular */
-  .hero { padding-top: calc(56 * var(--vh, 1svh)); }
-  .hero-media { height: calc(56 * var(--vh, 1svh)); }
+  .hero { padding-top: 56svh; }
+  .hero-media { height: 56svh; }
   .hero-tag { top: 76px; }
-  .hero-shade { background: linear-gradient(180deg, rgba(10, 10, 11, .42) 0, rgba(10, 10, 11, .04) calc(30 * var(--vh, 1svh)), rgba(10, 10, 11, .8) calc(46 * var(--vh, 1svh)), var(--bg) calc(56 * var(--vh, 1svh))); }
-  .hero-shade-night { background: linear-gradient(180deg, rgba(10, 10, 11, .42) 0, transparent 90px, rgba(10, 10, 11, .05) calc(30 * var(--vh, 1svh)), rgba(10, 10, 11, .85) calc(46 * var(--vh, 1svh)), var(--bg) calc(56 * var(--vh, 1svh))); }
+  .hero-shade { background: linear-gradient(180deg, rgba(10, 10, 11, .42) 0, rgba(10, 10, 11, .04) 30svh, rgba(10, 10, 11, .8) 46svh, var(--bg) 56svh); }
+  .hero-shade-night { background: linear-gradient(180deg, rgba(10, 10, 11, .42) 0, transparent 90px, rgba(10, 10, 11, .05) 30svh, rgba(10, 10, 11, .85) 46svh, var(--bg) 56svh); }
 }
 
 /* Em telas de paisagem baixas, reduzir a área dos blocos sobre a fachada. */
 @media (min-width: 861px) and (max-width: 1500px) and (max-height: 760px) {
-  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr); gap: clamp(24px, calc(4 * var(--vw, 1vw)), 54px); }
-  .hero-title { font-size: clamp(5.4rem, calc(8.2 * var(--vw, 1vw)), 8.6rem); line-height: .86; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr); gap: clamp(24px, 4vw, 54px); }
+  .hero-title { font-size: clamp(5.4rem, 8.2vw, 8.6rem); line-height: .86; }
   .hero-sub { margin-top: 10px; }
   .hero-ctas { margin-top: 16px; }
   .stats { margin-top: 16px; }
   .stats li { padding-top: 12px; }
-  .stats strong { font-size: clamp(2.2rem, calc(3.8 * var(--vw, 1vw)), 3rem); }
+  .stats strong { font-size: clamp(2.2rem, 3.8vw, 3rem); }
 }
 
 @media (max-width: 860px) {
@@ -112,14 +112,14 @@
   /* Em telas compactas, ajustar o conteúdo da linha do tempo à altura disponível. */
   .historia-head { gap: 14px; }
   .historia-head .lead { font-size: 15px; }
-  .historia-viewport { margin-top: clamp(20px, calc(3 * var(--vh, 1vh)), 30px); }
-  .marco-ano { font-size: clamp(4.2rem, calc(18 * var(--vw, 1vw)), 6rem); }
+  .historia-viewport { margin-top: clamp(20px, 3vh, 30px); }
+  .marco-ano { font-size: clamp(4.2rem, 18vw, 6rem); }
   .marco p { margin-top: 12px; font-size: 18px; }
 }
 
 @media (min-width: 861px) {
-  .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(340px, .8fr); gap: clamp(28px, calc(5 * var(--vw, 1vw)), 72px); }
-  .hero-title { font-size: clamp(5.4rem, calc(8.2 * var(--vw, 1vw)), 8.6rem); }
+  .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(340px, .8fr); gap: clamp(28px, 5vw, 72px); }
+  .hero-title { font-size: clamp(5.4rem, 8.2vw, 8.6rem); }
   .hero-grid { margin-bottom: -18px; }
   .hero-side { max-width: 470px; }
 }
@@ -127,7 +127,7 @@
   .hero-ctas .btn { flex: 1 1 190px; min-width: 0; }
 }
 @media (min-width: 861px) and (max-height: 760px) {
-  .hero { padding-bottom: clamp(88px, calc(12 * var(--vh, 1vh)), 120px); }
+  .hero { padding-bottom: clamp(88px, 12vh, 120px); }
 }
 
 
@@ -141,17 +141,17 @@
 /* Scale the facade headline and supporting copy with desktop viewport width.
    Keep a readable minimum on tablets and undo the older desktop cap on TVs. */
 @media (min-width: 641px) {
-  .hero-title { font-size: clamp(5.4rem, calc(8.2 * var(--vw, 1vw)), 10rem); }
+  .hero-title { font-size: clamp(5.4rem, 8.2vw, 10rem); }
 }
 @media (min-width: 1600px) {
-  .hero-side { width: 100%; max-width: clamp(560px, calc(35 * var(--vw, 1vw)), 720px); margin-left: 0; }
+  .hero-side { width: 100%; max-width: clamp(560px, 35vw, 720px); margin-left: 0; }
 }
 
 /* Keep the facade copy at the same vertical proportion on desktop windows. */
 @media (min-width: 861px) {
   .hero-grid {
     position: absolute;
-    top: calc(50 * var(--vh, 1svh));
+    top: 50svh;
     left: 0;
     right: 0;
     width: 100%;
