@@ -81,3 +81,27 @@ The two supplied reference windows were reproduced at 1363×605 and 1920×940. T
 - Follow-up viewport sweep: nine sizes from 375×812 through 3840×2160; no hidden hero reveal items or horizontal overflow. The complete build passed after this change.
 
 The mobile layout still stacks its CTAs vertically; at 375×812 the second button extends below the initial viewport, but it is visible in the document from first render and does not require scroll to animate in.
+
+## Follow-up — phone first fold
+
+Portrait phone spacing was tightened so the full introduction and both CTA buttons fit in the initial viewport without scrolling. In browser checks, button bottoms were y=691/700 (320×700), y=780/812 (375×812), y=812/844 (390×844), and y=900/932 (430×932). At each size, `scrollY` stayed 0, there were no hidden hero reveal items, and no horizontal overflow.
+
+- Phone screenshots: `output/playwright/mobile-firstfold__320x700__after.png`, `mobile-firstfold__375x812__after.png`, `mobile-firstfold__390x844__after.png`, and `mobile-firstfold__430x932__after.png`.
+- Browser capture script: `output/playwright/mobile-final-screens.js`.
+- Production build passed after the phone adjustment.
+
+## Follow-up — unit map sizing
+
+The unit map containers kept a fixed 260 px height while their two-column cards widened on larger desktops. The unit grid is now capped at 1210 px and centered, preserving the original ~595×260 px maps across desktop widths.
+
+- Before: 595×260 at 1366; 814×260 at 1920; 974×260 at 3840.
+- After: 595×260 at 1366, 1920, and 3840; ratio remains ~2.29:1.
+- Evidence: `output/playwright/maps__1366x768__after.png`, `maps__1920x940__after.png`; measurements in `output/playwright/map-size-retest.js`.
+
+## Follow-up — courses section density
+
+The courses cards also grew with the desktop wrapper: at 1366 px they were ~393 px wide and 471–495 px tall; at 1920 px they were ~539 px wide and 403 px tall, making the section shorter and visually sparse. Capping `#cursos .wrap` at 1320 px keeps card dimensions consistent while leaving the three-column layout intact.
+
+- After: ~392–393 px card widths and 471–495 px heights at 1366, 1920, and 3840 px; no horizontal overflow.
+- Screenshots: `output/playwright/courses__1366x768__after.png`, `courses__1920x940__after.png`.
+- Measurements: `output/playwright/courses-size-retest.js`.
