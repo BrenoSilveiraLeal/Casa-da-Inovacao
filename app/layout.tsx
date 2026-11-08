@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 
 /*
  * Escala do computador: em telas de computador (>= 1024px e com mouse) o site é
- * montado sempre na largura de referência (1920px, a tela onde o layout foi
+ * montado sempre na largura de referência (1366px, a tela onde o layout foi
  * aprovado) e depois ampliado/reduzido por igual para caber na tela. Assim todo
  * computador vê exatamente a mesma composição. Celular e tablet não são afetados:
  * sem escala, as variáveis --vw/--vh não existem e o CSS usa vw/svh normais.
  * As media queries são reavaliadas como se a tela tivesse a largura de referência.
  */
 const DESKTOP_SCALE = `(function () {
-  var REF = 1920, MIN = 1024, root = document.documentElement, original = new WeakMap();
+  var REF = 1366, MIN = 1024, root = document.documentElement, original = new WeakMap();
   var desktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   function eachMediaRule(rules, fn) {
     for (var i = 0; i < rules.length; i++) {

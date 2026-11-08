@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "createdAt": "2026-11-08T21:56:31.739Z",
+        "reason": "Claude decided: Geist is the site's existing typeface, and the user asked for the current desktop look to be kept exactly as it is"
+      }
+    ]
+  }
+}

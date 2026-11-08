@@ -178,3 +178,9 @@
   }
 }
 
+
+/* ---------- computador: a foto acompanha o mouse sem mostrar borda preta ---------- */
+/* o deslocamento chega a 8px na horizontal e 5px na vertical; a sobra cobre isso com folga */
+@media (min-width: 861px) and (hover: hover) and (pointer: fine) {
+  .hero-media { inset: -6% -24px -16px; }
+}
