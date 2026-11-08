@@ -98,26 +98,27 @@ The unit map containers kept a fixed 260 px height while their two-column cards 
 - After: 595×260 at 1366, 1920, and 3840; ratio remains ~2.29:1.
 - Evidence: `output/playwright/maps__1366x768__after.png`, `maps__1920x940__after.png`; measurements in `output/playwright/map-size-retest.js`.
 
-## Follow-up — courses section density
+## Follow-up — proportional courses section
 
-The courses cards also grew with the desktop wrapper: at 1366 px they were ~393 px wide and 471–495 px tall; at 1920 px they were ~539 px wide and 403 px tall, making the section shorter and visually sparse. Capping `#cursos .wrap` at 1320 px keeps card dimensions consistent while leaving the three-column layout intact.
-
-- After: ~392–393 px card widths and 471–495 px heights at 1366, 1920, and 3840 px; no horizontal overflow.
-- Screenshots: `output/playwright/courses__1366x768__after.png`, `courses__1920x940__after.png`.
-- Measurements: `output/playwright/courses-size-retest.js`.
-
-## Follow-up — course section density after clarification
-
-The earlier 1320 px cap kept desktop course cards the same width at 1366 px and 1920 px, but left excessive unused space on wider computer screens. The course section now follows the site's wide-screen content widths: 1760 px from 1600 px, and 2080 px from 2400 px. The original 1320 px width remains through 1599 px.
+The user clarified that the course schedule area should keep the same visual proportions on different computers. The course wrapper now grows fluidly with the viewport, and the heading, filters, card typography, icons, spacing, and minimum card height scale with the wrapper. The existing phone layout is unchanged.
 
 | Viewport | Course wrapper | Card layout | Horizontal overflow |
 |---:|---:|---|---|
 | 375×812 | 375 px | 1 column; 343×467 px cards | No |
 | 768×1024 | 768 px | 2 columns; 345×483 px cards | No |
-| 1366×768 | 1320 px | 3 columns; 393×471 px cards | No |
-| 1920×940 | 1760 px | 3 columns; 539×403 px cards | No |
-| 3840×2160 | 2080 px | 3 columns; 645×403 px cards | No |
+| 1280×800 | 1280 px | 3 columns; 382×461 px cards | No |
+| 1366×768 | 1320 px | 3 columns; 393×473 px cards | No |
+| 1600×900 | 1440 px | 3 columns; 431×519 px cards | No |
+| 1920×940 | 1760 px | 3 columns; 535×644 px cards | No |
+| 2400×1080 | 2080 px | 3 columns; 639×769 px cards | No |
+| 3840×2160 | 2080 px | 3 columns; 639×769 px cards | No |
 
-At 1920 px, the three course cards now span 1648 px including gaps, up from 1208 px, filling the wide monitor more like the user's reference. Browser visual review was performed in Chrome at 1920×940 and 3840×2160. The browser screenshot tool displayed the current captures but refused to write image files under the workspace, so the older wide-screen screenshots above still show the previous 1320 px cap. Measurements and interactions were read from the live page.
+At desktop sizes from 1280 px upward, the card height-to-width ratio is held at 1.20. Visual checks were performed in Chrome at 1366×768 and 1920×940, and measurements were read at every size in the table. The browser screenshot tool displayed the current captures but refused to save them under the workspace, so previous wide-screen screenshot files do not represent this final proportional adjustment.
 
-Course interaction regression: selecting São Pedro displayed 3 cards; selecting 60+ reduced that list to 1; resetting to Beira Linha and Todas as idades restored all 6 cards and their selected states. Tested with Chrome on `http://localhost:4173/`.
+Course interaction regression: selecting São Pedro displayed 3 cards; selecting 60+ reduced that list to 1; resetting to Beira Linha and Todas as idades restored all 6 cards and their selected states. Tested in Chrome on `http://localhost:4173/`.
+
+The public Vercel page was also inspected at 1920×940: it still uses 30 px course titles and 539×403 px cards, while the local corrected build uses 41 px titles and 535×644 px cards. The Vercel deployment therefore does not yet contain this correction.
+
+`npm run build`: pass; 12 routes prerendered.
+
+Mobile regression after isolating the desktop scaling rules: at 375×812, the hero again matches the saved first-fold reference (`output/playwright/mobile-firstfold__375x812__after.png`); the course section remains a single 343×467 px card with a 24 px title and no horizontal overflow. The wrapper is no longer a size container below 1280 px, and all fluid course sizing rules are desktop-only.

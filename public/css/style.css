@@ -264,12 +264,6 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 
 /* Cursos */
 #cursos .wrap { max-width: 1320px; }
-@media (min-width: 1600px) {
-  #cursos .wrap { max-width: 1760px; }
-}
-@media (min-width: 2400px) {
-  #cursos .wrap { max-width: 2080px; }
-}
 .cursos-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
 .cursos-head .lead { max-width: 30ch; }
 .filtros { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
@@ -320,6 +314,36 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 .card:hover .card-cta .arrow { background: var(--accent); color: var(--ink); border-color: var(--accent); transform: rotate(-45deg); }
 .cards-vazio { grid-column: 1 / -1; padding: 60px 24px; text-align: center; border: 1px dashed var(--line-2); border-radius: var(--radius); color: var(--muted); }
 .cards-vazio button { margin-top: 18px; }
+
+/* Keep the course section's proportions consistent across desktop viewport sizes. */
+@media (min-width: 1280px) {
+  #cursos .wrap { max-width: clamp(1320px, calc(100vw - 160px), 2080px); container-type: inline-size; }
+  #cursos { padding-block: clamp(96px, 14.07cqw, 280px); }
+  .cursos-head { gap: 2.65cqw; }
+  .cursos-head .h2 { font-size: clamp(76px, 6.33cqw, 128px); }
+  .cursos-head .lead { font-size: clamp(20px, 1.655cqw, 32px); }
+  #cursos .eyebrow { font-size: clamp(13px, 1.076cqw, 21px); margin-bottom: 1.82cqw; }
+  .filtros { margin-top: 3.97cqw; gap: 1.325cqw; }
+  .seg { padding: .414cqw; }
+  .seg button { padding: 1.076cqw 2.15cqw; font-size: 1.283cqw; }
+  .seg-pill { top: .414cqw; bottom: .414cqw; left: .414cqw; }
+  .chips { gap: .66cqw; }
+  .chips button { padding: .827cqw 1.325cqw; font-size: 1.2cqw; }
+  .cursos-endereco { margin-top: 1.82cqw; gap: .66cqw; font-size: 1.16cqw; }
+  .cursos-endereco svg { width: 1.49cqw; height: 1.49cqw; }
+  .cards { margin-top: 2.98cqw; gap: 1.325cqw; }
+  .card { min-height: 39.07cqw; padding: 2.32cqw; border-radius: 1.99cqw; }
+  .card-area { font-size: .993cqw; }
+  .card-icon { width: 4.64cqw; height: 4.64cqw; border-radius: 1.49cqw; }
+  .card-icon svg { width: 2.32cqw; height: 2.32cqw; }
+  .card h3 { margin-top: 2.48cqw; font-size: clamp(30px, 2.48cqw, 49px); }
+  .card-publico { margin-top: .827cqw; font-size: 1.16cqw; }
+  .card-resumo { margin-top: 1.16cqw; font-size: 1.283cqw; }
+  .card-horarios { margin-top: 1.82cqw; gap: .5cqw; }
+  .card-horarios span { padding: .66cqw .827cqw; border-radius: .66cqw; font-size: 1.034cqw; }
+  .card-cta { margin-top: 1.99cqw; padding-top: 1.49cqw; font-size: 1.24cqw; }
+  .card-cta .arrow { width: 3.145cqw; height: 3.145cqw; }
+}
 
 /* História */
 .historia { position: relative; }
