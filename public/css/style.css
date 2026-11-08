@@ -441,6 +441,7 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 .status { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border-radius: 999px; background: var(--ink); color: var(--cream); font: 500 13px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 28px; }
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #FF5A4A; box-shadow: 0 0 0 4px rgba(255, 90, 74, .25); }
 .status.is-open .status-dot { background: #3BE07A; box-shadow: 0 0 0 4px rgba(59, 224, 122, .25); animation: blink 2s infinite; }
+.status:not(.is-open) .status-dot { animation: blink 1.2s steps(1, end) infinite; }
 .passos { display: grid; gap: 10px; counter-reset: p; }
 .passos li { display: flex; gap: 16px; align-items: center; padding: 18px 20px; border-radius: 18px; background: rgba(255, 255, 255, .45); border: 1px solid rgba(17, 16, 18, .08); font-weight: 500; line-height: 1.4; }
 .passos li::before { counter-increment: p; content: counter(p); flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--yellow); font: 600 15px/1 var(--mono); }

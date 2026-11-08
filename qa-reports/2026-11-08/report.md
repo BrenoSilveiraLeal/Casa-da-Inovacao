@@ -134,3 +134,5 @@ Compared the user's 1363 px reference with the friend's 1892 px screenshot. The 
 | 375×812 | 375 px | 16 px | 343 px / 341×210 px | No |
 
 At both desktop widths, the title and maps now share the same centered content block; the phone breakpoint remains unchanged. The compiled app was checked with `npm run build` and all 12 routes prerendered successfully. The cache-busting stylesheet URL and CSS changes are local until deployed, so the friend's browser will not receive them yet.
+
+The closed registration indicator now blinks red to match the requested reference. Chrome confirmed `animation: blink 1.2s steps(1)` on `.status-dot` while the status is closed; the status remains red. The CSS URL is versioned as `20261108-inscricao-pulse`. `npm run build` passed with 12 routes prerendered.
