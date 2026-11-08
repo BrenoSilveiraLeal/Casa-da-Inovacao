@@ -122,3 +122,15 @@ The public Vercel page was also inspected at 1920×940: it still uses 30 px cour
 `npm run build`: pass; 12 routes prerendered.
 
 Mobile regression after isolating the desktop scaling rules: at 375×812, the hero again matches the saved first-fold reference (`output/playwright/mobile-firstfold__375x812__after.png`); the course section remains a single 343×467 px card with a 24 px title and no horizontal overflow. The wrapper is no longer a size container below 1280 px, and all fluid course sizing rules are desktop-only.
+
+## Follow-up — matching the two desktop unit layouts
+
+Compared the user's 1363 px reference with the friend's 1892 px screenshot. The friend's older layout let the section heading and map grid use different content widths. Constrained `#local` to the same centered 1320 px content block used in the reference, while keeping its map grid at 1210 px maximum. Added a version query to the main stylesheet URL so browsers fetch the updated CSS instead of reusing an older cached copy.
+
+| Viewport | Unit section wrapper | Heading left edge | Map grid / each map | Overflow |
+|---:|---:|---:|---:|---|
+| 1363×917 | 1320 px | 76 px | 1210 px / 595×260 px | No |
+| 1892×917 | 1320 px, centered | 342 px | 1208 px / 594×260 px | No |
+| 375×812 | 375 px | 16 px | 343 px / 341×210 px | No |
+
+At both desktop widths, the title and maps now share the same centered content block; the phone breakpoint remains unchanged. The compiled app was checked with `npm run build` and all 12 routes prerendered successfully. The cache-busting stylesheet URL and CSS changes are local until deployed, so the friend's browser will not receive them yet.
