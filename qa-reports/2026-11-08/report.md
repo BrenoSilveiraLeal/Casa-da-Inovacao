@@ -137,6 +137,18 @@ At both desktop widths, the title and maps now share the same centered content b
 
 The closed registration indicator now blinks red to match the requested reference. Chrome confirmed `animation: blink 1.2s steps(1)` on `.status-dot` while the status is closed; the status remains red. The CSS URL is versioned as `20261108-inscricao-pulse`. `npm run build` passed with 12 routes prerendered.
 
+## Follow-up — phone-only hero scroll reveal
+
+Per the updated phone reference, kept the title on the initial screen and placed the supporting course text and both CTAs below it. They start hidden on phones and rise into view as the person scrolls. The desktop hero still shows the text and buttons immediately. Initial reveal testing used a fresh browser context with the phone viewport set before page load to avoid desktop viewport restoration affecting observer state.
+
+| Viewport | Initial text / CTAs | After scrolling | Overflow |
+|---:|---|---|---|
+| 375×812 | Hidden; title top 568 px, text top 869 px, CTAs top 932 px | At 130 px scroll text revealed; at 200 px CTAs also revealed, both opacity 1 and transform cleared | No |
+| 430×932 | Hidden; title top 652 px, text top 974 px, CTAs top 1037 px | Reveal on scroll | No |
+| 1363×605 | Text and CTAs visible at initial load | No mobile reveal | No |
+
+The hero copy and CTAs are gated by the mobile scroll reveal in `site.js`; the `dia-noite.css` override reserves 70svh above them on phones. Reduced-motion preference shows them without animation. Updated the script and stylesheet query strings to `20261108-mobile-hero-scroll` and `20261108-mobile-scroll-reveal`. `npm run build` passed with 12 routes prerendered.
+
 ## Follow-up — restore the prior phone hero spacing
 
 Removed the later phone-only overrides that forced `.hero` to `38svh` (`32svh` below 360 px). The original `56svh` hero spacing from `dia-noite.css` is active again. Chrome confirmed 455 px at 375×812 and 522 px at 430×932; the hero intro and CTAs return to their previous vertical positions. Updated the `dia-noite.css` URL to `20261108-phone-restore` so browsers fetch the restored rules after deployment. `npm run build` passed with 12 routes prerendered.
