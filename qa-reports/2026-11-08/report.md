@@ -147,8 +147,17 @@ Per the updated phone reference, kept the title on the initial screen and placed
 | 430×932 | Hidden; title top 652 px, text top 974 px, CTAs top 1037 px | Reveal on scroll | No |
 | 1363×605 | Text and CTAs visible at initial load | No mobile reveal | No |
 
-The hero copy and CTAs are gated by the mobile scroll reveal in `site.js`; the `dia-noite.css` override reserves 70svh above them on phones. Reduced-motion preference shows them without animation. Updated the script and stylesheet query strings to `20261108-mobile-hero-scroll` and `20261108-mobile-scroll-reveal`. `npm run build` passed with 12 routes prerendered.
+The hero copy and CTAs are gated by the mobile scroll reveal in `site.js`. (This entry's 70svh spacing was later reverted; see the correction below.) Reduced-motion preference shows them without animation. Updated the script and stylesheet query strings to `20261108-mobile-hero-scroll` and `20261108-mobile-scroll-reveal`. `npm run build` passed with 12 routes prerendered.
 
 ## Follow-up — restore the prior phone hero spacing
 
-Removed the later phone-only overrides that forced `.hero` to `38svh` (`32svh` below 360 px). The original `56svh` hero spacing from `dia-noite.css` is active again. Chrome confirmed 455 px at 375×812 and 522 px at 430×932; the hero intro and CTAs return to their previous vertical positions. Updated the `dia-noite.css` URL to `20261108-phone-restore` so browsers fetch the restored rules after deployment. `npm run build` passed with 12 routes prerendered.
+Correction: that previous follow-up was inaccurate. The phone overrides are set to `38svh` (`32svh` below 360 px), preserving the prior phone composition. The intervening `70svh` spacing had pushed all hero content down; it is not active. This stylesheet is versioned as `20261108-mobile-scroll-reveal`.
+
+## Final retest — phone-only hero scroll reveal
+
+| Viewport | Initial state | After scroll | Result |
+|---|---|---|---|
+| 375×812 (Chrome, fresh load) | Title top 331 px; supporting text and CTAs remain in their original layout positions but render at opacity 0 | A 10 px scroll reveals supporting text and both CTAs (opacity 1); title moves only with normal page scroll | Pass |
+| 1366×768 (Chrome, fresh load) | Supporting text and CTAs are visible immediately; hero padding is 120 px | No phone-only gating | Pass |
+
+`npm run build` passed with 12 routes prerendered. The browser screenshot tool was available for visual inspection but denied saving its image into the project workspace; the measurements above were read from the live browser DOM. This retest covers the changed hero behavior, not the full responsive route matrix in the Ultimate Website QA checklist.

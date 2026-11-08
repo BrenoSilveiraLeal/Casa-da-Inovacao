@@ -168,7 +168,7 @@
   .hero-grid { max-width: 2080px; padding-inline: var(--gutter); }
 }
 
-/* Hero copy must be present on first paint; scroll reveals are for later sections. */
+/* Keep general reveal content visible unless its specific section opts in below. */
 .hero [data-reveal] {
   opacity: 1;
   transform: none;
@@ -177,7 +177,7 @@
 
 /* No telefone, o texto de apoio e os CTAs entram com reveal durante a rolagem. */
 @media (max-width: 640px) {
-  .hero { padding-top: 70svh; }
+  .hero { padding-top: 38svh !important; }
   .hero .hero-lead[data-reveal],
   .hero .hero-ctas[data-reveal] {
     opacity: 0;
@@ -190,6 +190,10 @@
     opacity: 1;
     transform: none;
   }
+}
+
+@media (max-width: 360px) {
+  .hero { padding-top: 32svh !important; }
 }
 
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
