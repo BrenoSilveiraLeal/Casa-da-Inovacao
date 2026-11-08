@@ -264,6 +264,12 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
 
 /* Cursos */
 #cursos .wrap { max-width: 1320px; }
+@media (min-width: 1600px) {
+  #cursos .wrap { max-width: 1760px; }
+}
+@media (min-width: 2400px) {
+  #cursos .wrap { max-width: 2080px; }
+}
 .cursos-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
 .cursos-head .lead { max-width: 30ch; }
 .filtros { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }

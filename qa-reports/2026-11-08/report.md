@@ -105,3 +105,19 @@ The courses cards also grew with the desktop wrapper: at 1366 px they were ~393 
 - After: ~392–393 px card widths and 471–495 px heights at 1366, 1920, and 3840 px; no horizontal overflow.
 - Screenshots: `output/playwright/courses__1366x768__after.png`, `courses__1920x940__after.png`.
 - Measurements: `output/playwright/courses-size-retest.js`.
+
+## Follow-up — course section density after clarification
+
+The earlier 1320 px cap kept desktop course cards the same width at 1366 px and 1920 px, but left excessive unused space on wider computer screens. The course section now follows the site's wide-screen content widths: 1760 px from 1600 px, and 2080 px from 2400 px. The original 1320 px width remains through 1599 px.
+
+| Viewport | Course wrapper | Card layout | Horizontal overflow |
+|---:|---:|---|---|
+| 375×812 | 375 px | 1 column; 343×467 px cards | No |
+| 768×1024 | 768 px | 2 columns; 345×483 px cards | No |
+| 1366×768 | 1320 px | 3 columns; 393×471 px cards | No |
+| 1920×940 | 1760 px | 3 columns; 539×403 px cards | No |
+| 3840×2160 | 2080 px | 3 columns; 645×403 px cards | No |
+
+At 1920 px, the three course cards now span 1648 px including gaps, up from 1208 px, filling the wide monitor more like the user's reference. Browser visual review was performed in Chrome at 1920×940 and 3840×2160. The browser screenshot tool displayed the current captures but refused to write image files under the workspace, so the older wide-screen screenshots above still show the previous 1320 px cap. Measurements and interactions were read from the live page.
+
+Course interaction regression: selecting São Pedro displayed 3 cards; selecting 60+ reduced that list to 1; resetting to Beira Linha and Todas as idades restored all 6 cards and their selected states. Tested with Chrome on `http://localhost:4173/`.
