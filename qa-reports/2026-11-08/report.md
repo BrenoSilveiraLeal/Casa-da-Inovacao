@@ -70,3 +70,14 @@ All four page patterns were checked at the seven required viewports. The dynamic
 
 
 
+
+## Follow-up — user reference screenshots
+
+The two supplied reference windows were reproduced at 1363×605 and 1920×940. The hero grid is now anchored at `50svh`, so the facade title begins at y=303 (50.1% of the shorter window) and y=470 (50% of the taller window), while keeping its width-responsive typography. Its left edge matches the supplied framing at x=76 and x=64. The subtitle, supporting copy, and CTA buttons all computed to opacity 1 with no transition at `scrollY=0`; no horizontal overflow occurred.
+
+- 1363×605 after: `output/playwright/home__reference__1363x605__fixed.png`
+- 1920×940 after: `output/playwright/home__reference__1920x940__fixed.png`
+- Browser check: `output/playwright/reference-retest.js`
+- Follow-up viewport sweep: nine sizes from 375×812 through 3840×2160; no hidden hero reveal items or horizontal overflow. The complete build passed after this change.
+
+The mobile layout still stacks its CTAs vertically; at 375×812 the second button extends below the initial viewport, but it is visible in the document from first render and does not require scroll to animate in.

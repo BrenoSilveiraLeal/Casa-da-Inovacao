@@ -146,3 +146,35 @@
 @media (min-width: 1600px) {
   .hero-side { width: 100%; max-width: clamp(560px, 35vw, 720px); margin-left: 0; }
 }
+
+/* Keep the facade copy at the same vertical proportion on desktop windows. */
+@media (min-width: 861px) {
+  .hero-grid {
+    position: absolute;
+    top: 50svh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    margin-bottom: 0;
+    transform: none;
+  }
+}
+@media (min-width: 1600px) and (max-width: 2399px) {
+  .hero-grid { max-width: none; padding-inline: 64px; }
+}
+@media (min-width: 2400px) {
+  .hero-grid { max-width: 2080px; padding-inline: var(--gutter); }
+}
+
+/* Hero copy must be present on first paint; scroll reveals are for later sections. */
+.hero [data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.hero-title .line > span {
+  transform: none;
+  transition: none;
+}
