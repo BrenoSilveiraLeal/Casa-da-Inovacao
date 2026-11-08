@@ -136,3 +136,7 @@ Compared the user's 1363 px reference with the friend's 1892 px screenshot. The 
 At both desktop widths, the title and maps now share the same centered content block; the phone breakpoint remains unchanged. The compiled app was checked with `npm run build` and all 12 routes prerendered successfully. The cache-busting stylesheet URL and CSS changes are local until deployed, so the friend's browser will not receive them yet.
 
 The closed registration indicator now blinks red to match the requested reference. Chrome confirmed `animation: blink 1.2s steps(1)` on `.status-dot` while the status is closed; the status remains red. The CSS URL is versioned as `20261108-inscricao-pulse`. `npm run build` passed with 12 routes prerendered.
+
+## Follow-up — restore the prior phone hero spacing
+
+Removed the later phone-only overrides that forced `.hero` to `38svh` (`32svh` below 360 px). The original `56svh` hero spacing from `dia-noite.css` is active again. Chrome confirmed 455 px at 375×812 and 522 px at 430×932; the hero intro and CTAs return to their previous vertical positions. Updated the `dia-noite.css` URL to `20261108-phone-restore` so browsers fetch the restored rules after deployment. `npm run build` passed with 12 routes prerendered.

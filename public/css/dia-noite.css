@@ -179,10 +179,3 @@
   transition: none;
 }
 
-/* Fit the complete introduction and both CTAs in a portrait phone viewport. */
-@media (max-width: 640px) {
-  .hero { padding-top: 38svh !important; }
-}
-@media (max-width: 360px) {
-  .hero { padding-top: 32svh !important; }
-}
