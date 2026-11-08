@@ -137,3 +137,12 @@
 
 /* No celular, a fachada cobre o hero inteiro, do topo ate o fim do conteudo. */
 @media(max-width:640px){.hero-media{inset:-6% 0 0!important;height:auto!important}.hero-media img{object-position:28% 40%;transform:none!important}.hero-shade{background:linear-gradient(180deg,rgba(10,10,11,.34) 0%,rgba(10,10,11,.08) 34%,rgba(10,10,11,.52) 72%,rgba(10,10,11,.9) 100%)!important}.hero-shade-night{background:linear-gradient(180deg,rgba(10,10,11,.34) 0%,rgba(10,10,11,.08) 34%,rgba(10,10,11,.58) 72%,rgba(10,10,11,.94) 100%)!important}}
+
+/* Scale the facade headline and supporting copy with desktop viewport width.
+   Keep a readable minimum on tablets and undo the older desktop cap on TVs. */
+@media (min-width: 641px) {
+  .hero-title { font-size: clamp(5.4rem, 8.2vw, 10rem); }
+}
+@media (min-width: 1600px) {
+  .hero-side { width: 100%; max-width: clamp(560px, 35vw, 720px); margin-left: 0; }
+}
