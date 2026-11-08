@@ -671,11 +671,10 @@ window.CASA = {
   const orqMedia = $('.orquestra-media');
   const orq = $('.orquestra');
   let dist = 0;
-  const compactHistory = matchMedia('(max-width: 860px)');
 
   const layoutHistoria = () => {
     const pin = $('.historia-pin');
-    const vertical = reduce || compactHistory.matches;
+    const vertical = reduce;
     historia.classList.toggle('historia-static', vertical);
     if (vertical) {
       dist = 0;
@@ -701,10 +700,10 @@ window.CASA = {
   const onScrollFx = () => {
     const vh = innerHeight;
 
-    // história: rola na horizontal no desktop, preenche a linha no celular
+    // A rolagem vertical avança a história na horizontal em todas as telas.
     const r = historia.getBoundingClientRect();
     let p;
-    if (!reduce && !compactHistory.matches) {
+    if (!reduce) {
       const total = historia.offsetHeight - $('.historia-pin').offsetHeight;
       p = total > 0 ? clamp(-r.top / total, 0, 1) : 0;
       track.style.transform = `translate3d(${-p * dist}px,0,0)`;

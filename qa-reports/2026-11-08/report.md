@@ -171,3 +171,9 @@ Removed today's phone hero padding, margin and custom scroll-gating changes. Res
 Chrome compared the current phone layout against the historical `style.css` and `dia-noite.css` loaded into the same live page. At 375x812 and 430x932, all 20 selected layout measurements (navigation, hero, course controls/cards, maps, registration status and footer) matched, with no horizontal overflow. The original reveal observer shows the description and CTAs as they enter view; scrolling 300 px at 430x932 revealed both. The red light reports `blink 1.2s steps(1) infinite`.
 
 Desktop regression at 1366x768: hero grid top 384 px, title 112.012 px, description and CTAs visible immediately. Build passed (12 prerendered routes); `git diff --check` passed. No commit or deployment was made.
+
+## Requested exception to phone restoration — horizontal history
+
+Restored the vertical-scroll-driven horizontal timeline on phones. Removed the compact-screen vertical-list breakpoint from the history CSS and the matching JavaScript gate; the existing horizontal sticky track now operates at phone widths. The reduced-motion static list remains available through `historia-static`.
+
+Chrome checked 375x812 and 430x932: the history pin stays at top 0, the track moves from 0 through its halfway point to -917 px / -862 px, and the final Hoje milestone is fully within the viewport. Neither phone has horizontal page overflow. Build and `git diff --check` passed. Asset query strings were refreshed. No deployment or commit was made by the agent.

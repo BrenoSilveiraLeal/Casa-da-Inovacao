@@ -609,12 +609,7 @@ mark { background: linear-gradient(transparent 58%, var(--yellow) 58%); color: i
   .stats li:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 22px; }
   .alex-grid, .unidades { grid-template-columns: 1fr; }
   .alex-photo { max-width: 460px; }
-  /* história vira lista vertical */
-  .historia-track { flex-direction: column; width: auto; gap: 34px; padding: 0 var(--gutter) 0 calc(var(--gutter) + 34px); }
-  .marco { width: auto; padding-bottom: 0; }
-  .marco-dot { left: calc(-34px + 1px); top: .9em; bottom: auto; }
-  .historia-line { left: calc(var(--gutter) + 8px); right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
-  .historia-line span { width: 100%; height: 100%; transform-origin: 50% 0; transform: scaleY(var(--p, 0)); }
+  /* A linha do tempo mantém a sequência horizontal no telefone. */
   .marco-ano { font-size: clamp(4.2rem, 20vw, 6rem); }
 }
 

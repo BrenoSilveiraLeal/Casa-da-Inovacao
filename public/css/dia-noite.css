@@ -109,7 +109,7 @@
 @media (max-width: 860px) {
   .marquee { width: calc(100% + 80px); margin-left: -40px; transform: rotate(-3.6deg); }
 
-  /* Em telas compactas, a história acompanha a leitura vertical. */
+  /* Em telas compactas, ajustar o conteúdo da linha do tempo à altura disponível. */
   .historia-head { gap: 14px; }
   .historia-head .lead { font-size: 15px; }
   .historia-viewport { margin-top: clamp(20px, 3vh, 30px); }
