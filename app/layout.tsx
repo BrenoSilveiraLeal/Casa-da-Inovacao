@@ -65,6 +65,19 @@ const DESKTOP_SCALE = `(function () {
   if (desktopPointer.addEventListener) desktopPointer.addEventListener('change', apply);
 })();`;
 
+/* Ao recarregar (F5), a página volta sempre para o topo em vez de restaurar a rolagem. */
+const SCROLL_TOP_ON_RELOAD = `(function () {
+  var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  if (!nav || nav.type !== 'reload') return;
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  function top() { window.scrollTo(0, 0); }
+  top();
+  window.addEventListener('DOMContentLoaded', top);
+  window.addEventListener('load', function () { top(); setTimeout(top, 100); });
+  window.addEventListener('pageshow', top);
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -79,6 +92,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/style.css?v=20261108-desktop-scale" />
         <link rel="stylesheet" href="/css/dia-noite.css?v=20261108-desktop-scale" />
         <script dangerouslySetInnerHTML={{ __html: DESKTOP_SCALE }} />
+        <script dangerouslySetInnerHTML={{ __html: SCROLL_TOP_ON_RELOAD }} />
       </head>
       <body>
         {children}
