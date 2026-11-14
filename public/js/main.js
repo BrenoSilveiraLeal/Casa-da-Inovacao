@@ -335,7 +335,7 @@
         <h3>${u.nome}</h3>
         <address>${u.endereco}<br>${u.cidade}</address>
         <div class="unidade-links">
-          <a href="tel:${u.tel}"><i>${icon('tel')}</i>${u.telefone}</a>
+          <a href="${u.whatsapp ? `https://wa.me/${u.whatsapp}` : `tel:${u.tel}`}"${u.whatsapp ? ' target="_blank" rel="noopener"' : ''}><i>${icon('tel')}</i>${u.telefone}</a>
           <a href="mailto:${u.email}"><i>${icon('mail')}</i>${u.email}</a>
         </div>
         <a class="btn btn-ink btn-sm" href="${u.maps}" target="_blank" rel="noopener">Como chegar <span class="arrow">→</span></a>

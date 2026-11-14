@@ -41,8 +41,9 @@ window.CASA = {
       cidade: 'São Pedro, Teresópolis · RJ',
       maps: 'https://www.google.com/maps/search/?api=1&query=Rua+S%C3%A3o+Pedro+191+Loja+01+S%C3%A3o+Pedro+Teres%C3%B3polis+RJ',
       embed: 'https://www.google.com/maps?q=Rua+S%C3%A3o+Pedro,+191,+Teres%C3%B3polis+-+RJ&output=embed',
-      telefone: '(21) 2040-1220',
-      tel: '+552120401220',
+      telefone: '(21) 99348-0947',
+      tel: '+5521993480947',
+      whatsapp: '5521993480947',
       email: 'casadainovacaosaopedro@gmail.com'
     }
   },
@@ -494,7 +495,7 @@ window.CASA = {
         <h3>${u.nome}</h3>
         <address>${u.endereco}<br>${u.cidade}</address>
         <div class="unidade-links">
-          <a href="tel:${u.tel}"><i>${icon('tel')}</i>${u.telefone}</a>
+          <a href="${u.whatsapp ? `https://wa.me/${u.whatsapp}` : `tel:${u.tel}`}"${u.whatsapp ? ' target="_blank" rel="noopener"' : ''}><i>${icon('tel')}</i>${u.telefone}</a>
           <a href="mailto:${u.email}"><i>${icon('mail')}</i>${u.email}</a>
         </div>
         <a class="btn btn-ink btn-sm" href="${u.maps}" target="_blank" rel="noopener">Como chegar <span class="arrow">→</span></a>

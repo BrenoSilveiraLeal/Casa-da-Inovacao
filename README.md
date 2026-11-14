@@ -9,7 +9,7 @@ Site institucional da Casa da Inovação E. F. Therezópolis, em Teresópolis (R
 ## Unidades
 
 - **Beira Linha:** Rua Beira Linha, 329, Teresópolis · (21) 96690-7209 · casadainovacaoteresopolis@gmail.com
-- **São Pedro:** Rua São Pedro, nº 191, Loja 01, Teresópolis · (21) 2040-1220 · casadainovacaosaopedro@gmail.com
+- **São Pedro:** Rua São Pedro, nº 191, Loja 01, Teresópolis · WhatsApp (21) 99348-0947 · casadainovacaosaopedro@gmail.com
 
 ## Recursos
 
